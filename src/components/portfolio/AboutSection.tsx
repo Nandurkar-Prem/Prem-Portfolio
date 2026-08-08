@@ -60,7 +60,7 @@ export function AboutSection() {
             </h2>
           </FadeIn>
           <AnimatedText
-            text="With more than five years of experience in design, i focus on branding, web design, and user experience, i truly enjoy working with businesses that aim to stand out and present their best image. Let's build something incredible together!"
+            text="I'm a Computer Technology student and aspiring backend developer passionate about building real-world applications with Java and Spring Boot. I enjoy designing REST APIs, working with databases, implementing secure backend systems, and solving problems through DSA. I'm constantly learning, building projects, and exploring technologies like AI, microservices, and cloud development."
             className="text-[#D7E2EA] font-medium text-center leading-relaxed max-w-[560px]"
             style={{ fontSize: "clamp(1rem, 2vw, 1.35rem)" }}
           />
