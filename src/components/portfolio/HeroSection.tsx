@@ -1,8 +1,14 @@
 import { FadeIn } from "./FadeIn";
 import { Magnet } from "./Magnet";
 import { ContactButton } from "./Buttons";
+import { Link } from "@tanstack/react-router";
 
-const NAV = ["About", "Skills", "Projects", "Contact"];
+const NAV = [
+  { name: "About", href: "/about", isRoute: true },
+  { name: "Skills", href: "#skills", isRoute: false },
+  { name: "Projects", href: "#projects", isRoute: false },
+  { name: "Contact", href: "#contact", isRoute: false },
+];
 
 export function HeroSection() {
   return (
@@ -13,13 +19,22 @@ export function HeroSection() {
       <FadeIn delay={0} y={-20} as="nav" className="px-6 md:px-10 pt-6 md:pt-8">
         <ul className="flex justify-between">
           {NAV.map((item) => (
-            <li key={item}>
-              <a
-                href={`#${item.toLowerCase()}`}
-                className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] transition-opacity duration-200 hover:opacity-70"
-              >
-                {item}
-              </a>
+            <li key={item.name}>
+              {item.isRoute ? (
+                <Link
+                  to={item.href}
+                  className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] transition-opacity duration-200 hover:opacity-70"
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <a
+                  href={item.href}
+                  className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] transition-opacity duration-200 hover:opacity-70"
+                >
+                  {item.name}
+                </a>
+              )}
             </li>
           ))}
         </ul>
