@@ -2,10 +2,11 @@ import { FadeIn } from "./FadeIn";
 import { Magnet } from "./Magnet";
 import { ContactButton } from "./Buttons";
 import { Link } from "@tanstack/react-router";
+import mainAvatar from "@/assets/mainAvatar.png"
 
 const NAV = [
   { name: "About", href: "/about", isRoute: true },
-  { name: "Skills", href: "#skills", isRoute: false },
+  { name: "Skills", href: "/skills", isRoute: true },
   { name: "Projects", href: "#projects", isRoute: false },
   { name: "Contact", href: "#contact", isRoute: false },
 ];
@@ -74,8 +75,8 @@ export function HeroSection() {
           inactiveTransition="transform 0.6s ease-in-out"
         >
           <img
-            src="https://shrug-person-78902957.figma.site/_components/v2/d24c01ad3a56fc65e942a1f501eb73db42d7cf9a/Rectangle_40443.81459862.png"
-            alt="Jack, 3D creator portrait"
+            src={mainAvatar}
+            alt="Prem's 3D avatar"
             className="w-full h-auto"
           />
         </Magnet>

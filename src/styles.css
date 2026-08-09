@@ -161,3 +161,12 @@
   -webkit-text-fill-color: transparent;
 }
 
+@keyframes dataFlow {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(650px);
+  }
+}
