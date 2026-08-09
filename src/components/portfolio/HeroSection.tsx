@@ -2,13 +2,14 @@ import { FadeIn } from "./FadeIn";
 import { Magnet } from "./Magnet";
 import { ContactButton } from "./Buttons";
 import { Link } from "@tanstack/react-router";
-import mainAvatar from "@/assets/mainAvatar.png"
+import premAvatar from "@/assets/premAvatar.png"
 
 const NAV = [
   { name: "About", href: "/about", isRoute: true },
   { name: "Skills", href: "/skills", isRoute: true },
-  { name: "Projects", href: "#projects", isRoute: false },
-  { name: "Contact", href: "#contact", isRoute: false },
+  { name: "Achievements", href: "/achievements", isRoute: true },
+  { name: "Projects", href: "/projects", isRoute: true },
+  { name: "Contact", href: "/contact", isRoute: true },
 ];
 
 export function HeroSection() {
@@ -75,7 +76,7 @@ export function HeroSection() {
           inactiveTransition="transform 0.6s ease-in-out"
         >
           <img
-            src={mainAvatar}
+            src={premAvatar}
             alt="Prem's 3D avatar"
             className="w-full h-auto"
           />

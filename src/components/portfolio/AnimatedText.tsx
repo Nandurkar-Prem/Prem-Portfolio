@@ -49,12 +49,24 @@ export function AnimatedText({
             {chars.map((c, ci) => {
               const start = charIndex / total;
               const end = (charIndex + 1) / total;
+
               charIndex++;
-              return <Char key={ci} char={c} progress={scrollYProgress} range={[start, end]} />;
+
+              return (
+                <Char
+                  key={ci}
+                  char={c}
+                  progress={scrollYProgress}
+                  range={[start, end]}
+                />
+              );
             })}
+
             {wi < words.length - 1 ? <span>&nbsp;</span> : null}
           </span>
         );
+
+        return node;
         charIndex++;
         return node;
       })}

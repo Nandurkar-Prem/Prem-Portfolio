@@ -1078,7 +1078,7 @@ function About() {
 
                 </div>
             </section>
-            
+
             {/* DEVELOPMENT JOURNEY */}
             <section
                 className="relative overflow-hidden border-t border-white/10 px-5 py-20 sm:px-8 sm:py-24 md:px-10 md:py-32"
@@ -1503,507 +1503,1256 @@ function About() {
                     </FadeIn>
                 </div>
             </section>
-            {/* PROJECT EXPERIENCE */}
+            {/* TECHNICAL PHILOSOPHY */}
             <section
                 className="relative overflow-hidden border-t border-white/10 px-5 py-20 sm:px-8 sm:py-24 md:px-10 md:py-32"
                 style={{ backgroundColor: "#0C0C0C" }}
             >
                 {/* ========================================= */}
-                {/* AMBIENT GLOWS */}
+                {/* AMBIENT NEON GLOWS */}
                 {/* ========================================= */}
 
-                {/* Purple Glow */}
                 <div
-                    className="pointer-events-none absolute -left-40 top-32 h-96 w-96 rounded-full opacity-[0.07] blur-[120px]"
+                    className="pointer-events-none absolute -left-48 top-20 h-[500px] w-[500px] rounded-full opacity-[0.08] blur-[140px]"
                     style={{ backgroundColor: "#A855F7" }}
                 />
 
-                {/* Blue Glow */}
                 <div
-                    className="pointer-events-none absolute -right-40 bottom-32 h-96 w-96 rounded-full opacity-[0.06] blur-[120px]"
+                    className="pointer-events-none absolute -right-[250px] top-[35%] h-[550px] w-[550px] rounded-full opacity-[0.07] blur-[150px]"
                     style={{ backgroundColor: "#38BDF8" }}
+                />
+
+                <div
+                    className="pointer-events-none absolute bottom-[-200px] left-[35%] h-[450px] w-[450px] rounded-full opacity-[0.05] blur-[140px]"
+                    style={{ backgroundColor: "#B6FF00" }}
+                />
+
+                {/* ========================================= */}
+                {/* BACKGROUND GRID */}
+                {/* ========================================= */}
+
+                <div
+                    className="pointer-events-none absolute inset-0 opacity-[0.025]"
+                    style={{
+                        backgroundImage: `
+        linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)
+      `,
+                        backgroundSize: "90px 90px",
+                    }}
                 />
 
                 <div className="relative mx-auto max-w-7xl">
 
                     {/* ========================================= */}
-                    {/* SECTION HEADER */}
+                    {/* HEADER */}
                     {/* ========================================= */}
 
                     <FadeIn>
-                        <p
-                            className="mb-12 text-sm font-medium uppercase tracking-[0.2em]"
-                            style={{ color: "#A855F7" }}
-                        >
-                            06 — Project Experience
-                        </p>
+                        <div className="flex items-center justify-between">
+
+                            <p
+                                className="text-sm font-medium uppercase tracking-[0.2em]"
+                                style={{ color: "#A855F7" }}
+                            >
+                                05 — Technical Philosophy
+                            </p>
+
+                            <span className="hidden text-xs uppercase tracking-[0.2em] text-white/20 sm:block">
+                                How I Build
+                            </span>
+
+                        </div>
                     </FadeIn>
+
+
+                    {/* ========================================= */}
+                    {/* MAIN HEADING */}
+                    {/* ========================================= */}
 
                     <FadeIn delay={0.1}>
                         <h2
-                            className="font-black uppercase leading-[0.85] text-white"
+                            className="mt-14 font-black uppercase leading-[0.82]"
                             style={{
-                                fontSize: "clamp(3.5rem, 9vw, 9rem)",
+                                fontSize: "clamp(3.8rem, 9vw, 9rem)",
                             }}
                         >
-                            Things
+                            <span className="text-white">
+                                Build.
+                            </span>
+
                             <br />
-                            I've{" "}
+
                             <span
                                 style={{
                                     color: "#A855F7",
                                     textShadow:
-                                        "0 0 30px rgba(168,85,247,0.25)",
+                                        "0 0 40px rgba(168,85,247,0.25)",
                                 }}
                             >
-                                Built
+                                Understand.
+                            </span>
+
+                            <br />
+
+                            <span
+                                style={{
+                                    color: "#38BDF8",
+                                    textShadow:
+                                        "0 0 40px rgba(56,189,248,0.2)",
+                                }}
+                            >
+                                Improve.
                             </span>
                         </h2>
                     </FadeIn>
 
-                    <FadeIn delay={0.15}>
-                        <p className="mt-10 max-w-3xl text-base leading-relaxed text-white/55 md:text-lg">
-                            A selection of projects I've built while learning software
-                            development, backend engineering, and full-stack application
-                            development.
-                        </p>
+
+                    {/* ========================================= */}
+                    {/* INTRODUCTION */}
+                    {/* ========================================= */}
+
+                    <FadeIn delay={0.2}>
+                        <div className="mt-12 flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+
+                            <p className="max-w-2xl text-base leading-relaxed text-white/50 md:text-xl">
+                                I don't want to simply learn technologies. I want to understand
+                                them, use them to solve real problems, and continuously improve
+                                the way I build software.
+                            </p>
+
+                            <span
+                                className="hidden select-none font-black leading-none md:block"
+                                style={{
+                                    color: "#FFFFFF",
+                                    opacity: 0.06,
+                                    fontSize: "clamp(5rem, 10vw, 10rem)",
+                                }}
+                            >
+                                03
+                            </span>
+
+                        </div>
                     </FadeIn>
 
 
                     {/* ========================================= */}
-                    {/* PROJECT 01 */}
+                    {/* PHILOSOPHY CARDS */}
                     {/* ========================================= */}
 
-                    <FadeIn delay={0.2}>
-                        <article className="group relative mt-20 overflow-hidden border border-white/10 md:mt-28">
+                    <div className="mt-20 grid gap-5 md:mt-28 md:grid-cols-3">
 
-                            {/* Hover Background */}
-                            <div
-                                className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-[0.04]"
-                                style={{
-                                    background:
-                                        "linear-gradient(135deg, #A855F7, transparent 60%)",
-                                }}
-                            />
 
-                            <div className="relative p-6 sm:p-8 md:p-12 lg:p-16">
+                        {/* ===================================== */}
+                        {/* 01 — BUILD */}
+                        {/* ===================================== */}
 
-                                {/* Project Header */}
-                                <div className="flex flex-col justify-between gap-8 md:flex-row md:items-start">
+                        <FadeIn delay={0.25}>
+                            <article
+                                className="group relative min-h-[430px] overflow-hidden border border-white/10 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#A855F7]/50 sm:p-9"
+                            >
 
-                                    {/* Project Number */}
-                                    <div>
+                                {/* Purple Hover Glow */}
+
+                                <div
+                                    className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full opacity-0 blur-[100px] transition-opacity duration-700 group-hover:opacity-20"
+                                    style={{ backgroundColor: "#A855F7" }}
+                                />
+
+                                <div className="relative flex h-full flex-col justify-between">
+
+                                    {/* TOP */}
+
+                                    <div className="flex items-start justify-between">
+
                                         <span
                                             className="font-black leading-none"
                                             style={{
                                                 color: "#A855F7",
-                                                fontSize: "clamp(4rem, 8vw, 8rem)",
+                                                fontSize: "clamp(3rem, 5vw, 5rem)",
                                                 textShadow:
                                                     "0 0 25px rgba(168,85,247,0.2)",
                                             }}
                                         >
                                             01
                                         </span>
-                                    </div>
 
-                                    {/* Project Type */}
-                                    <div className="md:text-right">
-                                        <p
-                                            className="text-xs uppercase tracking-[0.2em]"
-                                            style={{ color: "#A855F7" }}
+                                        <span
+                                            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border text-xl transition-all duration-500 group-hover:rotate-45 group-hover:bg-[#A855F7] group-hover:text-black"
+                                            style={{
+                                                borderColor: "rgba(168,85,247,0.4)",
+                                                color: "#A855F7",
+                                            }}
                                         >
-                                            Full-Stack Web Application
+                                            ↗
+                                        </span>
+
+                                    </div>
+
+
+                                    {/* CONTENT */}
+
+                                    <div className="mt-12">
+
+                                        <p className="text-xs uppercase tracking-[0.2em] text-white/30">
+                                            Philosophy 01
                                         </p>
 
-                                        <p className="mt-2 text-xs uppercase tracking-[0.15em] text-white/30">
-                                            Personal Project
+                                        <h3
+                                            className="mt-4 max-w-full break-words font-black uppercase leading-[0.9] tracking-tight"
+                                            style={{
+                                                color: "#A855F7",
+                                                fontSize: "clamp(2.4rem, 4vw, 3.8rem)",
+                                            }}
+                                        >
+                                            Build
+                                        </h3>
+
+                                        <p className="mt-6 text-sm leading-relaxed text-white/45 md:text-base">
+                                            I learn best by creating. Instead of only consuming
+                                            tutorials, I try to turn what I learn into practical
+                                            applications and real solutions.
                                         </p>
+
+                                    </div>
+
+
+                                    {/* BOTTOM */}
+
+                                    <div className="mt-10 flex items-center gap-3">
+
+                                        <span
+                                            className="h-1.5 w-1.5 shrink-0 rounded-full"
+                                            style={{
+                                                backgroundColor: "#A855F7",
+                                                boxShadow:
+                                                    "0 0 10px rgba(168,85,247,0.7)",
+                                            }}
+                                        />
+
+                                        <span className="text-xs uppercase tracking-[0.15em] text-white/25">
+                                            Learn by doing
+                                        </span>
+
                                     </div>
 
                                 </div>
 
 
-                                {/* Project Name */}
-                                <div className="mt-10">
+                                {/* Bottom Accent */}
 
-                                    <h3
-                                        className="font-black uppercase leading-[0.85]"
-                                        style={{
-                                            color: "#A855F7",
-                                            fontSize: "clamp(2.8rem, 7vw, 7rem)",
-                                            textShadow:
-                                                "0 0 30px rgba(168,85,247,0.2)",
-                                        }}
-                                    >
-                                        Books
-                                        <br />
-                                        In Budget
-                                    </h3>
+                                <div
+                                    className="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-700 group-hover:w-full"
+                                    style={{ backgroundColor: "#A855F7" }}
+                                />
 
-                                </div>
+                            </article>
+                        </FadeIn>
 
 
-                                {/* Project Description */}
-                                <div className="mt-12 grid gap-10 md:grid-cols-[0.35fr_0.65fr] md:gap-16">
+                        {/* ===================================== */}
+                        {/* 02 — UNDERSTAND */}
+                        {/* ===================================== */}
 
-                                    <div>
-                                        <p className="text-xs uppercase tracking-[0.2em] text-white/35">
-                                            Overview
-                                        </p>
+                        <FadeIn delay={0.3}>
+                            <article
+                                className="group relative min-h-[430px] overflow-hidden border border-white/10 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#38BDF8]/50 sm:p-9"
+                            >
 
-                                        <p className="mt-4 text-sm uppercase leading-relaxed text-white/50">
-                                            An e-commerce platform designed for selling books online
-                                            with category-based browsing and role-based access.
-                                        </p>
-                                    </div>
+                                {/* Blue Hover Glow */}
 
-                                    <div>
-                                        <p className="text-xs uppercase tracking-[0.2em] text-white/35">
-                                            What I Built
-                                        </p>
+                                <div
+                                    className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full opacity-0 blur-[100px] transition-opacity duration-700 group-hover:opacity-20"
+                                    style={{ backgroundColor: "#38BDF8" }}
+                                />
 
-                                        <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/65 md:text-lg">
-                                            A full-stack book marketplace built to support the practical
-                                            requirements of an online book-selling business. The
-                                            application allows users to browse books by category,
-                                            price, type, and genre while providing sellers with
-                                            dedicated controls for managing their listings.
-                                        </p>
-                                    </div>
+                                <div className="relative flex h-full flex-col justify-between">
 
-                                </div>
+                                    {/* TOP */}
 
+                                    <div className="flex items-start justify-between">
 
-                                {/* Technologies */}
-                                <div className="mt-12 border-t border-white/10 pt-8">
-
-                                    <p className="mb-5 text-xs uppercase tracking-[0.2em] text-white/35">
-                                        Technologies
-                                    </p>
-
-                                    <div className="flex flex-wrap gap-3">
-
-                                        {[
-                                            "Java",
-                                            "Spring Boot",
-                                            "Spring Security",
-                                            "React",
-                                            "MySQL",
-                                            "REST APIs",
-                                            "Bcrypt",
-                                        ].map((tech, index) => (
-                                            <span
-                                                key={tech}
-                                                className="rounded-full border px-4 py-2 text-xs uppercase tracking-wider transition-all duration-300 hover:-translate-y-1"
-                                                style={{
-                                                    borderColor:
-                                                        index % 2 === 0
-                                                            ? "rgba(168,85,247,0.4)"
-                                                            : "rgba(56,189,248,0.4)",
-                                                    color:
-                                                        index % 2 === 0
-                                                            ? "#A855F7"
-                                                            : "#38BDF8",
-                                                }}
-                                            >
-                                                {tech}
-                                            </span>
-                                        ))}
-
-                                    </div>
-                                </div>
-
-
-                                {/* Key Features */}
-                                <div className="mt-12 border-t border-white/10 pt-8">
-
-                                    <p className="mb-6 text-xs uppercase tracking-[0.2em] text-white/35">
-                                        Key Features
-                                    </p>
-
-                                    <div className="grid gap-4 md:grid-cols-2">
-
-                                        {[
-                                            "Book browsing with category-based filtering",
-                                            "Search by price, type, and genre",
-                                            "Role-based seller access",
-                                            "Seller book listing management",
-                                            "Secure authentication",
-                                            "Responsive full-stack architecture",
-                                        ].map((feature, index) => (
-                                            <div
-                                                key={feature}
-                                                className="flex items-start gap-4"
-                                            >
-                                                <span
-                                                    className="mt-2 h-2 w-2 shrink-0 rounded-full"
-                                                    style={{
-                                                        backgroundColor:
-                                                            index % 2 === 0
-                                                                ? "#A855F7"
-                                                                : "#38BDF8",
-                                                        boxShadow:
-                                                            index % 2 === 0
-                                                                ? "0 0 10px rgba(168,85,247,0.5)"
-                                                                : "0 0 10px rgba(56,189,248,0.5)",
-                                                    }}
-                                                />
-
-                                                <p className="text-sm leading-relaxed text-white/60">
-                                                    {feature}
-                                                </p>
-                                            </div>
-                                        ))}
-
-                                    </div>
-                                </div>
-
-
-                                {/* Project Links */}
-                                <div className="mt-12 flex flex-wrap gap-4 border-t border-white/10 pt-8">
-
-                                    <a
-                                        href="#"
-                                        className="rounded-full border border-[#A855F7] px-6 py-3 text-sm uppercase tracking-wider text-[#A855F7] transition-all duration-300 hover:bg-[#A855F7] hover:text-black"
-                                    >
-                                        GitHub →
-                                    </a>
-
-                                    <a
-                                        href="#"
-                                        className="rounded-full border border-white/20 px-6 py-3 text-sm uppercase tracking-wider text-white/60 transition-all duration-300 hover:border-[#38BDF8] hover:text-[#38BDF8]"
-                                    >
-                                        Live Demo →
-                                    </a>
-
-                                </div>
-
-                            </div>
-                        </article>
-                    </FadeIn>
-
-
-                    {/* ========================================= */}
-                    {/* PROJECT 02 */}
-                    {/* ========================================= */}
-
-                    <FadeIn delay={0.3}>
-                        <article className="group relative mt-12 overflow-hidden border border-white/10 md:mt-16">
-
-                            {/* Hover Background */}
-                            <div
-                                className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-[0.04]"
-                                style={{
-                                    background:
-                                        "linear-gradient(135deg, #38BDF8, transparent 60%)",
-                                }}
-                            />
-
-                            <div className="relative p-6 sm:p-8 md:p-12 lg:p-16">
-
-                                {/* Project Header */}
-                                <div className="flex flex-col justify-between gap-8 md:flex-row md:items-start">
-
-                                    {/* Project Number */}
-                                    <div>
                                         <span
                                             className="font-black leading-none"
                                             style={{
                                                 color: "#38BDF8",
-                                                fontSize: "clamp(4rem, 8vw, 8rem)",
+                                                fontSize: "clamp(3rem, 5vw, 5rem)",
                                                 textShadow:
                                                     "0 0 25px rgba(56,189,248,0.2)",
                                             }}
                                         >
                                             02
                                         </span>
-                                    </div>
 
-                                    {/* Project Type */}
-                                    <div className="md:text-right">
-                                        <p
-                                            className="text-xs uppercase tracking-[0.2em]"
-                                            style={{ color: "#38BDF8" }}
+                                        <span
+                                            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border text-xl transition-all duration-500 group-hover:rotate-45 group-hover:bg-[#38BDF8] group-hover:text-black"
+                                            style={{
+                                                borderColor: "rgba(56,189,248,0.4)",
+                                                color: "#38BDF8",
+                                            }}
                                         >
-                                            Full-Stack Management System
+                                            ↗
+                                        </span>
+
+                                    </div>
+
+
+                                    {/* CONTENT */}
+
+                                    <div className="mt-12 min-w-0">
+
+                                        <p className="text-xs uppercase tracking-[0.2em] text-white/30">
+                                            Philosophy 02
                                         </p>
 
-                                        <p className="mt-2 text-xs uppercase tracking-[0.15em] text-white/30">
-                                            Personal Project
+                                        {/* FIXED HEADING */}
+
+                                        <h3
+                                            className="mt-4 max-w-full break-words font-black uppercase leading-[0.9] tracking-[-0.03em]"
+                                            style={{
+                                                color: "#38BDF8",
+                                                fontSize: "clamp(2rem, 3.5vw, 3.4rem)",
+                                            }}
+                                        >
+                                            Understand
+                                        </h3>
+
+                                        <p className="mt-6 text-sm leading-relaxed text-white/45 md:text-base">
+                                            I believe fundamentals matter. I try to understand why
+                                            something works instead of only memorizing how to use it.
                                         </p>
+
+                                    </div>
+
+
+                                    {/* BOTTOM */}
+
+                                    <div className="mt-10 flex items-center gap-3">
+
+                                        <span
+                                            className="h-1.5 w-1.5 shrink-0 rounded-full"
+                                            style={{
+                                                backgroundColor: "#38BDF8",
+                                                boxShadow:
+                                                    "0 0 10px rgba(56,189,248,0.7)",
+                                            }}
+                                        />
+
+                                        <span className="text-xs uppercase tracking-[0.15em] text-white/25">
+                                            Fundamentals first
+                                        </span>
+
                                     </div>
 
                                 </div>
 
 
-                                {/* Project Name */}
-                                <div className="mt-10">
+                                {/* Bottom Accent */}
 
-                                    <h3
-                                        className="font-black uppercase leading-[0.85]"
+                                <div
+                                    className="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-700 group-hover:w-full"
+                                    style={{ backgroundColor: "#38BDF8" }}
+                                />
+
+                            </article>
+                        </FadeIn>
+
+
+                        {/* ===================================== */}
+                        {/* 03 — IMPROVE */}
+                        {/* ===================================== */}
+
+                        <FadeIn delay={0.35}>
+                            <article
+                                className="group relative min-h-[430px] overflow-hidden border border-white/10 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#B6FF00]/50 sm:p-9"
+                            >
+
+                                {/* Green Hover Glow */}
+
+                                <div
+                                    className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full opacity-0 blur-[100px] transition-opacity duration-700 group-hover:opacity-20"
+                                    style={{ backgroundColor: "#B6FF00" }}
+                                />
+
+                                <div className="relative flex h-full flex-col justify-between">
+
+                                    {/* TOP */}
+
+                                    <div className="flex items-start justify-between">
+
+                                        <span
+                                            className="font-black leading-none"
+                                            style={{
+                                                color: "#B6FF00",
+                                                fontSize: "clamp(3rem, 5vw, 5rem)",
+                                                textShadow:
+                                                    "0 0 25px rgba(182,255,0,0.2)",
+                                            }}
+                                        >
+                                            03
+                                        </span>
+
+                                        <span
+                                            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border text-xl transition-all duration-500 group-hover:rotate-45 group-hover:bg-[#B6FF00] group-hover:text-black"
+                                            style={{
+                                                borderColor: "rgba(182,255,0,0.4)",
+                                                color: "#B6FF00",
+                                            }}
+                                        >
+                                            ↗
+                                        </span>
+
+                                    </div>
+
+
+                                    {/* CONTENT */}
+
+                                    <div className="mt-12 min-w-0">
+
+                                        <p className="text-xs uppercase tracking-[0.2em] text-white/30">
+                                            Philosophy 03
+                                        </p>
+
+                                        <h3
+                                            className="mt-4 max-w-full break-words font-black uppercase leading-[0.9] tracking-tight"
+                                            style={{
+                                                color: "#B6FF00",
+                                                fontSize: "clamp(2.4rem, 4vw, 3.8rem)",
+                                            }}
+                                        >
+                                            Improve
+                                        </h3>
+
+                                        <p className="mt-6 text-sm leading-relaxed text-white/45 md:text-base">
+                                            Every solution can be better. I focus on writing cleaner
+                                            code, solving problems more efficiently, and learning from
+                                            every mistake.
+                                        </p>
+
+                                    </div>
+
+
+                                    {/* BOTTOM */}
+
+                                    <div className="mt-10 flex items-center gap-3">
+
+                                        <span
+                                            className="h-1.5 w-1.5 shrink-0 rounded-full"
+                                            style={{
+                                                backgroundColor: "#B6FF00",
+                                                boxShadow:
+                                                    "0 0 10px rgba(182,255,0,0.7)",
+                                            }}
+                                        />
+
+                                        <span className="text-xs uppercase tracking-[0.15em] text-white/25">
+                                            Keep evolving
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                {/* Bottom Accent */}
+
+                                <div
+                                    className="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-700 group-hover:w-full"
+                                    style={{ backgroundColor: "#B6FF00" }}
+                                />
+
+                            </article>
+                        </FadeIn>
+
+                    </div>
+
+
+                    {/* ========================================= */}
+                    {/* PHILOSOPHY STATEMENT */}
+                    {/* ========================================= */}
+
+                    <FadeIn delay={0.45}>
+                        <div className="relative mt-24 overflow-hidden border border-white/10 p-8 sm:p-12 md:mt-32 md:p-16">
+
+                            {/* Center Glow */}
+
+                            <div
+                                className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.06] blur-[100px]"
+                                style={{ backgroundColor: "#A855F7" }}
+                            />
+
+                            <div className="relative">
+
+                                <p className="text-xs uppercase tracking-[0.2em] text-white/25">
+                                    My Approach
+                                </p>
+
+                                <blockquote
+                                    className="mt-8 max-w-5xl font-black uppercase leading-[0.9]"
+                                    style={{
+                                        fontSize: "clamp(2.5rem, 6vw, 6rem)",
+                                    }}
+                                >
+                                    <span className="text-white">
+                                        Don't just
+                                    </span>{" "}
+
+                                    <span style={{ color: "#A855F7" }}>
+                                        use
+                                    </span>{" "}
+
+                                    <span className="text-white">
+                                        technology.
+                                    </span>
+
+                                    <br />
+
+                                    <span style={{ color: "#38BDF8" }}>
+                                        Understand
+                                    </span>{" "}
+
+                                    <span className="text-white">
+                                        it.
+                                    </span>
+                                </blockquote>
+
+
+                                <div className="mt-10 flex items-center gap-4">
+
+                                    <div
+                                        className="h-px w-16"
                                         style={{
-                                            color: "#38BDF8",
-                                            fontSize: "clamp(2.8rem, 7vw, 7rem)",
-                                            textShadow:
-                                                "0 0 30px rgba(56,189,248,0.2)",
+                                            background:
+                                                "linear-gradient(to right, #A855F7, #38BDF8)",
                                         }}
-                                    >
-                                        Employee
-                                        <br />
-                                        Management
-                                        <br />
-                                        System
-                                    </h3>
+                                    />
 
-                                </div>
-
-
-                                {/* Project Description */}
-                                <div className="mt-12 grid gap-10 md:grid-cols-[0.35fr_0.65fr] md:gap-16">
-
-                                    <div>
-                                        <p className="text-xs uppercase tracking-[0.2em] text-white/35">
-                                            Overview
-                                        </p>
-
-                                        <p className="mt-4 text-sm uppercase leading-relaxed text-white/50">
-                                            A role-based employee management platform focused on
-                                            secure access, employee operations, and administrative
-                                            control.
-                                        </p>
-                                    </div>
-
-                                    <div>
-                                        <p className="text-xs uppercase tracking-[0.2em] text-white/35">
-                                            What I Built
-                                        </p>
-
-                                        <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/65 md:text-lg">
-                                            A full-stack management system that provides different
-                                            capabilities based on user roles. Employees have controlled
-                                            read access while administrators can create, update, delete,
-                                            and manage employee records through a secure backend.
-                                        </p>
-                                    </div>
-
-                                </div>
-
-
-                                {/* Technologies */}
-                                <div className="mt-12 border-t border-white/10 pt-8">
-
-                                    <p className="mb-5 text-xs uppercase tracking-[0.2em] text-white/35">
-                                        Technologies
+                                    <p className="text-xs uppercase tracking-[0.2em] text-white/30">
+                                        Prem Nandurkar
                                     </p>
-
-                                    <div className="flex flex-wrap gap-3">
-
-                                        {[
-                                            "Java",
-                                            "Spring Boot",
-                                            "Spring Security",
-                                            "JWT",
-                                            "React",
-                                            "MySQL",
-                                            "REST APIs",
-                                        ].map((tech, index) => (
-                                            <span
-                                                key={tech}
-                                                className="rounded-full border px-4 py-2 text-xs uppercase tracking-wider transition-all duration-300 hover:-translate-y-1"
-                                                style={{
-                                                    borderColor:
-                                                        index % 2 === 0
-                                                            ? "rgba(56,189,248,0.4)"
-                                                            : "rgba(168,85,247,0.4)",
-                                                    color:
-                                                        index % 2 === 0
-                                                            ? "#38BDF8"
-                                                            : "#A855F7",
-                                                }}
-                                            >
-                                                {tech}
-                                            </span>
-                                        ))}
-
-                                    </div>
-                                </div>
-
-
-                                {/* Key Features */}
-                                <div className="mt-12 border-t border-white/10 pt-8">
-
-                                    <p className="mb-6 text-xs uppercase tracking-[0.2em] text-white/35">
-                                        Key Features
-                                    </p>
-
-                                    <div className="grid gap-4 md:grid-cols-2">
-
-                                        {[
-                                            "Employee CRUD operations",
-                                            "JWT-based authentication",
-                                            "Role-based authorization",
-                                            "Admin and employee access levels",
-                                            "Employee search and filtering",
-                                            "Secure REST API architecture",
-                                        ].map((feature, index) => (
-                                            <div
-                                                key={feature}
-                                                className="flex items-start gap-4"
-                                            >
-                                                <span
-                                                    className="mt-2 h-2 w-2 shrink-0 rounded-full"
-                                                    style={{
-                                                        backgroundColor:
-                                                            index % 2 === 0
-                                                                ? "#38BDF8"
-                                                                : "#A855F7",
-                                                        boxShadow:
-                                                            index % 2 === 0
-                                                                ? "0 0 10px rgba(56,189,248,0.5)"
-                                                                : "0 0 10px rgba(168,85,247,0.5)",
-                                                    }}
-                                                />
-
-                                                <p className="text-sm leading-relaxed text-white/60">
-                                                    {feature}
-                                                </p>
-                                            </div>
-                                        ))}
-
-                                    </div>
-                                </div>
-
-
-                                {/* Project Links */}
-                                <div className="mt-12 flex flex-wrap gap-4 border-t border-white/10 pt-8">
-
-                                    <a
-                                        href="#"
-                                        className="rounded-full border border-[#38BDF8] px-6 py-3 text-sm uppercase tracking-wider text-[#38BDF8] transition-all duration-300 hover:bg-[#38BDF8] hover:text-black"
-                                    >
-                                        GitHub →
-                                    </a>
-
-                                    <a
-                                        href="#"
-                                        className="rounded-full border border-white/20 px-6 py-3 text-sm uppercase tracking-wider text-white/60 transition-all duration-300 hover:border-[#A855F7] hover:text-[#A855F7]"
-                                    >
-                                        Live Demo →
-                                    </a>
 
                                 </div>
 
                             </div>
-                        </article>
+
+                        </div>
                     </FadeIn>
 
 
                     {/* ========================================= */}
-                    {/* BOTTOM DECORATIVE LINE */}
+                    {/* BOTTOM FLOW */}
                     {/* ========================================= */}
 
-                    <FadeIn delay={0.4}>
-                        <div className="mt-20 flex items-center gap-4 md:mt-24">
+                    <FadeIn delay={0.5}>
+                        <div className="mt-16 flex flex-col gap-6 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+
+                            <p className="max-w-lg text-xs uppercase leading-relaxed tracking-[0.15em] text-white/25">
+                                Curiosity creates the question.
+                                <br />
+                                Building creates the experience.
+                                <br />
+                                Understanding creates the developer.
+                            </p>
+
+
+                            <div className="flex items-center gap-3">
+
+                                <span
+                                    className="h-2 w-2 rounded-full"
+                                    style={{
+                                        backgroundColor: "#A855F7",
+                                        boxShadow:
+                                            "0 0 12px rgba(168,85,247,0.7)",
+                                    }}
+                                />
+
+                                <span
+                                    className="h-2 w-2 rounded-full"
+                                    style={{
+                                        backgroundColor: "#38BDF8",
+                                        boxShadow:
+                                            "0 0 12px rgba(56,189,248,0.7)",
+                                    }}
+                                />
+
+                                <span
+                                    className="h-2 w-2 rounded-full"
+                                    style={{
+                                        backgroundColor: "#B6FF00",
+                                        boxShadow:
+                                            "0 0 12px rgba(182,255,0,0.7)",
+                                    }}
+                                />
+
+                            </div>
+
+                        </div>
+                    </FadeIn>
+                </div>
+            </section>
+            {/* ========================================= */}
+            {/* SECTION 06 — CURRENTLY EXPLORING */}
+            {/* ========================================= */}
+
+            <section
+                className="relative overflow-hidden border-t border-white/10 px-5 py-20 sm:px-8 sm:py-24 md:px-10 md:py-32"
+                style={{ backgroundColor: "#0C0C0C" }}
+            >
+                {/* ========================================= */}
+                {/* AMBIENT NEON GLOWS */}
+                {/* ========================================= */}
+
+                <div
+                    className="pointer-events-none absolute -left-48 top-24 h-[500px] w-[500px] rounded-full opacity-[0.07] blur-[140px]"
+                    style={{ backgroundColor: "#A855F7" }}
+                />
+
+                <div
+                    className="pointer-events-none absolute -right-48 top-[40%] h-[550px] w-[550px] rounded-full opacity-[0.06] blur-[150px]"
+                    style={{ backgroundColor: "#38BDF8" }}
+                />
+
+                <div
+                    className="pointer-events-none absolute bottom-[-200px] left-[35%] h-[450px] w-[450px] rounded-full opacity-[0.05] blur-[140px]"
+                    style={{ backgroundColor: "#B6FF00" }}
+                />
+
+                {/* ========================================= */}
+                {/* BACKGROUND GRID */}
+                {/* ========================================= */}
+
+                <div
+                    className="pointer-events-none absolute inset-0 opacity-[0.025]"
+                    style={{
+                        backgroundImage: `
+        linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)
+      `,
+                        backgroundSize: "90px 90px",
+                    }}
+                />
+
+                <div className="relative mx-auto max-w-7xl">
+
+                    {/* ========================================= */}
+                    {/* HEADER */}
+                    {/* ========================================= */}
+
+                    <FadeIn>
+                        <div className="flex items-center justify-between">
+
+                            <p
+                                className="text-sm font-medium uppercase tracking-[0.2em]"
+                                style={{ color: "#38BDF8" }}
+                            >
+                                06 — Currently Exploring
+                            </p>
+
+                            <div className="hidden items-center gap-3 sm:flex">
+
+                                <span
+                                    className="h-2 w-2 animate-pulse rounded-full"
+                                    style={{
+                                        backgroundColor: "#B6FF00",
+                                        boxShadow:
+                                            "0 0 12px rgba(182,255,0,0.7)",
+                                    }}
+                                />
+
+                                <span className="text-xs uppercase tracking-[0.2em] text-white/25">
+                                    Active Learning
+                                </span>
+
+                            </div>
+
+                        </div>
+                    </FadeIn>
+
+
+                    {/* ========================================= */}
+                    {/* MAIN HEADING */}
+                    {/* ========================================= */}
+
+                    <FadeIn delay={0.1}>
+                        <div className="mt-14">
+
+                            <h2
+                                className="max-w-6xl font-black uppercase leading-[0.8]"
+                                style={{
+                                    fontSize: "clamp(3.8rem, 10vw, 10rem)",
+                                }}
+                            >
+                                <span className="text-white">
+                                    Always
+                                </span>
+
+                                <br />
+
+                                <span
+                                    style={{
+                                        color: "#38BDF8",
+                                        textShadow:
+                                            "0 0 40px rgba(56,189,248,0.2)",
+                                    }}
+                                >
+                                    Learning.
+                                </span>
+                            </h2>
+
+                        </div>
+                    </FadeIn>
+
+
+                    {/* ========================================= */}
+                    {/* INTRO */}
+                    {/* ========================================= */}
+
+                    <FadeIn delay={0.2}>
+                        <div className="mt-12 grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+
+                            <p className="max-w-2xl text-base leading-relaxed text-white/50 md:text-xl">
+                                I'm constantly expanding my technical foundation. Right now,
+                                I'm focusing on technologies and concepts that can help me move
+                                from building individual applications toward building more
+                                reliable and scalable systems.
+                            </p>
+
+                            <div className="hidden text-right md:block">
+
+                                <p className="text-xs uppercase tracking-[0.2em] text-white/20">
+                                    Learning Mode
+                                </p>
+
+                                <p
+                                    className="mt-2 font-black uppercase"
+                                    style={{
+                                        color: "#B6FF00",
+                                        fontSize: "1.5rem",
+                                    }}
+                                >
+                                    ON
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </FadeIn>
+
+
+                    {/* ========================================= */}
+                    {/* LEARNING SYSTEM */}
+                    {/* ========================================= */}
+
+                    <FadeIn delay={0.25}>
+                        <div className="mt-20 border-y border-white/10 py-8 md:mt-28 md:py-10">
+
+                            <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+
+                                <div className="flex items-center gap-4">
+
+                                    <span
+                                        className="flex h-10 w-10 items-center justify-center border text-xs font-bold"
+                                        style={{
+                                            borderColor: "rgba(56,189,248,0.35)",
+                                            color: "#38BDF8",
+                                        }}
+                                    >
+                                        06
+                                    </span>
+
+                                    <div>
+
+                                        <p className="text-xs uppercase tracking-[0.2em] text-white/25">
+                                            Current Learning Cycle
+                                        </p>
+
+                                        <p className="mt-1 text-sm uppercase tracking-wider text-white/60">
+                                            Strengthening the backend foundation
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div className="flex items-center gap-2">
+
+                                    <span className="text-[10px] uppercase tracking-[0.2em] text-white/20">
+                                        Status
+                                    </span>
+
+                                    <span
+                                        className="rounded-full border px-3 py-1 text-[10px] uppercase tracking-wider"
+                                        style={{
+                                            borderColor: "rgba(182,255,0,0.3)",
+                                            color: "#B6FF00",
+                                        }}
+                                    >
+                                        In Progress
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </FadeIn>
+
+
+                    {/* ========================================= */}
+                    {/* EXPLORING CARDS */}
+                    {/* ========================================= */}
+
+                    <div className="mt-8 grid gap-5 md:grid-cols-2">
+
+
+                        {/* ===================================== */}
+                        {/* SPRING SECURITY */}
+                        {/* ===================================== */}
+
+                        <FadeIn delay={0.3}>
+                            <article
+                                className="group relative min-h-[330px] overflow-hidden border border-white/10 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#A855F7]/50 sm:p-9"
+                            >
+
+                                <div
+                                    className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full opacity-0 blur-[100px] transition-opacity duration-700 group-hover:opacity-20"
+                                    style={{ backgroundColor: "#A855F7" }}
+                                />
+
+                                <div className="relative">
+
+                                    <div className="flex items-start justify-between">
+
+                                        <span
+                                            className="font-black leading-none"
+                                            style={{
+                                                color: "#A855F7",
+                                                fontSize: "clamp(3rem, 5vw, 5rem)",
+                                            }}
+                                        >
+                                            01
+                                        </span>
+
+                                        <span
+                                            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border text-lg transition-all duration-500 group-hover:rotate-45"
+                                            style={{
+                                                borderColor: "rgba(168,85,247,0.35)",
+                                                color: "#A855F7",
+                                            }}
+                                        >
+                                            ↗
+                                        </span>
+
+                                    </div>
+
+
+                                    <p className="mt-10 text-xs uppercase tracking-[0.2em] text-white/25">
+                                        Backend Security
+                                    </p>
+
+                                    <h3
+                                        className="mt-3 max-w-full break-words font-black uppercase leading-[0.9]"
+                                        style={{
+                                            color: "#A855F7",
+                                            fontSize: "clamp(2rem, 4vw, 3.5rem)",
+                                        }}
+                                    >
+                                        Spring Security
+                                    </h3>
+
+                                    <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/45">
+                                        Exploring authentication, authorization, JWT-based security,
+                                        and the foundations required to build secure Spring Boot
+                                        applications.
+                                    </p>
+
+
+                                    <div className="mt-8 flex items-center gap-3">
+
+                                        <span
+                                            className="h-1.5 w-1.5 rounded-full"
+                                            style={{
+                                                backgroundColor: "#A855F7",
+                                                boxShadow:
+                                                    "0 0 10px rgba(168,85,247,0.7)",
+                                            }}
+                                        />
+
+                                        <span className="text-xs uppercase tracking-[0.15em] text-white/25">
+                                            Deepening knowledge
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div
+                                    className="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-700 group-hover:w-full"
+                                    style={{ backgroundColor: "#A855F7" }}
+                                />
+
+                            </article>
+                        </FadeIn>
+
+
+                        {/* ===================================== */}
+                        {/* MICROSERVICES */}
+                        {/* ===================================== */}
+
+                        <FadeIn delay={0.35}>
+                            <article
+                                className="group relative min-h-[330px] overflow-hidden border border-white/10 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#38BDF8]/50 sm:p-9"
+                            >
+
+                                <div
+                                    className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full opacity-0 blur-[100px] transition-opacity duration-700 group-hover:opacity-20"
+                                    style={{ backgroundColor: "#38BDF8" }}
+                                />
+
+                                <div className="relative">
+
+                                    <div className="flex items-start justify-between">
+
+                                        <span
+                                            className="font-black leading-none"
+                                            style={{
+                                                color: "#38BDF8",
+                                                fontSize: "clamp(3rem, 5vw, 5rem)",
+                                            }}
+                                        >
+                                            02
+                                        </span>
+
+                                        <span
+                                            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border text-lg transition-all duration-500 group-hover:rotate-45"
+                                            style={{
+                                                borderColor: "rgba(56,189,248,0.35)",
+                                                color: "#38BDF8",
+                                            }}
+                                        >
+                                            ↗
+                                        </span>
+
+                                    </div>
+
+
+                                    <p className="mt-10 text-xs uppercase tracking-[0.2em] text-white/25">
+                                        Architecture
+                                    </p>
+
+                                    <h3
+                                        className="mt-3 max-w-full break-words font-black uppercase leading-[0.9]"
+                                        style={{
+                                            color: "#38BDF8",
+                                            fontSize: "clamp(2rem, 4vw, 3.5rem)",
+                                        }}
+                                    >
+                                        Microservices
+                                    </h3>
+
+                                    <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/45">
+                                        Learning how larger applications can be divided into
+                                        focused services while understanding communication,
+                                        scalability, and architectural trade-offs.
+                                    </p>
+
+
+                                    <div className="mt-8 flex items-center gap-3">
+
+                                        <span
+                                            className="h-1.5 w-1.5 rounded-full"
+                                            style={{
+                                                backgroundColor: "#38BDF8",
+                                                boxShadow:
+                                                    "0 0 10px rgba(56,189,248,0.7)",
+                                            }}
+                                        />
+
+                                        <span className="text-xs uppercase tracking-[0.15em] text-white/25">
+                                            Exploring architecture
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div
+                                    className="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-700 group-hover:w-full"
+                                    style={{ backgroundColor: "#38BDF8" }}
+                                />
+
+                            </article>
+                        </FadeIn>
+
+
+                        {/* ===================================== */}
+                        {/* DATA STRUCTURES & ALGORITHMS */}
+                        {/* ===================================== */}
+
+                        <FadeIn delay={0.4}>
+                            <article
+                                className="group relative min-h-[330px] overflow-hidden border border-white/10 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#B6FF00]/50 sm:p-9"
+                            >
+
+                                <div
+                                    className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full opacity-0 blur-[100px] transition-opacity duration-700 group-hover:opacity-20"
+                                    style={{ backgroundColor: "#B6FF00" }}
+                                />
+
+                                <div className="relative">
+
+                                    <div className="flex items-start justify-between">
+
+                                        <span
+                                            className="font-black leading-none"
+                                            style={{
+                                                color: "#B6FF00",
+                                                fontSize: "clamp(3rem, 5vw, 5rem)",
+                                            }}
+                                        >
+                                            03
+                                        </span>
+
+                                        <span
+                                            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border text-lg transition-all duration-500 group-hover:rotate-45"
+                                            style={{
+                                                borderColor: "rgba(182,255,0,0.35)",
+                                                color: "#B6FF00",
+                                            }}
+                                        >
+                                            ↗
+                                        </span>
+
+                                    </div>
+
+
+                                    <p className="mt-10 text-xs uppercase tracking-[0.2em] text-white/25">
+                                        Problem Solving
+                                    </p>
+
+                                    <h3
+                                        className="mt-3 max-w-full break-words font-black uppercase leading-[0.9]"
+                                        style={{
+                                            color: "#B6FF00",
+                                            fontSize: "clamp(2rem, 4vw, 3.5rem)",
+                                        }}
+                                    >
+                                        DSA
+                                    </h3>
+
+                                    <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/45">
+                                        Strengthening Data Structures and Algorithms to improve
+                                        problem-solving ability and develop more efficient
+                                        approaches to programming challenges.
+                                    </p>
+
+
+                                    <div className="mt-8 flex items-center gap-3">
+
+                                        <span
+                                            className="h-1.5 w-1.5 rounded-full"
+                                            style={{
+                                                backgroundColor: "#B6FF00",
+                                                boxShadow:
+                                                    "0 0 10px rgba(182,255,0,0.7)",
+                                            }}
+                                        />
+
+                                        <span className="text-xs uppercase tracking-[0.15em] text-white/25">
+                                            Problem solving
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div
+                                    className="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-700 group-hover:w-full"
+                                    style={{ backgroundColor: "#B6FF00" }}
+                                />
+
+                            </article>
+                        </FadeIn>
+
+
+                        {/* ===================================== */}
+                        {/* SPRING AI */}
+                        {/* ===================================== */}
+
+                        <FadeIn delay={0.45}>
+                            <article
+                                className="group relative min-h-[330px] overflow-hidden border border-white/10 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#A855F7]/50 sm:p-9"
+                            >
+
+                                <div
+                                    className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full opacity-0 blur-[100px] transition-opacity duration-700 group-hover:opacity-20"
+                                    style={{ backgroundColor: "#A855F7" }}
+                                />
+
+                                <div className="relative">
+
+                                    <div className="flex items-start justify-between">
+
+                                        <span
+                                            className="font-black leading-none"
+                                            style={{
+                                                color: "#A855F7",
+                                                fontSize: "clamp(3rem, 5vw, 5rem)",
+                                            }}
+                                        >
+                                            04
+                                        </span>
+
+                                        <span
+                                            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border text-lg transition-all duration-500 group-hover:rotate-45"
+                                            style={{
+                                                borderColor: "rgba(168,85,247,0.35)",
+                                                color: "#A855F7",
+                                            }}
+                                        >
+                                            ↗
+                                        </span>
+
+                                    </div>
+
+
+                                    <p className="mt-10 text-xs uppercase tracking-[0.2em] text-white/25">
+                                        AI + Backend
+                                    </p>
+
+                                    <h3
+                                        className="mt-3 max-w-full break-words font-black uppercase leading-[0.9]"
+                                        style={{
+                                            color: "#A855F7",
+                                            fontSize: "clamp(2rem, 4vw, 3.5rem)",
+                                        }}
+                                    >
+                                        Spring AI
+                                    </h3>
+
+                                    <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/45">
+                                        Exploring how AI capabilities can be integrated into
+                                        Spring applications and used to build smarter software
+                                        experiences.
+                                    </p>
+
+
+                                    <div className="mt-8 flex items-center gap-3">
+
+                                        <span
+                                            className="h-1.5 w-1.5 rounded-full"
+                                            style={{
+                                                backgroundColor: "#A855F7",
+                                                boxShadow:
+                                                    "0 0 10px rgba(168,85,247,0.7)",
+                                            }}
+                                        />
+
+                                        <span className="text-xs uppercase tracking-[0.15em] text-white/25">
+                                            New territory
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div
+                                    className="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-700 group-hover:w-full"
+                                    style={{ backgroundColor: "#A855F7" }}
+                                />
+
+                            </article>
+                        </FadeIn>
+
+                    </div>
+
+
+                    {/* ========================================= */}
+                    {/* LEARNING MINDSET */}
+                    {/* ========================================= */}
+
+                    <FadeIn delay={0.5}>
+                        <div className="relative mt-20 overflow-hidden border border-white/10 p-8 sm:p-12 md:mt-28 md:p-16">
+
+                            {/* Glow */}
+
+                            <div
+                                className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full opacity-[0.07] blur-[120px]"
+                                style={{ backgroundColor: "#38BDF8" }}
+                            />
+
+                            <div className="relative grid gap-10 md:grid-cols-[1fr_auto] md:items-end">
+
+                                <div>
+
+                                    <p className="text-xs uppercase tracking-[0.2em] text-white/25">
+                                        Learning Mindset
+                                    </p>
+
+                                    <h3
+                                        className="mt-6 max-w-4xl font-black uppercase leading-[0.9]"
+                                        style={{
+                                            fontSize: "clamp(2.5rem, 6vw, 6rem)",
+                                        }}
+                                    >
+                                        <span className="text-white">
+                                            Learn.
+                                        </span>{" "}
+
+                                        <span style={{ color: "#A855F7" }}>
+                                            Build.
+                                        </span>{" "}
+
+                                        <span style={{ color: "#38BDF8" }}>
+                                            Repeat.
+                                        </span>
+                                    </h3>
+
+                                    <p className="mt-8 max-w-2xl text-sm leading-relaxed text-white/45 md:text-base">
+                                        My goal isn't to collect technologies. It's to build a
+                                        strong technical foundation that allows me to understand
+                                        problems and create better solutions.
+                                    </p>
+
+                                </div>
+
+
+                                {/* Status */}
+
+                                <div className="flex items-center gap-3 md:pb-2">
+
+                                    <span
+                                        className="h-2 w-2 animate-pulse rounded-full"
+                                        style={{
+                                            backgroundColor: "#B6FF00",
+                                            boxShadow:
+                                                "0 0 15px rgba(182,255,0,0.7)",
+                                        }}
+                                    />
+
+                                    <span className="text-xs uppercase tracking-[0.2em] text-white/30">
+                                        Still Learning
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </FadeIn>
+
+
+                    {/* ========================================= */}
+                    {/* BOTTOM LINE */}
+                    {/* ========================================= */}
+
+                    <FadeIn delay={0.55}>
+                        <div className="mt-16 flex items-center gap-4 border-t border-white/10 pt-8">
 
                             <div
                                 className="h-px flex-1"
@@ -2013,12 +2762,12 @@ function About() {
                                 }}
                             />
 
-                            <div
+                            <span
                                 className="h-2 w-2 rounded-full"
                                 style={{
-                                    backgroundColor: "#A855F7",
+                                    backgroundColor: "#38BDF8",
                                     boxShadow:
-                                        "0 0 15px rgba(168,85,247,0.5)",
+                                        "0 0 12px rgba(56,189,248,0.7)",
                                 }}
                             />
 
@@ -2032,345 +2781,48 @@ function About() {
 
                         </div>
                     </FadeIn>
-
                 </div>
             </section>
-            {/* CERTIFICATIONS */}
+            {/* ========================================= */}
+            {/* SECTION 07 — WHERE I'M HEADED */}
+            {/* ========================================= */}
+
             <section
                 className="relative overflow-hidden border-t border-white/10 px-5 py-20 sm:px-8 sm:py-24 md:px-10 md:py-32"
                 style={{ backgroundColor: "#0C0C0C" }}
             >
                 {/* ========================================= */}
-                {/* AMBIENT GLOWS */}
+                {/* AMBIENT NEON GLOWS */}
                 {/* ========================================= */}
 
                 <div
-                    className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full opacity-[0.06] blur-[120px]"
+                    className="pointer-events-none absolute -left-56 top-20 h-[500px] w-[500px] rounded-full opacity-[0.06] blur-[150px]"
                     style={{ backgroundColor: "#A855F7" }}
                 />
 
                 <div
-                    className="pointer-events-none absolute -right-40 bottom-20 h-96 w-96 rounded-full opacity-[0.05] blur-[120px]"
+                    className="pointer-events-none absolute -right-56 top-[35%] h-[550px] w-[550px] rounded-full opacity-[0.05] blur-[150px]"
                     style={{ backgroundColor: "#38BDF8" }}
                 />
 
-                <div className="relative mx-auto max-w-7xl">
-
-                    {/* ========================================= */}
-                    {/* SECTION HEADER */}
-                    {/* ========================================= */}
-
-                    <FadeIn>
-                        <p
-                            className="mb-12 text-sm font-medium uppercase tracking-[0.2em]"
-                            style={{ color: "#A855F7" }}
-                        >
-                            07 — Certifications
-                        </p>
-                    </FadeIn>
-
-                    <FadeIn delay={0.1}>
-                        <h2
-                            className="font-black uppercase leading-[0.85] text-white"
-                            style={{
-                                fontSize: "clamp(3.5rem, 9vw, 9rem)",
-                            }}
-                        >
-                            Proof Of
-                            <br />
-                            <span
-                                style={{
-                                    color: "#A855F7",
-                                    textShadow:
-                                        "0 0 30px rgba(168,85,247,0.25)",
-                                }}
-                            >
-                                Learning
-                            </span>
-                        </h2>
-                    </FadeIn>
-
-                    <FadeIn delay={0.15}>
-                        <p className="mt-10 max-w-3xl text-base leading-relaxed text-white/55 md:text-lg">
-                            Certifications that represent the technologies and concepts I've
-                            invested time in learning beyond the classroom.
-                        </p>
-                    </FadeIn>
-
-
-                    {/* ========================================= */}
-                    {/* CERTIFICATION GRID */}
-                    {/* ========================================= */}
-
-                    <div className="mt-20 grid gap-8 md:mt-28 md:grid-cols-2">
-
-                        {/* ===================================== */}
-                        {/* CERTIFICATION 01 */}
-                        {/* ===================================== */}
-
-                        <FadeIn delay={0.2}>
-                            <article className="group relative h-full overflow-hidden border border-white/10 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#A855F7]/50 sm:p-9 md:p-10">
-
-                                {/* Hover Glow */}
-                                <div
-                                    className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full opacity-0 blur-[90px] transition-opacity duration-500 group-hover:opacity-20"
-                                    style={{ backgroundColor: "#A855F7" }}
-                                />
-
-                                <div className="relative">
-
-                                    {/* Top Row */}
-                                    <div className="flex items-start justify-between">
-
-                                        <span
-                                            className="font-black leading-none"
-                                            style={{
-                                                color: "#A855F7",
-                                                fontSize: "clamp(3rem, 6vw, 5rem)",
-                                                textShadow:
-                                                    "0 0 25px rgba(168,85,247,0.2)",
-                                            }}
-                                        >
-                                            01
-                                        </span>
-
-                                        <span
-                                            className="rounded-full border px-4 py-2 text-xs uppercase tracking-[0.15em]"
-                                            style={{
-                                                borderColor: "rgba(168,85,247,0.4)",
-                                                color: "#A855F7",
-                                            }}
-                                        >
-                                            2026
-                                        </span>
-
-                                    </div>
-
-
-                                    {/* Certification Title */}
-                                    <div className="mt-14">
-
-                                        <p className="text-xs uppercase tracking-[0.2em] text-white/35">
-                                            Udemy
-                                        </p>
-
-                                        <h3
-                                            className="mt-4 font-medium uppercase leading-tight"
-                                            style={{
-                                                color: "#A855F7",
-                                                fontSize: "clamp(1.8rem, 3.5vw, 3rem)",
-                                            }}
-                                        >
-                                            Spring Boot 4
-                                            <br />
-                                            & Spring 7
-                                        </h3>
-
-                                    </div>
-
-
-                                    {/* Description */}
-                                    <p className="mt-8 max-w-xl text-sm leading-relaxed text-white/55 md:text-base">
-                                        Certification covering Spring Boot and Spring Framework
-                                        concepts with a focus on building modern Java-based
-                                        applications.
-                                    </p>
-
-
-                                    {/* Bottom */}
-                                    <div className="mt-12 flex items-center justify-between border-t border-white/10 pt-6">
-
-                                        <div>
-                                            <p className="text-[10px] uppercase tracking-[0.2em] text-white/30">
-                                                Issued By
-                                            </p>
-
-                                            <p className="mt-2 text-sm uppercase text-white/70">
-                                                Udemy
-                                            </p>
-                                        </div>
-
-                                        <div
-                                            className="flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-300 group-hover:bg-[#A855F7] group-hover:text-black"
-                                            style={{
-                                                borderColor: "rgba(168,85,247,0.5)",
-                                                color: "#A855F7",
-                                            }}
-                                        >
-                                            ↗
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </article>
-                        </FadeIn>
-
-
-                        {/* ===================================== */}
-                        {/* CERTIFICATION 02 */}
-                        {/* ===================================== */}
-
-                        <FadeIn delay={0.3}>
-                            <article className="group relative h-full overflow-hidden border border-white/10 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#38BDF8]/50 sm:p-9 md:p-10">
-
-                                {/* Hover Glow */}
-                                <div
-                                    className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full opacity-0 blur-[90px] transition-opacity duration-500 group-hover:opacity-20"
-                                    style={{ backgroundColor: "#38BDF8" }}
-                                />
-
-                                <div className="relative">
-
-                                    {/* Top Row */}
-                                    <div className="flex items-start justify-between">
-
-                                        <span
-                                            className="font-black leading-none"
-                                            style={{
-                                                color: "#38BDF8",
-                                                fontSize: "clamp(3rem, 6vw, 5rem)",
-                                                textShadow:
-                                                    "0 0 25px rgba(56,189,248,0.2)",
-                                            }}
-                                        >
-                                            02
-                                        </span>
-
-                                        <span
-                                            className="rounded-full border px-4 py-2 text-xs uppercase tracking-[0.15em]"
-                                            style={{
-                                                borderColor: "rgba(56,189,248,0.4)",
-                                                color: "#38BDF8",
-                                            }}
-                                        >
-                                            2026
-                                        </span>
-
-                                    </div>
-
-
-                                    {/* Certification Title */}
-                                    <div className="mt-14">
-
-                                        <p className="text-xs uppercase tracking-[0.2em] text-white/35">
-                                            Udemy
-                                        </p>
-
-                                        <h3
-                                            className="mt-4 font-medium uppercase leading-tight"
-                                            style={{
-                                                color: "#38BDF8",
-                                                fontSize: "clamp(1.8rem, 3.5vw, 3rem)",
-                                            }}
-                                        >
-                                            Spring Boot
-                                            <br />
-                                            Professional E-Commerce
-                                        </h3>
-
-                                    </div>
-
-
-                                    {/* Description */}
-                                    <p className="mt-8 max-w-xl text-sm leading-relaxed text-white/55 md:text-base">
-                                        A practical course focused on building an e-commerce
-                                        application with Spring Boot and understanding the architecture
-                                        behind a real-world backend system.
-                                    </p>
-
-
-                                    {/* Bottom */}
-                                    <div className="mt-12 flex items-center justify-between border-t border-white/10 pt-6">
-
-                                        <div>
-                                            <p className="text-[10px] uppercase tracking-[0.2em] text-white/30">
-                                                Issued By
-                                            </p>
-
-                                            <p className="mt-2 text-sm uppercase text-white/70">
-                                                Udemy
-                                            </p>
-                                        </div>
-
-                                        <div
-                                            className="flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-300 group-hover:bg-[#38BDF8] group-hover:text-black"
-                                            style={{
-                                                borderColor: "rgba(56,189,248,0.5)",
-                                                color: "#38BDF8",
-                                            }}
-                                        >
-                                            ↗
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </article>
-                        </FadeIn>
-
-                    </div>
-
-
-                    {/* ========================================= */}
-                    {/* CREDENTIAL NOTE */}
-                    {/* ========================================= */}
-
-                    <FadeIn delay={0.4}>
-                        <div className="mt-12 flex flex-col gap-5 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
-
-                            <p className="max-w-xl text-xs uppercase leading-relaxed tracking-[0.15em] text-white/30">
-                                Continuous learning is part of my development journey.
-                            </p>
-
-                            <div className="flex items-center gap-3">
-
-                                <span
-                                    className="h-2 w-2 rounded-full"
-                                    style={{
-                                        backgroundColor: "#A855F7",
-                                        boxShadow:
-                                            "0 0 12px rgba(168,85,247,0.6)",
-                                    }}
-                                />
-
-                                <span
-                                    className="h-2 w-2 rounded-full"
-                                    style={{
-                                        backgroundColor: "#38BDF8",
-                                        boxShadow:
-                                            "0 0 12px rgba(56,189,248,0.6)",
-                                    }}
-                                />
-
-                                <span className="text-xs uppercase tracking-[0.15em] text-white/30">
-                                    Always Learning
-                                </span>
-
-                            </div>
-
-                        </div>
-                    </FadeIn>
-
-                </div>
-            </section>
-            {/* ACHIEVEMENTS */}
-            <section
-                className="relative overflow-hidden border-t border-white/10 px-5 py-20 sm:px-8 sm:py-24 md:px-10 md:py-32"
-                style={{ backgroundColor: "#0C0C0C" }}
-            >
-                {/* ========================================= */}
-                {/* AMBIENT GLOWS */}
-                {/* ========================================= */}
-
                 <div
-                    className="pointer-events-none absolute -right-40 top-20 h-96 w-96 rounded-full opacity-[0.07] blur-[120px]"
-                    style={{ backgroundColor: "#A855F7" }}
+                    className="pointer-events-none absolute bottom-[-250px] left-[40%] h-[500px] w-[500px] rounded-full opacity-[0.04] blur-[150px]"
+                    style={{ backgroundColor: "#B6FF00" }}
                 />
 
+                {/* ========================================= */}
+                {/* BACKGROUND GRID */}
+                {/* ========================================= */}
+
                 <div
-                    className="pointer-events-none absolute -left-40 bottom-20 h-96 w-96 rounded-full opacity-[0.06] blur-[120px]"
-                    style={{ backgroundColor: "#38BDF8" }}
+                    className="pointer-events-none absolute inset-0 opacity-[0.025]"
+                    style={{
+                        backgroundImage: `
+        linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)
+      `,
+                        backgroundSize: "90px 90px",
+                    }}
                 />
 
                 <div className="relative mx-auto max-w-7xl">
@@ -2380,405 +2832,1653 @@ function About() {
                     {/* ========================================= */}
 
                     <FadeIn>
-                        <p
-                            className="mb-12 text-sm font-medium uppercase tracking-[0.2em]"
-                            style={{ color: "#A855F7" }}
-                        >
-                            08 — Achievements
-                        </p>
+                        <div className="flex items-center justify-between">
+
+                            <p
+                                className="text-sm font-medium uppercase tracking-[0.2em]"
+                                style={{ color: "#A855F7" }}
+                            >
+                                07 — Where I'm Headed
+                            </p>
+
+                            <div className="hidden items-center gap-3 sm:flex">
+
+                                <span className="text-xs uppercase tracking-[0.2em] text-white/20">
+                                    Career Trajectory
+                                </span>
+
+                                <span
+                                    className="h-2 w-2 rounded-full"
+                                    style={{
+                                        backgroundColor: "#B6FF00",
+                                        boxShadow: "0 0 12px rgba(182,255,0,0.7)",
+                                    }}
+                                />
+
+                            </div>
+
+                        </div>
                     </FadeIn>
 
+
+                    {/* ========================================= */}
+                    {/* MAIN HEADING */}
+                    {/* ========================================= */}
+
                     <FadeIn delay={0.1}>
+
                         <h2
-                            className="font-black uppercase leading-[0.85] text-white"
+                            className="mt-14 max-w-6xl font-black uppercase leading-[0.82]"
                             style={{
                                 fontSize: "clamp(3.5rem, 9vw, 9rem)",
                             }}
                         >
-                            Proof Of
-                            <br />
+
+                            <span className="text-white">
+                                Not
+                            </span>{" "}
+
                             <span
                                 style={{
                                     color: "#A855F7",
                                     textShadow:
-                                        "0 0 30px rgba(168,85,247,0.25)",
+                                        "0 0 40px rgba(168,85,247,0.25)",
                                 }}
                             >
-                                Progress
+                                There
                             </span>
+
+                            <br />
+
+                            <span className="text-white">
+                                Yet.
+                            </span>{" "}
+
+                            <span
+                                style={{
+                                    color: "#38BDF8",
+                                    textShadow:
+                                        "0 0 40px rgba(56,189,248,0.2)",
+                                }}
+                            >
+                                Getting
+                            </span>{" "}
+
+                            <span className="text-white">
+                                There.
+                            </span>
+
                         </h2>
-                    </FadeIn>
 
-                    <FadeIn delay={0.15}>
-                        <p className="mt-10 max-w-3xl text-base leading-relaxed text-white/55 md:text-lg">
-                            Milestones that reflect my consistency, curiosity, and commitment
-                            to becoming a better software developer.
-                        </p>
                     </FadeIn>
 
 
                     {/* ========================================= */}
-                    {/* BIG STATS */}
+                    {/* INTRO */}
                     {/* ========================================= */}
 
-                    <div className="mt-20 grid gap-5 md:mt-28 md:grid-cols-3">
+                    <FadeIn delay={0.2}>
 
-                        {/* ===================================== */}
-                        {/* STAT 01 — LEETCODE */}
-                        {/* ===================================== */}
+                        <div className="mt-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
 
-                        <FadeIn delay={0.2}>
-                            <div className="group relative overflow-hidden border border-white/10 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#B6FF00]/40 sm:p-9">
+                            <p className="max-w-2xl text-base leading-relaxed text-white/50 md:text-xl">
+                                I'm still early in my journey, but I know the direction
+                                I want to take. My goal is to become a strong Java backend
+                                developer and eventually grow into an engineer capable of
+                                designing complex, reliable systems.
+                            </p>
 
-                                {/* Glow */}
+                            <p className="text-xs uppercase tracking-[0.2em] text-white/20">
+                                Destination: Software Engineering
+                            </p>
+
+                        </div>
+
+                    </FadeIn>
+
+
+                    {/* ========================================= */}
+                    {/* CAREER CARDS */}
+                    {/* ========================================= */}
+
+                    <div className="mt-24 grid items-stretch gap-5 md:mt-32 md:grid-cols-3">
+
+
+                        {/* ======================================= */}
+                        {/* CARD 01 — NOW */}
+                        {/* ======================================= */}
+
+                        <FadeIn delay={0.25} className="h-full">
+
+                            <article
+                                className="group relative flex h-full min-h-[500px] flex-col overflow-hidden border border-white/10 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#A855F7]/50 sm:p-9"
+                            >
+
+                                {/* Purple glow */}
+
                                 <div
-                                    className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full opacity-0 blur-[80px] transition-opacity duration-500 group-hover:opacity-20"
-                                    style={{ backgroundColor: "#B6FF00" }}
+                                    className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full opacity-0 blur-[100px] transition-opacity duration-700 group-hover:opacity-20"
+                                    style={{
+                                        backgroundColor: "#A855F7",
+                                    }}
                                 />
 
-                                <div className="relative">
+                                <div className="relative flex h-full flex-col">
 
-                                    <p className="text-xs uppercase tracking-[0.2em] text-white/35">
-                                        Problem Solving
-                                    </p>
+                                    {/* Top */}
 
-                                    <div className="mt-10 flex items-end gap-3">
+                                    <div className="flex items-center justify-between">
 
                                         <span
-                                            className="font-black leading-none"
+                                            className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border text-xs font-bold"
                                             style={{
-                                                color: "#B6FF00",
-                                                fontSize: "clamp(4rem, 8vw, 7rem)",
-                                                textShadow:
-                                                    "0 0 25px rgba(182,255,0,0.2)",
-                                            }}
-                                        >
-                                            75+
-                                        </span>
-
-                                        <span className="mb-2 text-sm uppercase tracking-wider text-white/40">
-                                            Problems
-                                        </span>
-
-                                    </div>
-
-                                    <p className="mt-6 text-sm leading-relaxed text-white/55">
-                                        LeetCode problems solved while strengthening Data Structures
-                                        and Algorithms knowledge.
-                                    </p>
-
-                                    <div className="mt-8 flex items-center gap-3">
-
-                                        <span
-                                            className="h-2 w-2 rounded-full"
-                                            style={{
-                                                backgroundColor: "#B6FF00",
-                                                boxShadow:
-                                                    "0 0 12px rgba(182,255,0,0.6)",
-                                            }}
-                                        />
-
-                                        <span className="text-xs uppercase tracking-[0.15em] text-white/30">
-                                            Consistency
-                                        </span>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </FadeIn>
-
-
-                        {/* ===================================== */}
-                        {/* STAT 02 — HACKATHON */}
-                        {/* ===================================== */}
-
-                        <FadeIn delay={0.25}>
-                            <div className="group relative overflow-hidden border border-white/10 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#A855F7]/40 sm:p-9">
-
-                                {/* Glow */}
-                                <div
-                                    className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full opacity-0 blur-[80px] transition-opacity duration-500 group-hover:opacity-20"
-                                    style={{ backgroundColor: "#A855F7" }}
-                                />
-
-                                <div className="relative">
-
-                                    <p className="text-xs uppercase tracking-[0.2em] text-white/35">
-                                        Competition
-                                    </p>
-
-                                    <div className="mt-10">
-
-                                        <span
-                                            className="block break-words font-black uppercase leading-[0.85]"
-                                            style={{
+                                                borderColor: "rgba(168,85,247,0.6)",
                                                 color: "#A855F7",
-                                                fontSize: "clamp(2.5rem, 4vw, 4.5rem)",
-                                                textShadow:
-                                                    "0 0 25px rgba(168,85,247,0.2)",
+                                                backgroundColor: "#0C0C0C",
+                                                boxShadow:
+                                                    "0 0 20px rgba(168,85,247,0.12)",
                                             }}
                                         >
-                                            National
+                                            NOW
                                         </span>
+
+                                        <span className="text-xs uppercase tracking-[0.2em] text-white/20">
+                                            01
+                                        </span>
+
+                                    </div>
+
+
+                                    {/* Content */}
+
+                                    <div className="mt-12 flex-1">
 
                                         <p
-                                            className="mt-2 text-xl font-medium uppercase"
+                                            className="text-xs uppercase tracking-[0.2em]"
                                             style={{ color: "#A855F7" }}
                                         >
-                                            Level Hackathon
+                                            Foundation
+                                        </p>
+
+                                        <h3
+                                            className="mt-4 font-black uppercase leading-[0.9] tracking-tight"
+                                            style={{
+                                                color: "#A855F7",
+                                                fontSize:
+                                                    "clamp(2.5rem, 4vw, 4rem)",
+                                                textShadow:
+                                                    "0 0 30px rgba(168,85,247,0.12)",
+                                            }}
+                                        >
+                                            Student
+                                        </h3>
+
+                                        <p className="mt-7 max-w-md text-sm leading-relaxed text-white/45">
+                                            Building my foundation through academics,
+                                            coding practice, backend projects, and
+                                            continuous learning.
                                         </p>
 
                                     </div>
 
-                                    <p className="mt-6 text-sm leading-relaxed text-white/55">
-                                        Participated in a National Level Hackathon, gaining experience
-                                        in collaborative problem-solving, rapid development, and
-                                        building solutions under time constraints.
-                                    </p>
 
-                                    <div className="mt-8 flex items-center gap-3">
+                                    {/* Tags */}
 
-                                        <span
-                                            className="h-2 w-2 rounded-full"
-                                            style={{
-                                                backgroundColor: "#A855F7",
-                                                boxShadow:
-                                                    "0 0 12px rgba(168,85,247,0.6)",
-                                            }}
-                                        />
+                                    <div className="mt-10 flex flex-wrap gap-2">
 
-                                        <span className="text-xs uppercase tracking-[0.15em] text-white/30">
-                                            Teamwork • Innovation
-                                        </span>
+                                        {["B.Tech", "Java", "DSA"].map((item) => (
+
+                                            <span
+                                                key={item}
+                                                className="rounded-full border px-3 py-1.5 text-[10px] uppercase tracking-wider"
+                                                style={{
+                                                    borderColor:
+                                                        "rgba(168,85,247,0.3)",
+                                                    color: "#A855F7",
+                                                }}
+                                            >
+                                                {item}
+                                            </span>
+
+                                        ))}
 
                                     </div>
 
                                 </div>
-                            </div>
+
+
+                                {/* Bottom accent */}
+
+                                <div
+                                    className="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-700 group-hover:w-full"
+                                    style={{
+                                        backgroundColor: "#A855F7",
+                                    }}
+                                />
+
+                            </article>
+
                         </FadeIn>
 
 
-                        {/* ===================================== */}
-                        {/* STAT 03 — TECH LEAD */}
-                        {/* ===================================== */}
+                        {/* ======================================= */}
+                        {/* CARD 02 — NEXT */}
+                        {/* ======================================= */}
 
-                        <FadeIn delay={0.3}>
-                            <div className="group relative overflow-hidden border border-white/10 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#38BDF8]/40 sm:p-9">
+                        <FadeIn delay={0.3} className="h-full">
 
-                                {/* Glow */}
+                            <article
+                                className="group relative flex h-full min-h-[500px] flex-col overflow-hidden border border-[#38BDF8]/30 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#38BDF8]/60 sm:p-9"
+                            >
+
+                                {/* Blue glow */}
+
                                 <div
-                                    className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full opacity-0 blur-[80px] transition-opacity duration-500 group-hover:opacity-20"
-                                    style={{ backgroundColor: "#38BDF8" }}
+                                    className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full opacity-[0.05] blur-[100px] transition-opacity duration-700 group-hover:opacity-20"
+                                    style={{
+                                        backgroundColor: "#38BDF8",
+                                    }}
                                 />
 
-                                <div className="relative">
+                                <div className="relative flex h-full flex-col">
 
-                                    <p className="text-xs uppercase tracking-[0.2em] text-white/35">
-                                        Leadership
-                                    </p>
+                                    {/* Top */}
 
-                                    <div className="mt-10">
+                                    <div className="flex items-center justify-between">
 
                                         <span
-                                            className="block break-words font-black uppercase leading-[0.85]"
+                                            className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border text-xs font-bold"
                                             style={{
+                                                borderColor:
+                                                    "rgba(56,189,248,0.6)",
                                                 color: "#38BDF8",
-                                                fontSize: "clamp(2.5rem, 3.7vw, 4.5rem)",
-                                                textShadow:
-                                                    "0 0 25px rgba(56,189,248,0.2)",
+                                                backgroundColor: "#0C0C0C",
+                                                boxShadow:
+                                                    "0 0 20px rgba(56,189,248,0.12)",
                                             }}
                                         >
-                                            Technical
+                                            NEXT
                                         </span>
 
+                                        <span className="text-xs uppercase tracking-[0.2em] text-white/20">
+                                            02
+                                        </span>
+
+                                    </div>
+
+
+                                    {/* Content */}
+
+                                    <div className="mt-12 flex-1">
+
                                         <p
-                                            className="mt-2 text-xl font-medium uppercase"
+                                            className="text-xs uppercase tracking-[0.2em]"
                                             style={{ color: "#38BDF8" }}
                                         >
-                                            Lead
+                                            Short-Term Goal
+                                        </p>
+
+                                        <h3
+                                            className="mt-4 font-black uppercase leading-[0.88] tracking-tight"
+                                            style={{
+                                                color: "#38BDF8",
+                                                fontSize:
+                                                    "clamp(2.2rem, 3.3vw, 3.3rem)",
+                                                textShadow:
+                                                    "0 0 30px rgba(56,189,248,0.12)",
+                                            }}
+                                        >
+                                            Java
+                                            <br />
+                                            Developer
+                                        </h3>
+
+                                        <p className="mt-7 max-w-md text-sm leading-relaxed text-white/45">
+                                            Become a capable Java developer with strong
+                                            knowledge of backend development, Spring Boot,
+                                            databases, security, APIs, and problem solving.
                                         </p>
 
                                     </div>
 
-                                    <p className="mt-6 text-sm leading-relaxed text-white/55">
-                                        Worked as a Technical Lead during a departmental techfest,
-                                        contributing to technical coordination, collaboration, and
-                                        event execution.
-                                    </p>
 
-                                    <div className="mt-8 flex items-center gap-3">
+                                    {/* Tags */}
 
-                                        <span
-                                            className="h-2 w-2 rounded-full"
-                                            style={{
-                                                backgroundColor: "#38BDF8",
-                                                boxShadow:
-                                                    "0 0 12px rgba(56,189,248,0.6)",
-                                            }}
-                                        />
+                                    <div className="mt-10 flex flex-wrap gap-2">
 
-                                        <span className="text-xs uppercase tracking-[0.15em] text-white/30">
-                                            Leadership • Collaboration
-                                        </span>
+                                        {[
+                                            "Spring Boot",
+                                            "Backend",
+                                            "Security",
+                                        ].map((item) => (
+
+                                            <span
+                                                key={item}
+                                                className="rounded-full border px-3 py-1.5 text-[10px] uppercase tracking-wider"
+                                                style={{
+                                                    borderColor:
+                                                        "rgba(56,189,248,0.3)",
+                                                    color: "#38BDF8",
+                                                }}
+                                            >
+                                                {item}
+                                            </span>
+
+                                        ))}
 
                                     </div>
 
                                 </div>
-                            </div>
+
+
+                                {/* Bottom accent */}
+
+                                <div
+                                    className="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-700 group-hover:w-full"
+                                    style={{
+                                        backgroundColor: "#38BDF8",
+                                    }}
+                                />
+
+                            </article>
+
+                        </FadeIn>
+
+
+                        {/* ======================================= */}
+                        {/* CARD 03 — GOAL */}
+                        {/* ======================================= */}
+
+                        <FadeIn delay={0.35} className="h-full">
+
+                            <article
+                                className="group relative flex h-full min-h-[500px] flex-col overflow-hidden border border-white/10 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#B6FF00]/50 sm:p-9"
+                            >
+
+                                {/* Green glow */}
+
+                                <div
+                                    className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full opacity-0 blur-[100px] transition-opacity duration-700 group-hover:opacity-20"
+                                    style={{
+                                        backgroundColor: "#B6FF00",
+                                    }}
+                                />
+
+                                <div className="relative flex h-full flex-col">
+
+                                    {/* Top */}
+
+                                    <div className="flex items-center justify-between">
+
+                                        <span
+                                            className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border text-xs font-bold"
+                                            style={{
+                                                borderColor:
+                                                    "rgba(182,255,0,0.6)",
+                                                color: "#B6FF00",
+                                                backgroundColor: "#0C0C0C",
+                                                boxShadow:
+                                                    "0 0 20px rgba(182,255,0,0.12)",
+                                            }}
+                                        >
+                                            GOAL
+                                        </span>
+
+                                        <span className="text-xs uppercase tracking-[0.2em] text-white/20">
+                                            03
+                                        </span>
+
+                                    </div>
+
+
+                                    {/* Content */}
+
+                                    <div className="mt-12 flex-1">
+
+                                        <p
+                                            className="text-xs uppercase tracking-[0.2em]"
+                                            style={{ color: "#B6FF00" }}
+                                        >
+                                            Long-Term Goal
+                                        </p>
+
+                                        <h3
+                                            className="mt-4 font-black uppercase leading-[0.88] tracking-tight"
+                                            style={{
+                                                color: "#B6FF00",
+                                                fontSize:
+                                                    "clamp(2.2rem, 3.3vw, 3.3rem)",
+                                                textShadow:
+                                                    "0 0 30px rgba(182,255,0,0.12)",
+                                            }}
+                                        >
+                                            Senior
+                                            <br />
+                                            Engineer
+                                        </h3>
+
+                                        <p className="mt-7 max-w-md text-sm leading-relaxed text-white/45">
+                                            Grow into a senior engineer capable of designing,
+                                            building, and reasoning about complex software
+                                            systems from the ground up.
+                                        </p>
+
+                                    </div>
+
+
+                                    {/* Tags */}
+
+                                    <div className="mt-10 flex flex-wrap gap-2">
+
+                                        {[
+                                            "Architecture",
+                                            "Scalability",
+                                            "Systems",
+                                        ].map((item) => (
+
+                                            <span
+                                                key={item}
+                                                className="rounded-full border px-3 py-1.5 text-[10px] uppercase tracking-wider"
+                                                style={{
+                                                    borderColor:
+                                                        "rgba(182,255,0,0.3)",
+                                                    color: "#B6FF00",
+                                                }}
+                                            >
+                                                {item}
+                                            </span>
+
+                                        ))}
+
+                                    </div>
+
+                                </div>
+
+
+                                {/* Bottom accent */}
+
+                                <div
+                                    className="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-700 group-hover:w-full"
+                                    style={{
+                                        backgroundColor: "#B6FF00",
+                                    }}
+                                />
+
+                            </article>
+
                         </FadeIn>
 
                     </div>
 
 
                     {/* ========================================= */}
-                    {/* ACHIEVEMENT TIMELINE */}
+                    {/* MISSION STATEMENT */}
                     {/* ========================================= */}
 
-                    <FadeIn delay={0.35}>
-                        <div className="mt-20 border-t border-white/10 pt-10 md:mt-28">
+                    <FadeIn delay={0.45}>
 
-                            <div className="mb-10 flex items-center justify-between">
+                        <div className="relative mt-20 overflow-hidden border border-white/10 p-8 sm:p-12 md:mt-28 md:p-16">
 
-                                <p className="text-xs uppercase tracking-[0.2em] text-white/35">
-                                    Milestones
+                            {/* Mission glow */}
+
+                            <div
+                                className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.05] blur-[120px]"
+                                style={{
+                                    backgroundColor: "#A855F7",
+                                }}
+                            />
+
+                            <div className="relative">
+
+                                <p className="text-xs uppercase tracking-[0.2em] text-white/25">
+                                    Mission
                                 </p>
 
-                                <span
-                                    className="text-xs uppercase tracking-[0.15em]"
-                                    style={{ color: "#A855F7" }}
+                                <h3
+                                    className="mt-7 max-w-5xl font-black uppercase leading-[0.88]"
+                                    style={{
+                                        fontSize: "clamp(2.5rem, 6vw, 6rem)",
+                                    }}
                                 >
-                                    2026 →
-                                </span>
+
+                                    <span className="text-white">
+                                        Become
+                                    </span>{" "}
+
+                                    <span style={{ color: "#A855F7" }}>
+                                        exceptionally
+                                    </span>
+
+                                    <br />
+
+                                    <span style={{ color: "#38BDF8" }}>
+                                        good
+                                    </span>{" "}
+
+                                    <span className="text-white">
+                                        at building.
+                                    </span>
+
+                                </h3>
+
+                                <p className="mt-10 max-w-2xl text-sm leading-relaxed text-white/45 md:text-base">
+                                    I'm not trying to learn every technology that exists.
+                                    I'm focused on developing the depth, discipline, and
+                                    problem-solving ability needed to build software that
+                                    actually works.
+                                </p>
 
                             </div>
 
+                        </div>
 
-                            {/* Milestone 01 */}
-                            <div className="group grid gap-4 border-b border-white/10 py-7 transition-colors duration-300 hover:border-[#A855F7]/40 md:grid-cols-[120px_1fr_auto] md:items-center">
+                    </FadeIn>
+
+
+                    {/* ========================================= */}
+                    {/* CURRENT TRAJECTORY */}
+                    {/* ========================================= */}
+
+                    <FadeIn delay={0.5}>
+
+                        <div className="mt-16 border-t border-white/10 pt-8">
+
+                            <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+
+                                <span className="text-xs uppercase tracking-[0.2em] text-white/20">
+                                    Current trajectory
+                                </span>
+
+                                <div className="flex flex-wrap items-center gap-3">
+
+                                    <span
+                                        className="text-xs font-medium uppercase tracking-wider"
+                                        style={{ color: "#A855F7" }}
+                                    >
+                                        Student
+                                    </span>
+
+                                    <span className="text-white/20">
+                                        →
+                                    </span>
+
+                                    <span
+                                        className="text-xs font-medium uppercase tracking-wider"
+                                        style={{ color: "#38BDF8" }}
+                                    >
+                                        Java Developer
+                                    </span>
+
+                                    <span className="text-white/20">
+                                        →
+                                    </span>
+
+                                    <span
+                                        className="text-xs font-medium uppercase tracking-wider"
+                                        style={{ color: "#B6FF00" }}
+                                    >
+                                        Software Engineer
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </FadeIn>
+
+
+                    {/* ========================================= */}
+                    {/* END ACCENT */}
+                    {/* ========================================= */}
+
+                    <FadeIn delay={0.55}>
+
+                        <div className="mt-16 flex items-center gap-4">
+
+                            <div
+                                className="h-px flex-1"
+                                style={{
+                                    background:
+                                        "linear-gradient(to right, rgba(168,85,247,0.5), rgba(56,189,248,0.1))",
+                                }}
+                            />
+
+                            <span
+                                className="h-2 w-2 rounded-full"
+                                style={{
+                                    backgroundColor: "#B6FF00",
+                                    boxShadow:
+                                        "0 0 15px rgba(182,255,0,0.7)",
+                                }}
+                            />
+
+                            <div
+                                className="h-px flex-1"
+                                style={{
+                                    background:
+                                        "linear-gradient(to left, rgba(168,85,247,0.5), rgba(56,189,248,0.1))",
+                                }}
+                            />
+
+                        </div>
+
+                    </FadeIn>
+
+                </div>
+            </section>
+            {/* ========================================= */}
+            {/* SECTION 08 — BEYOND THE CODE */}
+            {/* ========================================= */}
+
+            <section
+                className="relative overflow-hidden border-t border-white/10 px-5 py-20 sm:px-8 sm:py-24 md:px-10 md:py-32"
+                style={{ backgroundColor: "#0C0C0C" }}
+            >
+                {/* ========================================= */}
+                {/* AMBIENT GLOWS */}
+                {/* ========================================= */}
+
+                <div
+                    className="pointer-events-none absolute -right-52 top-20 h-[550px] w-[550px] rounded-full opacity-[0.06] blur-[150px]"
+                    style={{ backgroundColor: "#A855F7" }}
+                />
+
+                <div
+                    className="pointer-events-none absolute -left-52 bottom-0 h-[500px] w-[500px] rounded-full opacity-[0.05] blur-[150px]"
+                    style={{ backgroundColor: "#38BDF8" }}
+                />
+
+                <div
+                    className="pointer-events-none absolute right-[35%] bottom-[-250px] h-[500px] w-[500px] rounded-full opacity-[0.04] blur-[150px]"
+                    style={{ backgroundColor: "#B6FF00" }}
+                />
+
+                {/* ========================================= */}
+                {/* BACKGROUND GRID */}
+                {/* ========================================= */}
+
+                <div
+                    className="pointer-events-none absolute inset-0 opacity-[0.025]"
+                    style={{
+                        backgroundImage: `
+        linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)
+      `,
+                        backgroundSize: "90px 90px",
+                    }}
+                />
+
+                <div className="relative mx-auto max-w-7xl">
+
+                    {/* ========================================= */}
+                    {/* HEADER */}
+                    {/* ========================================= */}
+
+                    <FadeIn>
+
+                        <div className="flex items-center justify-between">
+
+                            <p
+                                className="text-sm font-medium uppercase tracking-[0.2em]"
+                                style={{ color: "#38BDF8" }}
+                            >
+                                08 — Beyond The Code
+                            </p>
+
+                            <span className="hidden text-xs uppercase tracking-[0.2em] text-white/20 sm:block">
+                                The person behind the developer
+                            </span>
+
+                        </div>
+
+                    </FadeIn>
+
+
+                    {/* ========================================= */}
+                    {/* BIG HEADING */}
+                    {/* ========================================= */}
+
+                    <FadeIn delay={0.1}>
+
+                        <div className="mt-14">
+
+                            <h2
+                                className="font-black uppercase leading-[0.82]"
+                                style={{
+                                    fontSize: "clamp(3.5rem, 10vw, 10rem)",
+                                }}
+                            >
+
+                                <span className="text-white">
+                                    OFF
+                                </span>{" "}
 
                                 <span
-                                    className="text-sm font-medium"
-                                    style={{ color: "#A855F7" }}
+                                    style={{
+                                        color: "#A855F7",
+                                        textShadow:
+                                            "0 0 40px rgba(168,85,247,0.22)",
+                                    }}
+                                >
+                                    THE
+                                </span>
+
+                                <br />
+
+                                <span
+                                    style={{
+                                        color: "#38BDF8",
+                                        textShadow:
+                                            "0 0 40px rgba(56,189,248,0.2)",
+                                    }}
+                                >
+                                    SCREEN.
+                                </span>
+
+                            </h2>
+
+                        </div>
+
+                    </FadeIn>
+
+
+                    {/* ========================================= */}
+                    {/* INTRO */}
+                    {/* ========================================= */}
+
+                    <FadeIn delay={0.2}>
+
+                        <div className="mt-12 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+
+                            <p className="max-w-2xl text-base leading-relaxed text-white/50 md:text-xl">
+                                Coding is a big part of my life, but it isn't the whole
+                                story. Outside of building software, I enjoy activities
+                                that keep me competitive, creative, and curious.
+                            </p>
+
+                            <span
+                                className="text-xs uppercase tracking-[0.2em]"
+                                style={{ color: "#B6FF00" }}
+                            >
+                                Balance matters
+                            </span>
+
+                        </div>
+
+                    </FadeIn>
+
+
+                    {/* ========================================= */}
+                    {/* HOBBY GRID */}
+                    {/* ========================================= */}
+
+                    <div className="mt-20 grid gap-5 md:grid-cols-3 md:mt-24">
+
+
+                        {/* ======================================= */}
+                        {/* CRICKET */}
+                        {/* ======================================= */}
+
+                        <FadeIn delay={0.25}>
+
+                            <article
+                                className="group relative min-h-[420px] overflow-hidden border border-white/10 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#A855F7]/50 sm:p-9"
+                            >
+
+                                {/* Large background number */}
+
+                                <span
+                                    className="pointer-events-none absolute -right-3 -top-10 font-black leading-none opacity-[0.035]"
+                                    style={{
+                                        fontSize: "12rem",
+                                    }}
                                 >
                                     01
                                 </span>
 
-                                <div>
-                                    <h3 className="text-lg font-medium uppercase text-white transition-colors duration-300 group-hover:text-[#A855F7]">
-                                        National Level Hackathon
-                                    </h3>
 
-                                    <p className="mt-2 text-sm text-white/40">
-                                        Collaborative problem-solving and rapid project development.
-                                    </p>
+                                {/* Glow */}
+
+                                <div
+                                    className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full opacity-0 blur-[110px] transition-opacity duration-700 group-hover:opacity-20"
+                                    style={{
+                                        backgroundColor: "#A855F7",
+                                    }}
+                                />
+
+
+                                <div className="relative flex h-full flex-col">
+
+                                    {/* Icon */}
+
+                                    <div className="flex items-center justify-between">
+
+                                        <div
+                                            className="flex h-16 w-16 items-center justify-center rounded-full border text-2xl transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110"
+                                            style={{
+                                                borderColor:
+                                                    "rgba(168,85,247,0.4)",
+                                                backgroundColor:
+                                                    "rgba(168,85,247,0.04)",
+                                            }}
+                                        >
+                                            🏏
+                                        </div>
+
+                                        <span
+                                            className="text-xs uppercase tracking-[0.2em]"
+                                            style={{ color: "#A855F7" }}
+                                        >
+                                            01
+                                        </span>
+
+                                    </div>
+
+
+                                    {/* Content */}
+
+                                    <div className="mt-auto">
+
+                                        <p className="text-xs uppercase tracking-[0.2em] text-white/25">
+                                            Competitive
+                                        </p>
+
+                                        <h3
+                                            className="mt-3 font-black uppercase leading-none"
+                                            style={{
+                                                color: "#A855F7",
+                                                fontSize:
+                                                    "clamp(2.8rem, 5vw, 4.5rem)",
+                                                textShadow:
+                                                    "0 0 30px rgba(168,85,247,0.15)",
+                                            }}
+                                        >
+                                            Cricket
+                                        </h3>
+
+                                        <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/40">
+                                            A game that keeps me competitive, energetic,
+                                            and connected with people outside the world
+                                            of technology.
+                                        </p>
+
+                                    </div>
+
+
+                                    {/* Bottom accent */}
+
+                                    <div
+                                        className="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-700 group-hover:w-full"
+                                        style={{
+                                            backgroundColor: "#A855F7",
+                                        }}
+                                    />
+
                                 </div>
 
-                                <span className="text-xs uppercase tracking-[0.15em] text-white/25">
-                                    Experience
-                                </span>
+                            </article>
 
-                            </div>
+                        </FadeIn>
 
 
-                            {/* Milestone 02 */}
-                            <div className="group grid gap-4 border-b border-white/10 py-7 transition-colors duration-300 hover:border-[#38BDF8]/40 md:grid-cols-[120px_1fr_auto] md:items-center">
+                        {/* ======================================= */}
+                        {/* CHESS */}
+                        {/* ======================================= */}
+
+                        <FadeIn delay={0.3}>
+
+                            <article
+                                className="group relative min-h-[420px] overflow-hidden border border-white/10 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#38BDF8]/50 sm:p-9"
+                            >
+
+                                {/* Large background number */}
 
                                 <span
-                                    className="text-sm font-medium"
-                                    style={{ color: "#38BDF8" }}
+                                    className="pointer-events-none absolute -right-3 -top-10 font-black leading-none opacity-[0.035]"
+                                    style={{
+                                        fontSize: "12rem",
+                                    }}
                                 >
                                     02
                                 </span>
 
-                                <div>
-                                    <h3 className="text-lg font-medium uppercase text-white transition-colors duration-300 group-hover:text-[#38BDF8]">
-                                        Technical Lead
-                                    </h3>
 
-                                    <p className="mt-2 text-sm text-white/40">
-                                        Technical coordination and leadership during departmental
-                                        techfest activities.
-                                    </p>
+                                {/* Glow */}
+
+                                <div
+                                    className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full opacity-0 blur-[110px] transition-opacity duration-700 group-hover:opacity-20"
+                                    style={{
+                                        backgroundColor: "#38BDF8",
+                                    }}
+                                />
+
+
+                                <div className="relative flex h-full flex-col">
+
+                                    {/* Icon */}
+
+                                    <div className="flex items-center justify-between">
+
+                                        <div
+                                            className="flex h-16 w-16 items-center justify-center rounded-full border text-2xl transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110"
+                                            style={{
+                                                borderColor:
+                                                    "rgba(56,189,248,0.4)",
+                                                backgroundColor:
+                                                    "rgba(56,189,248,0.04)",
+                                            }}
+                                        >
+                                            ♟
+                                        </div>
+
+                                        <span
+                                            className="text-xs uppercase tracking-[0.2em]"
+                                            style={{ color: "#38BDF8" }}
+                                        >
+                                            02
+                                        </span>
+
+                                    </div>
+
+
+                                    {/* Content */}
+
+                                    <div className="mt-auto">
+
+                                        <p className="text-xs uppercase tracking-[0.2em] text-white/25">
+                                            Strategic
+                                        </p>
+
+                                        <h3
+                                            className="mt-3 font-black uppercase leading-none"
+                                            style={{
+                                                color: "#38BDF8",
+                                                fontSize:
+                                                    "clamp(2.8rem, 5vw, 4.5rem)",
+                                                textShadow:
+                                                    "0 0 30px rgba(56,189,248,0.15)",
+                                            }}
+                                        >
+                                            Chess
+                                        </h3>
+
+                                        <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/40">
+                                            A reminder that good decisions come from
+                                            thinking ahead, understanding possibilities,
+                                            and staying patient.
+                                        </p>
+
+                                    </div>
+
+
+                                    {/* Bottom accent */}
+
+                                    <div
+                                        className="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-700 group-hover:w-full"
+                                        style={{
+                                            backgroundColor: "#38BDF8",
+                                        }}
+                                    />
+
                                 </div>
 
-                                <span className="text-xs uppercase tracking-[0.15em] text-white/25">
-                                    Leadership
-                                </span>
+                            </article>
 
-                            </div>
+                        </FadeIn>
 
 
-                            {/* Milestone 03 */}
-                            <div className="group grid gap-4 border-b border-white/10 py-7 transition-colors duration-300 hover:border-[#B6FF00]/40 md:grid-cols-[120px_1fr_auto] md:items-center">
+                        {/* ======================================= */}
+                        {/* COOKING */}
+                        {/* ======================================= */}
+
+                        <FadeIn delay={0.35}>
+
+                            <article
+                                className="group relative min-h-[420px] overflow-hidden border border-white/10 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#B6FF00]/50 sm:p-9"
+                            >
+
+                                {/* Large background number */}
 
                                 <span
-                                    className="text-sm font-medium"
-                                    style={{ color: "#B6FF00" }}
+                                    className="pointer-events-none absolute -right-3 -top-10 font-black leading-none opacity-[0.035]"
+                                    style={{
+                                        fontSize: "12rem",
+                                    }}
                                 >
                                     03
                                 </span>
 
-                                <div>
-                                    <h3 className="text-lg font-medium uppercase text-white transition-colors duration-300 group-hover:text-[#B6FF00]">
-                                        75+ LeetCode Problems
-                                    </h3>
 
-                                    <p className="mt-2 text-sm text-white/40">
-                                        Continuous practice focused on improving problem-solving and
-                                        algorithmic thinking.
-                                    </p>
+                                {/* Glow */}
+
+                                <div
+                                    className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full opacity-0 blur-[110px] transition-opacity duration-700 group-hover:opacity-20"
+                                    style={{
+                                        backgroundColor: "#B6FF00",
+                                    }}
+                                />
+
+
+                                <div className="relative flex h-full flex-col">
+
+                                    {/* Icon */}
+
+                                    <div className="flex items-center justify-between">
+
+                                        <div
+                                            className="flex h-16 w-16 items-center justify-center rounded-full border text-2xl transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110"
+                                            style={{
+                                                borderColor:
+                                                    "rgba(182,255,0,0.4)",
+                                                backgroundColor:
+                                                    "rgba(182,255,0,0.04)",
+                                            }}
+                                        >
+                                            🍳
+                                        </div>
+
+                                        <span
+                                            className="text-xs uppercase tracking-[0.2em]"
+                                            style={{ color: "#B6FF00" }}
+                                        >
+                                            03
+                                        </span>
+
+                                    </div>
+
+
+                                    {/* Content */}
+
+                                    <div className="mt-auto">
+
+                                        <p className="text-xs uppercase tracking-[0.2em] text-white/25">
+                                            Creative
+                                        </p>
+
+                                        <h3
+                                            className="mt-3 font-black uppercase leading-none"
+                                            style={{
+                                                color: "#B6FF00",
+                                                fontSize:
+                                                    "clamp(2.8rem, 5vw, 4.5rem)",
+                                                textShadow:
+                                                    "0 0 30px rgba(182,255,0,0.15)",
+                                            }}
+                                        >
+                                            Cooking
+                                        </h3>
+
+                                        <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/40">
+                                            Something completely different from coding —
+                                            experimenting with ingredients, recipes,
+                                            and creating something from scratch.
+                                        </p>
+
+                                    </div>
+
+
+                                    {/* Bottom accent */}
+
+                                    <div
+                                        className="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-700 group-hover:w-full"
+                                        style={{
+                                            backgroundColor: "#B6FF00",
+                                        }}
+                                    />
+
                                 </div>
 
-                                <span className="text-xs uppercase tracking-[0.15em] text-white/25">
-                                    DSA
+                            </article>
+
+                        </FadeIn>
+
+                    </div>
+
+
+                    {/* ========================================= */}
+                    {/* PERSONAL STATEMENT */}
+                    {/* ========================================= */}
+
+                    <FadeIn delay={0.45}>
+
+                        <div className="relative mt-20 overflow-hidden border border-white/10 p-8 sm:p-12 md:mt-24 md:p-16">
+
+                            {/* Decorative glow */}
+
+                            <div
+                                className="pointer-events-none absolute -left-20 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full opacity-[0.05] blur-[100px]"
+                                style={{
+                                    backgroundColor: "#38BDF8",
+                                }}
+                            />
+
+                            <div
+                                className="pointer-events-none absolute -right-20 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full opacity-[0.05] blur-[100px]"
+                                style={{
+                                    backgroundColor: "#A855F7",
+                                }}
+                            />
+
+
+                            <div className="relative">
+
+                                <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
+
+                                    <div>
+
+                                        <p className="text-xs uppercase tracking-[0.2em] text-white/25">
+                                            A little more about me
+                                        </p>
+
+                                        <h3
+                                            className="mt-6 max-w-4xl font-black uppercase leading-[0.9]"
+                                            style={{
+                                                fontSize:
+                                                    "clamp(2.5rem, 5vw, 5.5rem)",
+                                            }}
+                                        >
+
+                                            <span className="text-white">
+                                                Build.
+                                            </span>{" "}
+
+                                            <span
+                                                style={{
+                                                    color: "#A855F7",
+                                                }}
+                                            >
+                                                Think.
+                                            </span>{" "}
+
+                                            <span
+                                                style={{
+                                                    color: "#38BDF8",
+                                                }}
+                                            >
+                                                Play.
+                                            </span>
+
+                                        </h3>
+
+                                    </div>
+
+
+                                    <div className="max-w-sm">
+
+                                        <p className="text-sm leading-relaxed text-white/40 md:text-base">
+                                            Whether I'm solving a programming problem,
+                                            playing a game of chess, watching a cricket
+                                            match, or experimenting in the kitchen, I enjoy
+                                            learning, experimenting, and improving.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </FadeIn>
+
+
+                    {/* ========================================= */}
+                    {/* FINAL PERSONALITY STRIP */}
+                    {/* ========================================= */}
+
+                    <FadeIn delay={0.5}>
+
+                        <div className="mt-14 flex flex-col gap-5 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+
+                            <span className="text-xs uppercase tracking-[0.2em] text-white/20">
+                                Outside the IDE
+                            </span>
+
+                            <div className="flex flex-wrap items-center gap-4">
+
+                                <span
+                                    className="text-xs font-medium uppercase tracking-wider"
+                                    style={{ color: "#A855F7" }}
+                                >
+                                    Cricket
+                                </span>
+
+                                <span className="text-white/15">
+                                    •
+                                </span>
+
+                                <span
+                                    className="text-xs font-medium uppercase tracking-wider"
+                                    style={{ color: "#38BDF8" }}
+                                >
+                                    Chess
+                                </span>
+
+                                <span className="text-white/15">
+                                    •
+                                </span>
+
+                                <span
+                                    className="text-xs font-medium uppercase tracking-wider"
+                                    style={{ color: "#B6FF00" }}
+                                >
+                                    Cooking
                                 </span>
 
                             </div>
 
                         </div>
+
+                    </FadeIn>
+
+                </div>
+            </section>
+            {/* ========================================= */}
+            {/* ABOUT PAGE FOOTER */}
+            {/* ========================================= */}
+
+            <footer
+                className="relative overflow-hidden border-t border-white/10 px-5 pb-8 pt-24 sm:px-8 sm:pt-28 md:px-10 md:pt-36"
+                style={{ backgroundColor: "#080808" }}
+            >
+                {/* ========================================= */}
+                {/* AMBIENT NEON GLOWS */}
+                {/* ========================================= */}
+
+                <div
+                    className="pointer-events-none absolute -left-52 top-20 h-[500px] w-[500px] rounded-full opacity-[0.07] blur-[150px]"
+                    style={{ backgroundColor: "#A855F7" }}
+                />
+
+                <div
+                    className="pointer-events-none absolute -right-52 top-40 h-[500px] w-[500px] rounded-full opacity-[0.06] blur-[150px]"
+                    style={{ backgroundColor: "#38BDF8" }}
+                />
+
+                <div
+                    className="pointer-events-none absolute bottom-[-300px] left-1/2 h-[600px] w-[600px] -translate-x-1/2 rounded-full opacity-[0.05] blur-[160px]"
+                    style={{ backgroundColor: "#B6FF00" }}
+                />
+
+                {/* ========================================= */}
+                {/* BACKGROUND GRID */}
+                {/* ========================================= */}
+
+                <div
+                    className="pointer-events-none absolute inset-0 opacity-[0.025]"
+                    style={{
+                        backgroundImage: `
+        linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)
+      `,
+                        backgroundSize: "90px 90px",
+                    }}
+                />
+
+                <div className="relative mx-auto max-w-7xl">
+
+                    {/* ========================================= */}
+                    {/* FINAL STATEMENT */}
+                    {/* ========================================= */}
+
+                    <FadeIn>
+
+                        <div className="relative">
+
+                            <p
+                                className="text-xs font-medium uppercase tracking-[0.25em]"
+                                style={{ color: "#A855F7" }}
+                            >
+                                End of the page — not the journey
+                            </p>
+
+
+                            <h2
+                                className="mt-8 max-w-6xl font-black uppercase leading-[0.8]"
+                                style={{
+                                    fontSize: "clamp(4rem, 11vw, 11rem)",
+                                }}
+                            >
+
+                                <span className="text-white">
+                                    Just
+                                </span>{" "}
+
+                                <span
+                                    style={{
+                                        color: "#A855F7",
+                                        textShadow:
+                                            "0 0 45px rgba(168,85,247,0.22)",
+                                    }}
+                                >
+                                    The
+                                </span>
+
+                                <br />
+
+                                <span
+                                    style={{
+                                        color: "#38BDF8",
+                                        textShadow:
+                                            "0 0 45px rgba(56,189,248,0.2)",
+                                    }}
+                                >
+                                    Beginning.
+                                </span>
+
+                            </h2>
+
+                        </div>
+
                     </FadeIn>
 
 
                     {/* ========================================= */}
-                    {/* BOTTOM STATEMENT */}
+                    {/* CLOSING MESSAGE */}
+                    {/* ========================================= */}
+
+                    <FadeIn delay={0.15}>
+
+                        <div className="mt-12 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+
+                            <p className="max-w-2xl text-base leading-relaxed text-white/40 md:text-lg">
+                                I'm still learning, still building, and still figuring out
+                                how far I can take this journey. But every project,
+                                every problem solved, and every new concept learned
+                                moves me one step forward.
+                            </p>
+
+                            <div className="flex items-center gap-3">
+
+                                <span className="text-xs uppercase tracking-[0.2em] text-white/20">
+                                    Keep building
+                                </span>
+
+                                <span
+                                    className="h-2 w-2 rounded-full"
+                                    style={{
+                                        backgroundColor: "#B6FF00",
+                                        boxShadow:
+                                            "0 0 14px rgba(182,255,0,0.8)",
+                                    }}
+                                />
+
+                            </div>
+
+                        </div>
+
+                    </FadeIn>
+
+
+                    {/* ========================================= */}
+                    {/* LARGE NAME */}
+                    {/* ========================================= */}
+
+                    <FadeIn delay={0.25}>
+
+                        <div className="mt-24 border-y border-white/10 py-8 md:mt-32 md:py-10">
+
+                            <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+
+                                <h3
+                                    className="font-black uppercase leading-none"
+                                    style={{
+                                        fontSize: "clamp(2.5rem, 6vw, 6rem)",
+                                    }}
+                                >
+                                    <span className="text-white">
+                                        Prem
+                                    </span>{" "}
+
+                                    <span
+                                        style={{
+                                            color: "#A855F7",
+                                        }}
+                                    >
+                                        Nandurkar
+                                    </span>
+                                </h3>
+
+
+                                <span className="text-xs uppercase tracking-[0.2em] text-white/20">
+                                    Java • Backend • Builder
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </FadeIn>
+
+
+                    {/* ========================================= */}
+                    {/* FOOTER NAVIGATION */}
+                    {/* ========================================= */}
+
+                    <FadeIn delay={0.35}>
+
+                        <div className="grid gap-12 py-14 sm:grid-cols-2 md:grid-cols-4 md:py-16">
+
+                            {/* About */}
+
+                            <div>
+
+                                <p
+                                    className="text-xs uppercase tracking-[0.2em]"
+                                    style={{ color: "#A855F7" }}
+                                >
+                                    Explore
+                                </p>
+
+                                <div className="mt-6 flex flex-col gap-4">
+
+                                    <a
+                                        href="/"
+                                        className="w-fit text-sm text-white/45 transition-colors duration-300 hover:text-white"
+                                    >
+                                        Home
+                                    </a>
+
+                                    <a
+                                        href="/about"
+                                        className="w-fit text-sm text-white/45 transition-colors duration-300 hover:text-white"
+                                    >
+                                        About
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+
+                            {/* Social */}
+
+                            <div>
+
+                                <p
+                                    className="text-xs uppercase tracking-[0.2em]"
+                                    style={{ color: "#38BDF8" }}
+                                >
+                                    Connect
+                                </p>
+
+                                <div className="mt-6 flex flex-col gap-4">
+
+                                    <a
+                                        href="https://github.com/Nandurkar-Prem"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="group flex w-fit items-center gap-2 text-sm text-white/45 transition-colors duration-300 hover:text-white"
+                                    >
+                                        GitHub
+
+                                        <span className="text-white/20 transition-transform duration-300 group-hover:translate-x-1">
+                                            ↗
+                                        </span>
+                                    </a>
+
+                                    <a
+                                        href="https://www.linkedin.com/in/prem-nandurkar-0a09a0276/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="group flex w-fit items-center gap-2 text-sm text-white/45 transition-colors duration-300 hover:text-white"
+                                    >
+                                        LinkedIn
+
+                                        <span className="text-white/20 transition-transform duration-300 group-hover:translate-x-1">
+                                            ↗
+                                        </span>
+                                    </a>
+
+                                    <a
+                                        href="https://leetcode.com/u/Prem_Nandurkar/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="group flex w-fit items-center gap-2 text-sm text-white/45 transition-colors duration-300 hover:text-white"
+                                    >
+                                        LeetCode
+
+                                        <span className="text-white/20 transition-transform duration-300 group-hover:translate-x-1">
+                                            ↗
+                                        </span>
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+
+                            {/* Focus */}
+
+                            <div>
+
+                                <p
+                                    className="text-xs uppercase tracking-[0.2em]"
+                                    style={{ color: "#B6FF00" }}
+                                >
+                                    Currently
+                                </p>
+
+                                <div className="mt-6 flex flex-col gap-4">
+
+                                    <span className="text-sm text-white/45">
+                                        Java
+                                    </span>
+
+                                    <span className="text-sm text-white/45">
+                                        Spring Boot
+                                    </span>
+
+                                    <span className="text-sm text-white/45">
+                                        DSA
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            {/* Contact */}
+
+                            <div>
+
+                                <p
+                                    className="text-xs uppercase tracking-[0.2em]"
+                                    style={{ color: "#A855F7" }}
+                                >
+                                    Say Hello
+                                </p>
+
+                                <div className="mt-6">
+
+                                    <a
+                                        href="mailto:nandurkarperem1@gmail.com"
+                                        className="group block max-w-[220px] text-sm leading-relaxed text-white/45 transition-colors duration-300 hover:text-white"
+                                    >
+                                        nandurkarperem1@gmail.com
+
+                                        <span
+                                            className="mt-3 block h-px w-0 transition-all duration-500 group-hover:w-full"
+                                            style={{
+                                                background:
+                                                    "linear-gradient(to right, #A855F7, #38BDF8)",
+                                            }}
+                                        />
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </FadeIn>
+
+
+                    {/* ========================================= */}
+                    {/* FINAL FOOTER BAR */}
                     {/* ========================================= */}
 
                     <FadeIn delay={0.45}>
-                        <div className="mt-16 max-w-4xl md:mt-20">
 
-                            <p
-                                className="font-black uppercase leading-[0.9] text-white"
-                                style={{
-                                    fontSize: "clamp(2rem, 5vw, 5rem)",
-                                }}
-                            >
-                                Still{" "}
-                                <span
-                                    style={{
-                                        color: "#A855F7",
-                                    }}
-                                >
-                                    Learning.
-                                </span>
-                                <br />
-                                Still{" "}
-                                <span
-                                    style={{
-                                        color: "#38BDF8",
-                                    }}
-                                >
-                                    Building.
-                                </span>
-                            </p>
+                        <div className="border-t border-white/10 pt-6">
 
+                            <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+
+                                <p className="text-[10px] uppercase tracking-[0.2em] text-white/20">
+                                    © {new Date().getFullYear()} Prem Pramod Nandurkar
+                                </p>
+
+
+                                <div className="flex items-center gap-3">
+
+                                    <span className="text-[10px] uppercase tracking-[0.2em] text-white/20">
+                                        Built with
+                                    </span>
+
+                                    <span
+                                        className="text-[10px] font-medium uppercase tracking-[0.2em]"
+                                        style={{ color: "#38BDF8" }}
+                                    >
+                                        Code
+                                    </span>
+
+                                    <span className="text-white/15">
+                                        +
+                                    </span>
+
+                                    <span
+                                        className="text-[10px] font-medium uppercase tracking-[0.2em]"
+                                        style={{ color: "#A855F7" }}
+                                    >
+                                        Curiosity
+                                    </span>
+
+                                </div>
+
+
+                                <span
+                                    className="text-[10px] uppercase tracking-[0.2em]"
+                                    style={{ color: "#B6FF00" }}
+                                >
+                                    Keep moving →
+                                </span>
+                            </div>
                         </div>
                     </FadeIn>
 
 
-                    {/* Decorative Line */}
-                    <FadeIn delay={0.5}>
-                        <div className="mt-16 flex items-center gap-4 md:mt-20">
+                    {/* ========================================= */}
+                    {/* FINAL NEON ACCENT */}
+                    {/* ========================================= */}
+
+                    <FadeIn delay={0.55}>
+
+                        <div className="mt-12 flex items-center gap-4">
 
                             <div
                                 className="h-px flex-1"
@@ -2793,7 +4493,7 @@ function About() {
                                 style={{
                                     backgroundColor: "#B6FF00",
                                     boxShadow:
-                                        "0 0 15px rgba(182,255,0,0.6)",
+                                        "0 0 16px rgba(182,255,0,0.8)",
                                 }}
                             />
 
@@ -2806,519 +4506,11 @@ function About() {
                             />
 
                         </div>
+
                     </FadeIn>
 
                 </div>
-            </section>
-            {/* LET'S CONNECT */}
-            <section
-                className="relative min-h-screen overflow-hidden border-t border-white/10 px-5 py-20 sm:px-8 sm:py-24 md:px-10 md:py-32"
-                style={{ backgroundColor: "#0C0C0C" }}
-            >
-                {/* ========================================= */}
-                {/* BACKGROUND GRID */}
-                {/* ========================================= */}
-
-                <div
-                    className="pointer-events-none absolute inset-0 opacity-[0.035]"
-                    style={{
-                        backgroundImage: `
-        linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)
-      `,
-                        backgroundSize: "80px 80px",
-                    }}
-                />
-
-                {/* Purple Glow */}
-                <div
-                    className="pointer-events-none absolute -left-40 top-20 h-[500px] w-[500px] rounded-full opacity-[0.12] blur-[150px]"
-                    style={{ backgroundColor: "#A855F7" }}
-                />
-
-                {/* Blue Glow */}
-                <div
-                    className="pointer-events-none absolute -right-40 bottom-20 h-[500px] w-[500px] rounded-full opacity-[0.1] blur-[150px]"
-                    style={{ backgroundColor: "#38BDF8" }}
-                />
-
-                <div className="relative mx-auto flex min-h-[80vh] max-w-7xl flex-col justify-between">
-
-                    {/* ========================================= */}
-                    {/* SECTION LABEL */}
-                    {/* ========================================= */}
-
-                    <FadeIn>
-                        <div className="flex items-center justify-between">
-
-                            <p
-                                className="text-sm font-medium uppercase tracking-[0.2em]"
-                                style={{ color: "#A855F7" }}
-                            >
-                                11 — Let's Connect
-                            </p>
-
-                            <p className="hidden text-xs uppercase tracking-[0.2em] text-white/25 sm:block">
-                                End of About
-                            </p>
-
-                        </div>
-                    </FadeIn>
-
-
-                    {/* ========================================= */}
-                    {/* MAIN CONTENT */}
-                    {/* ========================================= */}
-
-                    <div className="mt-24">
-
-                        <FadeIn delay={0.1}>
-                            <p className="mb-8 text-xs uppercase tracking-[0.25em] text-white/35">
-                                Have an idea?
-                            </p>
-                        </FadeIn>
-
-
-                        {/* MAIN HEADING */}
-                        <FadeIn delay={0.15}>
-                            <h2
-                                className="font-black uppercase leading-[0.78]"
-                                style={{
-                                    fontSize: "clamp(4rem, 12vw, 12rem)",
-                                }}
-                            >
-                                <span className="text-white">
-                                    Let's
-                                </span>
-
-                                <br />
-
-                                <span
-                                    style={{
-                                        color: "#A855F7",
-                                        textShadow:
-                                            "0 0 40px rgba(168,85,247,0.25)",
-                                    }}
-                                >
-                                    Connect
-                                </span>
-
-                                <span style={{ color: "#38BDF8" }}>
-                                    .
-                                </span>
-                            </h2>
-                        </FadeIn>
-
-
-                        {/* DESCRIPTION */}
-                        <FadeIn delay={0.25}>
-                            <p className="mt-12 max-w-2xl text-base leading-relaxed text-white/55 md:text-xl">
-                                I'm always interested in learning, building, and connecting with
-                                people who are passionate about technology and creating meaningful
-                                things.
-                            </p>
-                        </FadeIn>
-
-
-                        {/* ========================================= */}
-                        {/* EMAIL CTA */}
-                        {/* ========================================= */}
-
-                        <FadeIn delay={0.3}>
-                            <div className="mt-12">
-
-                                <a
-                                    href="mailto:nandurkarperem1@gmail.com"
-                                    className="group inline-flex items-center gap-5 border px-6 py-4 transition-all duration-500 hover:-translate-y-1 sm:px-8 sm:py-5"
-                                    style={{
-                                        borderColor: "rgba(168,85,247,0.5)",
-                                        boxShadow:
-                                            "0 0 0 rgba(168,85,247,0)",
-                                    }}
-                                    onMouseEnter={(e) => {
-                                        e.currentTarget.style.boxShadow =
-                                            "0 0 35px rgba(168,85,247,0.12)";
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        e.currentTarget.style.boxShadow =
-                                            "0 0 0 rgba(168,85,247,0)";
-                                    }}
-                                >
-                                    {/* IMPORTANT: no uppercase class here */}
-                                    <span
-                                        className="text-sm tracking-[0.05em] transition-colors duration-300 group-hover:text-white sm:text-base"
-                                        style={{
-                                            color: "#A855F7",
-                                        }}
-                                    >
-                                        nandurkarperem1@gmail.com
-                                    </span>
-
-                                    <span
-                                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition-all duration-500 group-hover:translate-x-1 group-hover:bg-[#A855F7] group-hover:text-black"
-                                        style={{
-                                            borderColor: "rgba(168,85,247,0.5)",
-                                            color: "#A855F7",
-                                        }}
-                                    >
-                                        →
-                                    </span>
-
-                                </a>
-
-                            </div>
-                        </FadeIn>
-
-                    </div>
-
-
-                    {/* ========================================= */}
-                    {/* CONNECT WITH ME */}
-                    {/* ========================================= */}
-
-                    <FadeIn delay={0.4}>
-                        <div className="mt-24">
-
-                            <div className="mb-8 flex items-end justify-between">
-
-                                <div>
-                                    <p className="text-xs uppercase tracking-[0.2em] text-white/30">
-                                        Find me online
-                                    </p>
-
-                                    <p className="mt-2 text-sm text-white/20">
-                                        Let's connect beyond the portfolio.
-                                    </p>
-                                </div>
-
-                                <span
-                                    className="hidden text-xs uppercase tracking-[0.2em] sm:block"
-                                    style={{ color: "#38BDF8" }}
-                                >
-                                    03 Platforms
-                                </span>
-
-                            </div>
-
-
-                            {/* ===================================== */}
-                            {/* SOCIAL CARDS */}
-                            {/* ===================================== */}
-
-                            <div className="grid gap-4 md:grid-cols-3">
-
-
-                                {/* ================================= */}
-                                {/* GITHUB */}
-                                {/* ================================= */}
-
-                                <a
-                                    href="https://github.com/Nandurkar-Prem"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="group relative min-h-[230px] overflow-hidden border border-white/10 p-6 transition-all duration-500 hover:-translate-y-2 hover:border-[#A855F7]/60 sm:p-8"
-                                >
-
-                                    {/* Hover Glow */}
-                                    <div
-                                        className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full opacity-0 blur-[90px] transition-opacity duration-500 group-hover:opacity-20"
-                                        style={{ backgroundColor: "#A855F7" }}
-                                    />
-
-                                    {/* Number */}
-                                    <div className="relative flex items-start justify-between">
-
-                                        <span
-                                            className="font-black text-5xl leading-none"
-                                            style={{
-                                                color: "#A855F7",
-                                                textShadow:
-                                                    "0 0 20px rgba(168,85,247,0.2)",
-                                            }}
-                                        >
-                                            01
-                                        </span>
-
-                                        <span
-                                            className="flex h-11 w-11 items-center justify-center rounded-full border text-lg transition-all duration-500 group-hover:rotate-45 group-hover:bg-[#A855F7] group-hover:text-black"
-                                            style={{
-                                                borderColor: "rgba(168,85,247,0.4)",
-                                                color: "#A855F7",
-                                            }}
-                                        >
-                                            ↗
-                                        </span>
-
-                                    </div>
-
-
-                                    {/* Content */}
-                                    <div className="relative mt-16">
-
-                                        <p className="text-[10px] uppercase tracking-[0.2em] text-white/30">
-                                            Code & Projects
-                                        </p>
-
-                                        <h3
-                                            className="mt-3 text-2xl font-medium uppercase tracking-wide transition-all duration-300 group-hover:translate-x-1"
-                                            style={{
-                                                color: "#A855F7",
-                                            }}
-                                        >
-                                            GitHub
-                                        </h3>
-
-                                        <p className="mt-2 text-xs text-white/35">
-                                            Explore my repositories →
-                                        </p>
-
-                                    </div>
-
-                                    {/* Bottom Accent */}
-                                    <div
-                                        className="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-500 group-hover:w-full"
-                                        style={{ backgroundColor: "#A855F7" }}
-                                    />
-
-                                </a>
-
-
-                                {/* ================================= */}
-                                {/* LINKEDIN */}
-                                {/* ================================= */}
-
-                                <a
-                                    href="https://www.linkedin.com/in/prem-nandurkar-0a09a0276/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="group relative min-h-[230px] overflow-hidden border border-white/10 p-6 transition-all duration-500 hover:-translate-y-2 hover:border-[#38BDF8]/60 sm:p-8"
-                                >
-
-                                    {/* Hover Glow */}
-                                    <div
-                                        className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full opacity-0 blur-[90px] transition-opacity duration-500 group-hover:opacity-20"
-                                        style={{ backgroundColor: "#38BDF8" }}
-                                    />
-
-                                    {/* Number */}
-                                    <div className="relative flex items-start justify-between">
-
-                                        <span
-                                            className="font-black text-5xl leading-none"
-                                            style={{
-                                                color: "#38BDF8",
-                                                textShadow:
-                                                    "0 0 20px rgba(56,189,248,0.2)",
-                                            }}
-                                        >
-                                            02
-                                        </span>
-
-                                        <span
-                                            className="flex h-11 w-11 items-center justify-center rounded-full border text-lg transition-all duration-500 group-hover:rotate-45 group-hover:bg-[#38BDF8] group-hover:text-black"
-                                            style={{
-                                                borderColor: "rgba(56,189,248,0.4)",
-                                                color: "#38BDF8",
-                                            }}
-                                        >
-                                            ↗
-                                        </span>
-
-                                    </div>
-
-
-                                    {/* Content */}
-                                    <div className="relative mt-16">
-
-                                        <p className="text-[10px] uppercase tracking-[0.2em] text-white/30">
-                                            Professional Network
-                                        </p>
-
-                                        <h3
-                                            className="mt-3 text-2xl font-medium uppercase tracking-wide transition-all duration-300 group-hover:translate-x-1"
-                                            style={{
-                                                color: "#38BDF8",
-                                            }}
-                                        >
-                                            LinkedIn
-                                        </h3>
-
-                                        <p className="mt-2 text-xs text-white/35">
-                                            Connect professionally →
-                                        </p>
-
-                                    </div>
-
-                                    {/* Bottom Accent */}
-                                    <div
-                                        className="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-500 group-hover:w-full"
-                                        style={{ backgroundColor: "#38BDF8" }}
-                                    />
-
-                                </a>
-
-
-                                {/* ================================= */}
-                                {/* LEETCODE */}
-                                {/* ================================= */}
-
-                                <a
-                                    href="https://leetcode.com/u/Prem_Nandurkar/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="group relative min-h-[230px] overflow-hidden border border-white/10 p-6 transition-all duration-500 hover:-translate-y-2 hover:border-[#B6FF00]/60 sm:p-8"
-                                >
-
-                                    {/* Hover Glow */}
-                                    <div
-                                        className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full opacity-0 blur-[90px] transition-opacity duration-500 group-hover:opacity-20"
-                                        style={{ backgroundColor: "#B6FF00" }}
-                                    />
-
-                                    {/* Number */}
-                                    <div className="relative flex items-start justify-between">
-
-                                        <span
-                                            className="font-black text-5xl leading-none"
-                                            style={{
-                                                color: "#B6FF00",
-                                                textShadow:
-                                                    "0 0 20px rgba(182,255,0,0.2)",
-                                            }}
-                                        >
-                                            03
-                                        </span>
-
-                                        <span
-                                            className="flex h-11 w-11 items-center justify-center rounded-full border text-lg transition-all duration-500 group-hover:rotate-45 group-hover:bg-[#B6FF00] group-hover:text-black"
-                                            style={{
-                                                borderColor: "rgba(182,255,0,0.4)",
-                                                color: "#B6FF00",
-                                            }}
-                                        >
-                                            ↗
-                                        </span>
-
-                                    </div>
-
-
-                                    {/* Content */}
-                                    <div className="relative mt-16">
-
-                                        <p className="text-[10px] uppercase tracking-[0.2em] text-white/30">
-                                            Problem Solving
-                                        </p>
-
-                                        <h3
-                                            className="mt-3 text-2xl font-medium uppercase tracking-wide transition-all duration-300 group-hover:translate-x-1"
-                                            style={{
-                                                color: "#B6FF00",
-                                            }}
-                                        >
-                                            LeetCode
-                                        </h3>
-
-                                        <p className="mt-2 text-xs text-white/35">
-                                            See my coding progress →
-                                        </p>
-
-                                    </div>
-
-                                    {/* Bottom Accent */}
-                                    <div
-                                        className="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-500 group-hover:w-full"
-                                        style={{ backgroundColor: "#B6FF00" }}
-                                    />
-
-                                </a>
-
-                            </div>
-
-                        </div>
-                    </FadeIn>
-
-
-                    {/* ========================================= */}
-                    {/* FINAL STATEMENT */}
-                    {/* ========================================= */}
-
-                    <FadeIn delay={0.5}>
-                        <div className="mt-24 flex flex-col gap-8 border-t border-white/10 pt-8 sm:flex-row sm:items-end sm:justify-between">
-
-                            <div>
-
-                                <p className="text-xs uppercase tracking-[0.2em] text-white/25">
-                                    Prem Pramod Nandurkar
-                                </p>
-
-                                <p className="mt-3 text-sm text-white/35">
-                                    Java • Spring Boot • Backend Development
-                                </p>
-
-                            </div>
-
-
-                            {/* Back To Top */}
-                            <a
-                                href="#top"
-                                className="group flex items-center gap-4"
-                            >
-                                <span className="text-xs uppercase tracking-[0.2em] text-white/30 transition-colors duration-300 group-hover:text-white">
-                                    Back to top
-                                </span>
-
-                                <span
-                                    className="flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-300 group-hover:-translate-y-1"
-                                    style={{
-                                        borderColor: "rgba(56,189,248,0.4)",
-                                        color: "#38BDF8",
-                                    }}
-                                >
-                                    ↑
-                                </span>
-                            </a>
-
-                        </div>
-                    </FadeIn>
-
-
-                    {/* ========================================= */}
-                    {/* FINAL DECORATIVE LINE */}
-                    {/* ========================================= */}
-
-                    <FadeIn delay={0.55}>
-                        <div className="mt-10 flex items-center gap-4">
-
-                            <div
-                                className="h-px flex-1"
-                                style={{
-                                    background:
-                                        "linear-gradient(to right, rgba(168,85,247,0.5), rgba(56,189,248,0.15))",
-                                }}
-                            />
-
-                            <div
-                                className="h-2 w-2 rounded-full"
-                                style={{
-                                    backgroundColor: "#A855F7",
-                                    boxShadow:
-                                        "0 0 15px rgba(168,85,247,0.6)",
-                                }}
-                            />
-
-                            <div
-                                className="h-px flex-1"
-                                style={{
-                                    background:
-                                        "linear-gradient(to left, rgba(168,85,247,0.5), rgba(56,189,248,0.15))",
-                                }}
-                            />
-
-                        </div>
-                    </FadeIn>
-
-                </div>
-            </section>
+            </footer>
         </main>
     );
 }

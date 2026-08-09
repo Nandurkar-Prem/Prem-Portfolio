@@ -176,7 +176,7 @@ function Skills() {
                                     <h3 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                                         Backend
                                         <span className="text-blue-400">
-                                            {" "}Engineering
+                                            {" "}Stack
                                         </span>
                                     </h3>
 
@@ -550,9 +550,9 @@ function Skills() {
                                 {/* Description */}
                                 <div className="relative z-10 mt-6">
                                     <h3 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                                        Data
+                                        DataBase
                                         <span className="text-lime-400">
-                                            {" "}Engineering
+                                            {" "}Stack
                                         </span>
                                     </h3>
 
