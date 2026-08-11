@@ -161,6 +161,7 @@
   -webkit-text-fill-color: transparent;
 }
 
+
 @keyframes dataFlow {
   from {
     transform: translateX(0);
@@ -170,3 +171,12 @@
     transform: translateX(650px);
   }
 }
+
+/* span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+span:hover{
+  transform: scale(2);
+} */
