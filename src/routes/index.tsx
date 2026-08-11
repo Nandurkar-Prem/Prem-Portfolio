@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HeroSection } from "@/components/portfolio/HeroSection";
-import { MarqueeSection } from "@/components/portfolio/MarqueeSection";
 import { AboutSection } from "@/components/portfolio/AboutSection";
 import { ServicesSection } from "@/components/portfolio/SkillsSection";
 import { ProjectsSection } from "@/components/portfolio/ProjectsSection";
+import { ContactSection } from "@/components/portfolio/ContactSection";
+import { Footer } from "@/components/portfolio/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,10 +32,11 @@ function Index() {
   return (
     <main style={{ backgroundColor: "#0C0C0C", overflowX: "clip" }}>
       <HeroSection />
-      <MarqueeSection />
       <AboutSection />
       <ServicesSection />
       <ProjectsSection />
+      <ContactSection />
+      <Footer />
     </main>
   );
 }
