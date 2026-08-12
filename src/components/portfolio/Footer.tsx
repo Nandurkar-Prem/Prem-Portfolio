@@ -207,9 +207,7 @@ export function Footer() {
 
               <div className="mt-8 flex items-center gap-2">
                 <span className="h-[2px] w-12 rounded-full bg-[#D7E2EA]/50" />
-
                 <span className="h-[2px] w-5 rounded-full bg-[#D7E2EA]/25" />
-
                 <span className="h-[2px] w-2 rounded-full bg-[#D7E2EA]/15" />
               </div>
             </div>
@@ -323,8 +321,6 @@ export function Footer() {
                     "
                   >
                     <div className="flex items-center gap-4">
-                      {/* Number */}
-
                       <span
                         className="
                           w-5
@@ -416,8 +412,6 @@ export function Footer() {
               md:py-14
             "
           >
-            {/* Subtle glow */}
-
             <div
               className="
                 pointer-events-none
@@ -449,10 +443,6 @@ export function Footer() {
                 hover:text-[#D7E2EA]/[0.16]
               "
               style={{
-                /*
-                 * Kept below the width limit so the complete
-                 * name remains visible on desktop.
-                 */
                 fontSize: "clamp(2.6rem, 9vw, 8.5rem)",
               }}
             >
@@ -484,16 +474,34 @@ export function Footer() {
               sm:text-xs
             "
           >
-            {/* Copyright */}
+            {/* Creator + Copyright */}
 
-            <div className="flex flex-wrap items-center gap-3">
-              <span>© {currentYear} Prem Nandurkar</span>
-
-              <span className="text-[#D7E2EA]/15">•</span>
-
-              <span className="text-[#D7E2EA]/40">
-                Built with curiosity & code
+            <div className="flex flex-col gap-2">
+              <span
+                className="
+                  text-[0.55rem]
+                  font-medium
+                  uppercase
+                  tracking-[0.2em]
+                  text-[#D7E2EA]/45
+                  sm:text-xs
+                "
+              >
+                Designed & developed by{" "}
+                <span className="text-[#D7E2EA]/75">
+                  Prem Nandurkar
+                </span>
               </span>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <span>© {currentYear} Prem Nandurkar</span>
+
+                <span className="text-[#D7E2EA]/15">•</span>
+
+                <span className="text-[#D7E2EA]/35">
+                  Built with curiosity & code
+                </span>
+              </div>
             </div>
 
             {/* Closing statement */}
