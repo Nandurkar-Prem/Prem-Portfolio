@@ -1130,7 +1130,7 @@ function Projects() {
                         ]}
                         image={springBootEcommerceScreenshot}
                         accent="cyan"
-                        githubUrl="https://github.com/Nandurkar-Prem/JWT-Authentication"
+                        githubUrl="#"
                     />
 
 
@@ -1153,7 +1153,7 @@ function Projects() {
                         ]}
                         image={springSecurityScreenshot}
                         accent="green"
-                        githubUrl="#"
+                        githubUrl="https://github.com/Nandurkar-Prem/JWT-Authentication"
                     />
 
 
