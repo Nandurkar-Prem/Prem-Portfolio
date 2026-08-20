@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -133,6 +134,7 @@
 }
 
 @layer base {
+
   *,
   *::before,
   *::after {
@@ -146,7 +148,7 @@
   body,
   #root {
     background-color: #0c0c0c;
-    font-family: "Kanit", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
   }
 
   body {
