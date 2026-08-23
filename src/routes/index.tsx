@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HeroSection } from "@/components/portfolio/HeroSection";
 import { AboutSection } from "@/components/portfolio/AboutSection";
-import { ServicesSection } from "@/components/portfolio/SkillsSection";
+import { SkillsSection } from "@/components/portfolio/SkillsSection";
 import { ProjectsSection } from "@/components/portfolio/ProjectsSection";
 import { ContactSection } from "@/components/portfolio/ContactSection";
 import { Footer } from "@/components/portfolio/Footer";
@@ -54,7 +54,7 @@ function Index() {
         speed={32}
         reverse
       />
-      <ServicesSection />
+      <SkillsSection />
       <TransitionMarquee
         items={[
           "JAVA",
