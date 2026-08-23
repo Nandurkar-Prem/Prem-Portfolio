@@ -5,7 +5,7 @@ import { ServicesSection } from "@/components/portfolio/SkillsSection";
 import { ProjectsSection } from "@/components/portfolio/ProjectsSection";
 import { ContactSection } from "@/components/portfolio/ContactSection";
 import { Footer } from "@/components/portfolio/Footer";
-import { HeroAboutTransition } from "@/components/portfolio/HeroAboutTransition";
+import { TransitionMarquee } from "@/components/portfolio/TransitionMarquee";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,10 +33,53 @@ function Index() {
   return (
     <main style={{ backgroundColor: "#0C0C0C", overflowX: "clip" }}>
       <HeroSection />
-      <HeroAboutTransition />
+      <TransitionMarquee
+        items={[
+          "CURIOUS",
+          "BUILDING",
+          "LEARNING",
+          "GROWING",
+          "EXPLORING",
+        ]}
+      />
       <AboutSection />
+      <TransitionMarquee
+        items={[
+          "FUNDAMENTALS",
+          "PRACTICE",
+          "LEARNING",
+          "EVOLUTION",
+          "DISCIPLINE",
+        ]}
+        speed={32}
+        reverse
+      />
       <ServicesSection />
+      <TransitionMarquee
+        items={[
+          "JAVA",
+          "SPRING BOOT",
+          "REACT",
+          "DOCKER",
+          "DEVELOPMENT",
+          "BACKEND",
+          "APIs",
+          "DATABASES",
+        ]}
+        speed={26}
+      />
       <ProjectsSection />
+      <TransitionMarquee
+        items={[
+          "BUILDING",
+          "SOLVING",
+          "SHIPPING",
+          "CREATING",
+          "COLLABORATING",
+        ]}
+        speed={30}
+        reverse
+      />
       <ContactSection />
       <Footer />
     </main>
