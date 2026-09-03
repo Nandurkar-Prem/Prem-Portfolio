@@ -1,1862 +1,672 @@
-import type {
-  ElementType,
-  MouseEvent,
-} from "react";
+"use client";
 
+import { useState } from "react";
 import {
-  motion,
-  useMotionValue,
-  useSpring,
-  useTransform,
-} from "framer-motion";
-
-import {
-  ArrowUpRight,
-  Code2,
-  Database,
-  Layers3,
-  Server,
-  Sparkles,
-  Wrench,
-} from "lucide-react";
-
-import {
-  FaCss3Alt,
-  FaDocker,
-  FaGitAlt,
-  FaGithub,
-  FaJava,
-} from "react-icons/fa";
-
-import {
-  SiFigma,
-  SiHtml5,
-  SiIntellijidea,
-  SiJavascript,
-  SiMysql,
-  SiPostman,
-  SiReact,
+  SiOpenjdk,
   SiSpringboot,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
   SiTailwindcss,
+  SiHtml5,
+  SiCss,
+  SiNodedotjs,
+  SiExpress,
+  SiMysql,
+  SiMongodb,
+  SiGit,
+  SiGithub,
+  SiDocker,
+  SiKubernetes,
+  SiFirebase,
+  SiPostman,
+  SiIntellijidea,
 } from "react-icons/si";
-
 import { VscVscode } from "react-icons/vsc";
+import { FiTerminal, FiArrowUpRight, FiExternalLink } from "react-icons/fi";
+import type { IconType } from "react-icons";
 
-/* =========================================================
-   TYPES
-========================================================= */
+type Tab = "certifications" | "stack" | "projects";
 
-type SkillItem = {
+interface TechItem {
   name: string;
-  icon: ElementType;
-};
+  icon: IconType;
+  color: string;
+  category: string;
+}
 
-type SkillGroup = {
-  number: string;
+interface Certification {
+  title: string;
+  issuer: string;
+  year: string;
+  description: string;
+}
+
+interface Project {
   title: string;
   description: string;
-  icon: ElementType;
-  accent: "green" | "silver" | "teal";
-  skills: SkillItem[];
-};
+  technologies: string[];
+  type: string;
+}
 
-type Tool = {
-  name: string;
-  icon: ElementType;
-  accent:
-    | "blue"
-    | "orange"
-    | "purple"
-    | "red"
-    | "pink"
-    | "white";
-};
+/* -------------------------------------------------------------------------- */
+/*                                TECH STACK                                  */
+/* -------------------------------------------------------------------------- */
 
-/* =========================================================
-   DATA
-========================================================= */
-
-const SKILL_GROUPS: SkillGroup[] = [
+const techStack: TechItem[] = [
   {
-    number: "01",
-    title: "Backend",
-    description:
-      "Building reliable server-side systems, APIs and application logic.",
-    icon: Server,
-    accent: "green",
-
-    skills: [
-      {
-        name: "Java",
-        icon: FaJava,
-      },
-      {
-        name: "Spring Boot",
-        icon: SiSpringboot,
-      },
-      {
-        name: "REST APIs",
-        icon: Code2,
-      },
-      {
-        name: "Spring Security",
-        icon: Layers3,
-      },
-      {
-        name: "JPA / Hibernate",
-        icon: Database,
-      },
-    ],
+    name: "Java",
+    icon: SiOpenjdk,
+    color: "#E76F00",
+    category: "Backend",
   },
-
   {
-    number: "02",
-    title: "Frontend",
-    description:
-      "Creating responsive interfaces with clean interactions and modern UI.",
-    icon: Code2,
-    accent: "silver",
-
-    skills: [
-      {
-        name: "React",
-        icon: SiReact,
-      },
-      {
-        name: "JavaScript",
-        icon: SiJavascript,
-      },
-      {
-        name: "HTML5",
-        icon: SiHtml5,
-      },
-      {
-        name: "CSS3",
-        icon: FaCss3Alt,
-      },
-      {
-        name: "Tailwind CSS",
-        icon: SiTailwindcss,
-      },
-    ],
+    name: "Spring Boot",
+    icon: SiSpringboot,
+    color: "#6DB33F",
+    category: "Backend",
   },
-
   {
-    number: "03",
-    title: "Database",
-    description:
-      "Designing structured data systems with reliability and performance in mind.",
-    icon: Database,
-    accent: "teal",
-
-    skills: [
-      {
-        name: "MySQL",
-        icon: SiMysql,
-      },
-      {
-        name: "JPA / Hibernate",
-        icon: Database,
-      },
-      {
-        name: "Database Design",
-        icon: Layers3,
-      },
-      {
-        name: "Query Optimization",
-        icon: Code2,
-      },
-      {
-        name: "Data Integrity",
-        icon: Database,
-      },
-    ],
+    name: "JavaScript",
+    icon: SiJavascript,
+    color: "#F7DF1E",
+    category: "Frontend",
   },
-];
-
-/* =========================================================
-   DEVELOPER TOOLS
-========================================================= */
-
-const TOOLS: Tool[] = [
+  {
+    name: "TypeScript",
+    icon: SiTypescript,
+    color: "#3178C6",
+    category: "Frontend",
+  },
+  {
+    name: "React",
+    icon: SiReact,
+    color: "#61DAFB",
+    category: "Frontend",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: SiTailwindcss,
+    color: "#06B6D4",
+    category: "Frontend",
+  },
+  {
+    name: "HTML5",
+    icon: SiHtml5,
+    color: "#E34F26",
+    category: "Frontend",
+  },
+  {
+    name: "CSS3",
+    icon: SiCss,
+    color: "#1572B6",
+    category: "Frontend",
+  },
+  {
+    name: "Node.js",
+    icon: SiNodedotjs,
+    color: "#5FA04E",
+    category: "Runtime",
+  },
+  {
+    name: "Express.js",
+    icon: SiExpress,
+    color: "#F5F5F5",
+    category: "Backend",
+  },
+  {
+    name: "MySQL",
+    icon: SiMysql,
+    color: "#4479A1",
+    category: "Database",
+  },
+  {
+    name: "MongoDB",
+    icon: SiMongodb,
+    color: "#47A248",
+    category: "Database",
+  },
   {
     name: "Git",
-    icon: FaGitAlt,
-    accent: "orange",
+    icon: SiGit,
+    color: "#F05032",
+    category: "Version Control",
   },
   {
     name: "GitHub",
-    icon: FaGithub,
-    accent: "white",
+    icon: SiGithub,
+    color: "#F5F5F5",
+    category: "Version Control",
+  },
+  {
+    name: "Docker",
+    icon: SiDocker,
+    color: "#2496ED",
+    category: "DevOps",
+  },
+  {
+    name: "Kubernetes",
+    icon: SiKubernetes,
+    color: "#326CE5",
+    category: "DevOps",
+  },
+  {
+    name: "Firebase",
+    icon: SiFirebase,
+    color: "#FFCA28",
+    category: "Backend",
   },
   {
     name: "VS Code",
     icon: VscVscode,
-    accent: "blue",
+    color: "#007ACC",
+    category: "Developer Tool",
   },
   {
     name: "Postman",
     icon: SiPostman,
-    accent: "orange",
-  },
-  {
-    name: "Docker",
-    icon: FaDocker,
-    accent: "blue",
+    color: "#FF6C37",
+    category: "Developer Tool",
   },
   {
     name: "IntelliJ IDEA",
     icon: SiIntellijidea,
-    accent: "purple",
+    color: "#FE315D",
+    category: "Developer Tool",
   },
-
-  // Maven uses an existing icon instead of SiMaven
   {
-    name: "Maven",
-    icon: Layers3,
-    accent: "red",
-  },
-
-  {
-    name: "Figma",
-    icon: SiFigma,
-    accent: "pink",
+    name: "Terminal",
+    icon: FiTerminal,
+    color: "#5FBF8F",
+    category: "Developer Tool",
   },
 ];
 
-/* =========================================================
-   SKILL GROUP VISUAL CONFIG
-========================================================= */
+/* -------------------------------------------------------------------------- */
+/*                              CERTIFICATIONS                                */
+/* -------------------------------------------------------------------------- */
 
-const skillAccentStyles = {
-  green: {
-    border:
-      "border-emerald-300/[0.14] hover:border-emerald-300/[0.38]",
+/*
+ * Replace these placeholder entries with your actual certifications.
+ */
 
-    glow:
-      "group-hover:shadow-[0_0_70px_rgba(16,185,129,0.12)]",
-
-    icon:
-      "border-emerald-300/[0.14] bg-emerald-300/[0.045] text-emerald-200/75",
-
-    hoverIcon:
-      "group-hover:text-emerald-100",
-
-    line:
-      "from-transparent via-emerald-300/75 to-transparent",
-
-    dot:
-      "bg-emerald-300",
-
-    ambient:
-      "bg-emerald-300/[0.07]",
+const certifications: Certification[] = [
+  {
+    title: "Java Development",
+    issuer: "Certification / Course",
+    year: "2026",
+    description:
+      "Focused on Java programming, object-oriented concepts and backend development fundamentals.",
   },
-
-  silver: {
-    border:
-      "border-white/[0.11] hover:border-white/[0.28]",
-
-    glow:
-      "group-hover:shadow-[0_0_70px_rgba(220,230,235,0.07)]",
-
-    icon:
-      "border-white/[0.11] bg-white/[0.035] text-white/65",
-
-    hoverIcon:
-      "group-hover:text-white",
-
-    line:
-      "from-transparent via-white/65 to-transparent",
-
-    dot:
-      "bg-white",
-
-    ambient:
-      "bg-white/[0.045]",
+  {
+    title: "Backend Development",
+    issuer: "Certification / Course",
+    year: "2026",
+    description:
+      "Focused on building backend systems, APIs and understanding modern application architecture.",
   },
-
-  teal: {
-    border:
-      "border-teal-300/[0.13] hover:border-teal-300/[0.36]",
-
-    glow:
-      "group-hover:shadow-[0_0_70px_rgba(45,212,191,0.10)]",
-
-    icon:
-      "border-teal-300/[0.13] bg-teal-300/[0.045] text-teal-200/70",
-
-    hoverIcon:
-      "group-hover:text-teal-100",
-
-    line:
-      "from-transparent via-teal-300/70 to-transparent",
-
-    dot:
-      "bg-teal-300",
-
-    ambient:
-      "bg-teal-300/[0.06]",
+  {
+    title: "Database & SQL",
+    issuer: "Certification / Course",
+    year: "2026",
+    description:
+      "Focused on relational databases, SQL queries, data modelling and database fundamentals.",
   },
-};
+];
 
-/* =========================================================
-   TOOL BRAND COLORS
-========================================================= */
+/* -------------------------------------------------------------------------- */
+/*                                  PROJECTS                                  */
+/* -------------------------------------------------------------------------- */
 
-const toolColors = {
-  blue: {
-    color: "#38bdf8",
-    border: "rgba(56,189,248,0.48)",
-    glow: "rgba(56,189,248,0.20)",
-    background: "rgba(56,189,248,0.08)",
+/*
+ * Replace these with your actual portfolio projects.
+ */
+
+const projects: Project[] = [
+  {
+    title: "Portfolio Website",
+    description:
+      "A highly interactive developer portfolio designed around immersive motion, visual storytelling and a premium dark interface.",
+    technologies: ["React", "TypeScript", "Tailwind CSS"],
+    type: "Frontend",
   },
-
-  orange: {
-    color: "#fb923c",
-    border: "rgba(251,146,60,0.48)",
-    glow: "rgba(251,146,60,0.19)",
-    background: "rgba(251,146,60,0.08)",
+  {
+    title: "Backend System",
+    description:
+      "A backend-focused application built around reliable APIs, structured architecture and real-world problem solving.",
+    technologies: ["Java", "Spring Boot", "REST API"],
+    type: "Backend",
   },
-
-  purple: {
-    color: "#a78bfa",
-    border: "rgba(167,139,250,0.48)",
-    glow: "rgba(167,139,250,0.19)",
-    background: "rgba(167,139,250,0.08)",
+  {
+    title: "Full Stack Application",
+    description:
+      "A full-stack application combining a modern frontend with backend services and persistent data storage.",
+    technologies: ["React", "Java", "MySQL"],
+    type: "Full Stack",
   },
+];
 
-  red: {
-    color: "#f87171",
-    border: "rgba(248,113,113,0.48)",
-    glow: "rgba(248,113,113,0.19)",
-    background: "rgba(248,113,113,0.08)",
+/* -------------------------------------------------------------------------- */
+/*                             TAB CONFIGURATION                              */
+/* -------------------------------------------------------------------------- */
+
+const tabs: {
+  id: Tab;
+  label: string;
+  number: string;
+}[] = [
+  {
+    id: "certifications",
+    label: "Certifications",
+    number: "02",
   },
-
-  pink: {
-    color: "#f472b6",
-    border: "rgba(244,114,182,0.48)",
-    glow: "rgba(244,114,182,0.19)",
-    background: "rgba(244,114,182,0.08)",
+  {
+    id: "stack",
+    label: "Tech Stack",
+    number: "01",
   },
-
-  white: {
-    color: "#f1f5f9",
-    border: "rgba(241,245,249,0.36)",
-    glow: "rgba(241,245,249,0.12)",
-    background: "rgba(241,245,249,0.065)",
+  {
+    id: "projects",
+    label: "Projects",
+    number: "03",
   },
-};
+];
 
-/* =========================================================
-   SKILL GROUP CARD
-========================================================= */
+/* -------------------------------------------------------------------------- */
+/*                              TECH CARD                                     */
+/* -------------------------------------------------------------------------- */
 
-function SkillGroupCard({
-  group,
-  index,
-}: {
-  group: SkillGroup;
-  index: number;
-}) {
-  const accent =
-    skillAccentStyles[group.accent];
-
-  const GroupIcon = group.icon;
-
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const rotateX = useSpring(
-    useTransform(
-      mouseY,
-      [-0.5, 0.5],
-      [5, -5]
-    ),
-    {
-      stiffness: 180,
-      damping: 22,
-    }
-  );
-
-  const rotateY = useSpring(
-    useTransform(
-      mouseX,
-      [-0.5, 0.5],
-      [-5, 5]
-    ),
-    {
-      stiffness: 180,
-      damping: 22,
-    }
-  );
-
-  const spotlightX = useMotionValue(50);
-  const spotlightY = useMotionValue(50);
-
-  const handleMouseMove = (
-    event: MouseEvent<HTMLDivElement>
-  ) => {
-    const rect =
-      event.currentTarget.getBoundingClientRect();
-
-    const x =
-      (event.clientX - rect.left) /
-      rect.width;
-
-    const y =
-      (event.clientY - rect.top) /
-      rect.height;
-
-    mouseX.set(x - 0.5);
-    mouseY.set(y - 0.5);
-
-    spotlightX.set(x * 100);
-    spotlightY.set(y * 100);
-  };
-
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-
-    spotlightX.set(50);
-    spotlightY.set(50);
-  };
+function TechCard({ item }: { item: TechItem }) {
+  const Icon = item.icon;
 
   return (
-    <motion.div
-      initial={{
-        opacity: 0,
-        y: 45,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{
-        once: true,
-        amount: 0.2,
-      }}
-      transition={{
-        duration: 0.75,
-        delay: index * 0.12,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      style={{
-        rotateX,
-        rotateY,
-        transformStyle: "preserve-3d",
-      }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className="
-        group
-        relative
-        h-full
-        [perspective:1200px]
-      "
+    <div
+      className="group relative min-h-[112px] overflow-hidden rounded-2xl border border-white/[0.09] bg-[#080d0c]/80 p-[1px] transition-all duration-500 ease-out hover:-translate-y-2 hover:border-white/[0.2] hover:bg-white/[0.025]"
+      style={
+        {
+          "--brand-color": item.color,
+        } as React.CSSProperties
+      }
     >
+      {/* Default atmospheric glow */}
       <div
-        className={`
-          pointer-events-none
-          absolute
-          -inset-5
-          rounded-[34px]
-          ${accent.ambient}
-          opacity-0
-          blur-[55px]
-          transition-opacity
-          duration-700
-          group-hover:opacity-100
-        `}
+        className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full opacity-[0.08] blur-3xl transition-all duration-500 group-hover:opacity-30"
+        style={{ backgroundColor: item.color }}
       />
 
+      {/* Hover radial light */}
       <div
-        className={`
-          relative
-          h-full
-          overflow-hidden
-          rounded-[26px]
-          border
-          ${accent.border}
-          bg-[#0a0f0d]/85
-          backdrop-blur-2xl
-          transition-all
-          duration-500
-          ${accent.glow}
-        `}
-      >
-        <motion.div
-          className="
-            pointer-events-none
-            absolute
-            inset-0
-            opacity-0
-            transition-opacity
-            duration-500
-            group-hover:opacity-100
-          "
-          style={{
-            background: useTransform(
-              [spotlightX, spotlightY],
-              ([x, y]) =>
-                `radial-gradient(
-                  320px circle at ${x}% ${y}%,
-                  rgba(120,255,205,0.08),
-                  transparent 70%
-                )`
-            ),
-          }}
-        />
-
-        <motion.div
-          className={`
-            pointer-events-none
-            absolute
-            left-[12%]
-            right-[12%]
-            top-0
-            h-px
-            bg-gradient-to-r
-            ${accent.line}
-            opacity-45
-            transition-all
-            duration-700
-            group-hover:left-[4%]
-            group-hover:right-[4%]
-            group-hover:opacity-100
-          `}
-        />
-
-        <div
-          className="
-            pointer-events-none
-            absolute
-            left-0
-            top-0
-            h-[1px]
-            w-0
-            bg-emerald-200
-            opacity-0
-            shadow-[0_0_18px_rgba(110,231,183,0.8)]
-            transition-all
-            duration-700
-            group-hover:w-full
-            group-hover:opacity-80
-          "
-        />
-
-        <div
-          className="
-            pointer-events-none
-            absolute
-            -right-4
-            -top-8
-            select-none
-            text-[145px]
-            font-black
-            leading-none
-            tracking-[-0.09em]
-            text-white/[0.025]
-            transition-all
-            duration-700
-            group-hover:text-white/[0.045]
-          "
-        >
-          {group.number}
-        </div>
-
-        <div
-          className={`
-            pointer-events-none
-            absolute
-            -right-24
-            -top-24
-            h-72
-            w-72
-            rounded-full
-            ${accent.ambient}
-            opacity-20
-            blur-[90px]
-            transition-all
-            duration-700
-            group-hover:scale-125
-            group-hover:opacity-70
-          `}
-        />
-
-        <div className="relative z-10 p-7 md:p-8">
-          <div className="mb-8 flex items-start justify-between">
-            <div className="flex items-center gap-3.5">
-              <motion.div
-                whileHover={{
-                  scale: 1.08,
-                  rotate: 3,
-                }}
-                className={`
-                  flex
-                  h-11
-                  w-11
-                  items-center
-                  justify-center
-                  rounded-xl
-                  border
-                  ${accent.icon}
-                  transition-all
-                  duration-500
-                  ${accent.hoverIcon}
-                  group-hover:shadow-[0_0_24px_rgba(110,231,183,0.12)]
-                `}
-              >
-                <GroupIcon
-                  size={19}
-                  strokeWidth={1.6}
-                />
-              </motion.div>
-
-              <div>
-                <p
-                  className="
-                    text-[9px]
-                    font-semibold
-                    tracking-[0.32em]
-                    text-white/25
-                  "
-                >
-                  {group.number}
-                </p>
-
-                <p
-                  className="
-                    mt-1
-                    text-[9px]
-                    uppercase
-                    tracking-[0.23em]
-                    text-white/22
-                  "
-                >
-                  Skill Group
-                </p>
-              </div>
-            </div>
-
-            <motion.div
-              whileHover={{
-                rotate: 45,
-                scale: 1.12,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 15,
-              }}
-              className="
-                text-white/15
-                transition-colors
-                duration-300
-                group-hover:text-white/65
-              "
-            >
-              <ArrowUpRight size={18} />
-            </motion.div>
-          </div>
-
-          <div className="mb-4">
-            <h3
-              className="
-                text-[28px]
-                font-semibold
-                tracking-[-0.04em]
-                text-[#e1e7ea]
-              "
-            >
-              {group.title}
-            </h3>
-
-            <div
-              className={`
-                mt-3
-                h-px
-                w-10
-                bg-gradient-to-r
-                ${accent.line}
-                transition-all
-                duration-500
-                group-hover:w-24
-              `}
-            />
-          </div>
-
-          <p
-            className="
-              mb-7
-              max-w-sm
-              text-[13px]
-              leading-6
-              text-white/38
-            "
-          >
-            {group.description}
-          </p>
-
-          <div>
-            {group.skills.map(
-              (skill, skillIndex) => {
-                const Icon = skill.icon;
-
-                return (
-                  <motion.div
-                    key={skill.name}
-                    initial={{
-                      opacity: 0,
-                      x: -10,
-                    }}
-                    whileInView={{
-                      opacity: 1,
-                      x: 0,
-                    }}
-                    viewport={{
-                      once: true,
-                    }}
-                    transition={{
-                      delay:
-                        index * 0.12 +
-                        skillIndex * 0.055,
-                    }}
-                    className="
-                      group/skill
-                      relative
-                      flex
-                      items-center
-                      justify-between
-                      border-b
-                      border-white/[0.055]
-                      py-3
-                      last:border-b-0
-                    "
-                  >
-                    <div
-                      className="
-                        pointer-events-none
-                        absolute
-                        inset-x-[-8px]
-                        inset-y-1
-                        rounded-lg
-                        bg-emerald-300/[0.025]
-                        opacity-0
-                        transition-opacity
-                        duration-300
-                        group-hover/skill:opacity-100
-                      "
-                    />
-
-                    <div className="relative z-10 flex items-center gap-3">
-                      <div
-                        className="
-                          flex
-                          h-8
-                          w-8
-                          items-center
-                          justify-center
-                          rounded-lg
-                          border
-                          border-white/[0.055]
-                          bg-white/[0.025]
-                          text-white/30
-                          transition-all
-                          duration-300
-                          group-hover/skill:scale-105
-                          group-hover/skill:border-emerald-300/[0.15]
-                          group-hover/skill:bg-emerald-300/[0.045]
-                          group-hover/skill:text-emerald-100/80
-                          group-hover/skill:shadow-[0_0_18px_rgba(110,231,183,0.08)]
-                        "
-                      >
-                        <Icon size={15} />
-                      </div>
-
-                      <span
-                        className="
-                          text-[13px]
-                          text-white/50
-                          transition-colors
-                          duration-300
-                          group-hover/skill:text-white/90
-                        "
-                      >
-                        {skill.name}
-                      </span>
-                    </div>
-
-                    <span
-                      className={`
-                        relative
-                        z-10
-                        h-1.5
-                        w-1.5
-                        rounded-full
-                        ${accent.dot}
-                        opacity-15
-                        transition-all
-                        duration-300
-                        group-hover/skill:scale-125
-                        group-hover/skill:opacity-100
-                      `}
-                    />
-                  </motion.div>
-                );
-              }
-            )}
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
-/* =========================================================
-   DEVELOPER TOOL ITEM
-========================================================= */
-
-function ToolItem({
-  tool,
-  index,
-}: {
-  tool: Tool;
-  index: number;
-}) {
-  const Icon = tool.icon;
-  const colors = toolColors[tool.accent];
-
-  return (
-    <motion.div
-      initial={{
-        opacity: 0,
-        y: 18,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{
-        once: true,
-        amount: 0.2,
-      }}
-      transition={{
-        duration: 0.55,
-        delay: index * 0.055,
-      }}
-      whileHover={{
-        y: -6,
-      }}
-      className="group/tool relative"
-    >
-      <div
-        className="
-          pointer-events-none
-          absolute
-          inset-2
-          rounded-2xl
-          opacity-0
-          blur-[28px]
-          transition-all
-          duration-500
-          group-hover/tool:opacity-100
-        "
+        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         style={{
-          background: colors.glow,
+          background: `radial-gradient(circle at 50% 20%, ${item.color}18 0%, transparent 55%)`,
         }}
       />
 
+      {/* Animated border glow */}
       <div
-        className="
-          relative
-          flex
-          min-h-[125px]
-          flex-col
-          items-center
-          justify-center
-          gap-3
-          overflow-hidden
-          border-r
-          border-white/[0.055]
-          transition-all
-          duration-500
-        "
-      >
-        <div
-          className="
-            pointer-events-none
-            absolute
-            inset-0
-            opacity-0
-            transition-opacity
-            duration-500
-            group-hover/tool:opacity-100
-          "
-          style={{
-            background: `radial-gradient(
-              circle at center,
-              ${colors.background},
-              transparent 65%
-            )`,
-          }}
-        />
+        className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        style={{
+          boxShadow: `inset 0 0 25px ${item.color}08, 0 0 25px ${item.color}12`,
+        }}
+      />
 
+      {/* Shine */}
+      <div className="pointer-events-none absolute -left-[120%] top-0 h-full w-[60%] rotate-12 bg-gradient-to-r from-transparent via-white/[0.07] to-transparent transition-all duration-700 group-hover:left-[140%]" />
+
+      <div className="relative flex h-full flex-col items-center justify-center rounded-[15px] bg-[#090e0d]/95 px-3 py-5">
+        {/* Icon */}
         <div
-          className="
-            relative
-            z-10
-            flex
-            h-12
-            w-12
-            items-center
-            justify-center
-            rounded-xl
-            border
-            border-white/[0.075]
-            bg-white/[0.025]
-            text-white/32
-            transition-all
-            duration-500
-            group-hover/tool:scale-110
-          "
-          style={
-            {
-              "--tool-color":
-                colors.color,
-              "--tool-glow":
-                colors.glow,
-            } as React.CSSProperties
-          }
+          className="relative mb-3 transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-1"
+          style={{
+            filter: `drop-shadow(0 0 8px ${item.color}30)`,
+          }}
         >
-          <Icon
-            size={23}
-            className="
-              relative
-              z-10
-              transition-all
-              duration-500
-            "
+          <div
+            className="absolute inset-0 scale-150 rounded-full opacity-0 blur-xl transition-all duration-500 group-hover:opacity-60"
+            style={{ backgroundColor: item.color }}
           />
 
-          <span
-            className="
-              pointer-events-none
-              absolute
-              inset-0
-              rounded-xl
-              opacity-0
-              transition-opacity
-              duration-500
-              group-hover/tool:opacity-100
-            "
-            style={{
-              background:
-                colors.background,
-
-              boxShadow: `
-                inset 0 0 22px ${colors.glow},
-                0 0 28px ${colors.glow}
-              `,
-            }}
+          <Icon
+            size={34}
+            className="relative transition-all duration-500"
+            style={{ color: item.color }}
           />
         </div>
 
-        <span
-          className="
-            relative
-            z-10
-            text-[11px]
-            font-medium
-            tracking-wide
-            text-white/35
-            transition-all
-            duration-500
-            group-hover/tool:text-white/90
-          "
-        >
-          {tool.name}
+        {/* Name */}
+        <span className="text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300 transition-colors duration-300 group-hover:text-white">
+          {item.name}
         </span>
 
-        <span
-          className="
-            absolute
-            bottom-0
-            left-1/2
-            h-px
-            w-0
-            -translate-x-1/2
-            transition-all
-            duration-500
-            group-hover/tool:w-14
-          "
-          style={{
-            background:
-              colors.color,
-
-            boxShadow:
-              `0 0 15px ${colors.color}`,
-          }}
-        />
+        {/* Category */}
+        <span className="mt-1 text-[8px] uppercase tracking-[0.18em] text-slate-600 transition-colors duration-300 group-hover:text-slate-500">
+          {item.category}
+        </span>
       </div>
-
-      <div
-        className="
-          pointer-events-none
-          absolute
-          inset-0
-          rounded-xl
-          border
-          border-transparent
-          opacity-0
-          transition-all
-          duration-500
-          group-hover/tool:opacity-100
-        "
-        style={{
-          borderColor:
-            colors.border,
-
-          boxShadow: `
-            0 0 35px ${colors.glow},
-            inset 0 0 20px ${colors.glow}
-          `,
-        }}
-      />
-
-      <style>{`
-        .group\\/tool:hover svg {
-          color: ${colors.color};
-          filter:
-            drop-shadow(
-              0 0 9px ${colors.glow}
-            );
-        }
-      `}</style>
-    </motion.div>
+    </div>
   );
 }
 
-/* =========================================================
-   MAIN SKILLS SECTION
-========================================================= */
+/* -------------------------------------------------------------------------- */
+/*                         CERTIFICATION CARD                                 */
+/* -------------------------------------------------------------------------- */
+
+function CertificationCard({
+  certification,
+  index,
+}: {
+  certification: Certification;
+  index: number;
+}) {
+  return (
+    <div className="group relative overflow-hidden rounded-2xl border border-white/[0.09] bg-[#080d0c]/85 p-6 transition-all duration-500 hover:-translate-y-2 hover:border-emerald-300/25 hover:bg-[#0a1110] hover:shadow-[0_0_45px_rgba(16,185,129,0.08)]">
+      {/* Green atmosphere */}
+      <div className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-emerald-400/[0.07] blur-3xl transition-all duration-500 group-hover:bg-emerald-400/[0.14]" />
+
+      <div className="relative">
+        <div className="mb-7 flex items-center justify-between">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-emerald-400/20 bg-emerald-400/[0.04] font-mono text-[9px] text-emerald-300">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+
+          <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-slate-600">
+            {certification.year}
+          </span>
+        </div>
+
+        <p className="mb-2 text-[9px] font-semibold uppercase tracking-[0.22em] text-emerald-300/70">
+          {certification.issuer}
+        </p>
+
+        <h3 className="mb-3 text-xl font-semibold tracking-tight text-slate-100">
+          {certification.title}
+        </h3>
+
+        <p className="text-sm leading-6 text-slate-500">
+          {certification.description}
+        </p>
+
+        <div className="mt-7 flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-slate-500 transition-colors group-hover:text-emerald-300">
+          View credential
+          <FiArrowUpRight size={13} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              PROJECT CARD                                  */
+/* -------------------------------------------------------------------------- */
+
+function ProjectCard({
+  project,
+  index,
+}: {
+  project: Project;
+  index: number;
+}) {
+  return (
+    <div className="group relative overflow-hidden rounded-2xl border border-white/[0.09] bg-[#080d0c]/85 p-6 transition-all duration-500 hover:-translate-y-2 hover:border-emerald-300/25 hover:shadow-[0_0_45px_rgba(16,185,129,0.08)]">
+      {/* Green glow */}
+      <div className="pointer-events-none absolute -right-20 -top-20 h-44 w-44 rounded-full bg-emerald-400/[0.05] blur-3xl transition-all duration-500 group-hover:bg-emerald-400/[0.13]" />
+
+      <div className="relative">
+        <div className="mb-6 flex items-center justify-between">
+          <span className="font-mono text-[9px] tracking-[0.2em] text-emerald-300/70">
+            PROJECT / {String(index + 1).padStart(2, "0")}
+          </span>
+
+          <FiExternalLink
+            size={15}
+            className="text-slate-600 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-emerald-300"
+          />
+        </div>
+
+        <span className="mb-2 inline-block text-[9px] font-semibold uppercase tracking-[0.2em] text-slate-600">
+          {project.type}
+        </span>
+
+        <h3 className="mb-3 text-xl font-semibold tracking-tight text-slate-100">
+          {project.title}
+        </h3>
+
+        <p className="mb-6 text-sm leading-6 text-slate-500">
+          {project.description}
+        </p>
+
+        <div className="flex flex-wrap gap-2">
+          {project.technologies.map((technology) => (
+            <span
+              key={technology}
+              className="rounded-full border border-white/[0.08] bg-white/[0.025] px-3 py-1.5 text-[8px] uppercase tracking-[0.12em] text-slate-400 transition-colors group-hover:border-emerald-400/15 group-hover:text-slate-300"
+            >
+              {technology}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              MAIN SECTION                                  */
+/* -------------------------------------------------------------------------- */
 
 export function SkillsSection() {
+  const [activeTab, setActiveTab] = useState<Tab>("stack");
+
+  const activeIndex =
+    activeTab === "stack" ? 1 : activeTab === "certifications" ? 2 : 3;
+
   return (
     <section
       id="skills"
-      className="
-        relative
-        min-h-screen
-        overflow-hidden
-        bg-[#040706]
-        py-28
-        text-white
-        md:py-36
-      "
+      className="relative min-h-[100svh] overflow-hidden bg-[#030706] text-slate-100"
     >
-      {/* =====================================================
-          ATMOSPHERIC BACKGROUND
-      ===================================================== */}
+      {/* ------------------------------------------------------------------ */}
+      {/* Background                                                          */}
+      {/* ------------------------------------------------------------------ */}
 
       <div className="pointer-events-none absolute inset-0">
+        {/* Grid */}
         <div
-          className="
-            absolute
-            inset-0
-            opacity-[0.025]
-            [background-image:linear-gradient(rgba(255,255,255,.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.5)_1px,transparent_1px)]
-            [background-size:72px_72px]
-          "
+          className="absolute inset-0 opacity-[0.055]"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(148,163,184,0.28) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(148,163,184,0.28) 1px, transparent 1px)
+            `,
+            backgroundSize: "42px 42px",
+          }}
         />
 
-        <motion.div
-          animate={{
-            x: [0, 35, -20, 0],
-            y: [0, -25, 20, 0],
-            scale: [1, 1.08, 0.96, 1],
-          }}
-          transition={{
-            duration: 16,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="
-            absolute
-            left-[-8%]
-            top-[12%]
-            h-[550px]
-            w-[550px]
-            rounded-full
-            bg-emerald-400/[0.055]
-            blur-[150px]
-          "
-        />
+        {/* Green atmospheric glow */}
+        <div className="absolute left-1/2 top-[35%] h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-emerald-500/[0.055] blur-[130px]" />
 
-        <motion.div
-          animate={{
-            x: [0, -30, 25, 0],
-            y: [0, 30, -20, 0],
-            scale: [1, 0.94, 1.08, 1],
-          }}
-          transition={{
-            duration: 19,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="
-            absolute
-            bottom-[-10%]
-            right-[-6%]
-            h-[500px]
-            w-[500px]
-            rounded-full
-            bg-emerald-500/[0.045]
-            blur-[145px]
-          "
-        />
+        <div className="absolute -left-32 top-[15%] h-[400px] w-[400px] rounded-full bg-emerald-400/[0.025] blur-[120px]" />
 
-        <motion.div
-          animate={{
-            opacity: [0.2, 0.45, 0.2],
-            scale: [0.9, 1.05, 0.9],
-          }}
-          transition={{
-            duration: 9,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="
-            absolute
-            left-1/2
-            top-[28%]
-            h-[360px]
-            w-[360px]
-            -translate-x-1/2
-            rounded-full
-            bg-white/[0.018]
-            blur-[125px]
-          "
-        />
+        <div className="absolute -right-32 bottom-[10%] h-[450px] w-[450px] rounded-full bg-teal-400/[0.025] blur-[120px]" />
 
-        <div
-          className="
-            absolute
-            left-1/2
-            top-0
-            h-[260px]
-            w-[70%]
-            -translate-x-1/2
-            rounded-full
-            bg-emerald-300/[0.025]
-            blur-[100px]
-          "
-        />
-
-        <div
-          className="
-            absolute
-            inset-0
-            bg-[radial-gradient(circle_at_center,transparent_15%,rgba(0,0,0,0.30)_100%)]
-          "
-        />
-
-        <motion.div
-          animate={{
-            x: ["-20%", "120%"],
-            opacity: [0, 0.7, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            repeatDelay: 4,
-            ease: "easeInOut",
-          }}
-          className="
-            absolute
-            left-0
-            top-[8%]
-            h-px
-            w-[35%]
-            bg-gradient-to-r
-            from-transparent
-            via-emerald-300/45
-            to-transparent
-            shadow-[0_0_25px_rgba(110,231,183,0.35)]
-          "
-        />
+        {/* Scan line */}
+        <div className="absolute left-0 right-0 top-[42%] h-px bg-gradient-to-r from-transparent via-emerald-300/[0.12] to-transparent" />
       </div>
 
-      {/* =====================================================
-          CONTENT
-      ===================================================== */}
+      {/* ------------------------------------------------------------------ */}
+      {/* Content                                                             */}
+      {/* ------------------------------------------------------------------ */}
 
-      <div
-        className="
-          relative
-          z-10
-          mx-auto
-          max-w-[1280px]
-          px-6
-          lg:px-10
-        "
-      >
-        {/* ===================================================
-            HEADER
-        =================================================== */}
-
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 30,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.8,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="mb-16"
-        >
-          <div className="mb-7 flex items-center gap-4">
-            <motion.span
-              animate={{
-                opacity: [0.45, 1, 0.45],
-                scale: [0.85, 1.15, 0.85],
-              }}
-              transition={{
-                duration: 2.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="
-                h-1.5
-                w-1.5
-                rounded-full
-                bg-emerald-300
-                shadow-[0_0_14px_rgba(110,231,183,0.9)]
-              "
-            />
-
-            <span
-              className="
-                text-[10px]
-                font-semibold
-                tracking-[0.35em]
-                text-emerald-200/65
-              "
-            >
-              THE STACK
+      <div className="relative mx-auto flex min-h-[100svh] w-full max-w-[1600px] flex-col px-5 py-8 sm:px-8 lg:px-12">
+        {/* Top identity line */}
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-50" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.8)]" />
             </span>
 
-            <div
-              className="
-                h-px
-                w-24
-                bg-gradient-to-r
-                from-emerald-300/35
-                to-transparent
-              "
-            />
-
-            <span
-              className="
-                ml-auto
-                hidden
-                text-[10px]
-                tracking-[0.25em]
-                text-white/20
-                md:block
-              "
-            >
-              03 / 06
+            <span className="font-mono text-[9px] font-semibold uppercase tracking-[0.3em] text-emerald-300/80">
+              Portfolio Showcase
             </span>
           </div>
 
-          <div
-            className="
-              grid
-              gap-8
-              lg:grid-cols-[1fr_370px]
-              lg:items-end
-            "
-          >
-            <div>
-              <h2
-                className="
-                  max-w-5xl
-                  text-[clamp(3.5rem,8vw,7.5rem)]
-                  font-bold
-                  leading-[0.84]
-                  tracking-[-0.075em]
-                "
-              >
-                <span
-                  className="
-                    text-[#e6ebee]
-                  "
-                >
-                  Skills I
-                </span>{" "}
-                <span
-                  className="
-                    bg-gradient-to-r
-                    from-[#e4e9ec]
-                    via-[#aeb9bf]
-                    to-[#647178]
-                    bg-clip-text
-                    text-transparent
-                  "
-                >
-                  work with.
-                </span>
-              </h2>
+          <span className="font-mono text-[9px] tracking-[0.25em] text-slate-600">
+            {String(activeIndex).padStart(2, "0")} / 03
+          </span>
+        </div>
+
+        {/* Heading */}
+        <div className="mx-auto mt-10 w-full max-w-5xl text-center sm:mt-12 lg:mt-14">
+          <div className="mb-5 flex items-center justify-center gap-3">
+            <span className="h-px w-10 bg-emerald-400/50" />
+
+            <span className="font-mono text-[8px] uppercase tracking-[0.35em] text-slate-500">
+              Skills • Work • Experience
+            </span>
+
+            <span className="h-px w-10 bg-emerald-400/50" />
+          </div>
+
+          <h2 className="text-[clamp(2.4rem,5vw,5.4rem)] font-semibold leading-[0.95] tracking-[-0.055em] text-slate-200">
+            What I Build{" "}
+            <span className="bg-gradient-to-r from-slate-100 via-slate-300 to-slate-500 bg-clip-text text-transparent">
+              &amp; Work With
+            </span>
+          </h2>
+
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-slate-500 sm:text-base">
+            Explore the technologies I use, the certifications I&apos;ve
+            earned, and the projects I&apos;ve built while continuously
+            developing my skills.
+          </p>
+        </div>
+
+        {/* ---------------------------------------------------------------- */}
+        {/* Capsule Tabs                                                     */}
+        {/* ---------------------------------------------------------------- */}
+
+        <div className="mx-auto mt-8 w-full max-w-5xl sm:mt-10">
+          <div className="relative rounded-full border border-white/[0.14] bg-[#070b0a]/90 p-1 shadow-[0_0_35px_rgba(16,185,129,0.035)] backdrop-blur-xl">
+            <div className="grid grid-cols-3">
+              {tabs.map((tab) => {
+                const isActive = activeTab === tab.id;
+
+                return (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`group relative flex h-12 items-center justify-center rounded-full px-3 text-[9px] font-semibold uppercase tracking-[0.22em] transition-all duration-500 sm:h-14 sm:text-[10px] ${
+                      isActive
+                        ? "text-white"
+                        : "text-slate-500 hover:text-slate-200"
+                    }`}
+                  >
+                    {/* Active background */}
+                    {isActive && (
+                      <span className="absolute inset-0 rounded-full border border-emerald-300/30 bg-gradient-to-b from-emerald-300/[0.12] to-emerald-300/[0.025] shadow-[0_0_30px_rgba(16,185,129,0.16),inset_0_0_20px_rgba(16,185,129,0.05)]" />
+                    )}
+
+                    {/* Active bottom glow */}
+                    {isActive && (
+                      <span className="absolute -bottom-2 left-1/2 h-4 w-1/2 -translate-x-1/2 rounded-full bg-emerald-400/30 blur-xl" />
+                    )}
+
+                    <span className="relative z-10 flex items-center gap-2">
+                      {tab.label}
+
+                      {isActive && (
+                        <span className="hidden font-mono text-[7px] text-emerald-300/70 sm:inline">
+                          {tab.number}
+                        </span>
+                      )}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
-
-            <p
-              className="
-                max-w-md
-                text-sm
-                leading-7
-                text-white/40
-                lg:pb-2
-              "
-            >
-              Technologies and tools I use to build
-              real-world applications, strengthen my
-              fundamentals, and turn ideas into working
-              systems.
-            </p>
           </div>
+        </div>
 
-          <div
-            className="
-              relative
-              mt-10
-              h-px
-              w-full
-              overflow-hidden
-              bg-white/[0.07]
-            "
-          >
-            <motion.div
-              animate={{
-                x: ["-100%", "100%"],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              className="
-                absolute
-                left-0
-                top-0
-                h-px
-                w-1/3
-                bg-gradient-to-r
-                from-transparent
-                via-emerald-300/45
-                to-transparent
-              "
-            />
-          </div>
-        </motion.div>
-
-        {/* ===================================================
-            SKILL GROUPS
-        =================================================== */}
+        {/* ---------------------------------------------------------------- */}
+        {/* Content Area                                                     */}
+        {/* ---------------------------------------------------------------- */}
 
         <div
-          className="
-            grid
-            gap-5
-            lg:grid-cols-3
-          "
+          key={activeTab}
+          className="relative mx-auto mt-7 w-full max-w-6xl flex-1 animate-[showcaseIn_500ms_ease-out]"
         >
-          {SKILL_GROUPS.map(
-            (group, index) => (
-              <SkillGroupCard
-                key={group.number}
-                group={group}
-                index={index}
-              />
-            )
+          {/* TECH STACK */}
+          {activeTab === "stack" && (
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-4 lg:grid-cols-6">
+              {techStack.map((item) => (
+                <TechCard key={item.name} item={item} />
+              ))}
+            </div>
+          )}
+
+          {/* CERTIFICATIONS */}
+          {activeTab === "certifications" && (
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+              {certifications.map((certification, index) => (
+                <CertificationCard
+                  key={certification.title}
+                  certification={certification}
+                  index={index}
+                />
+              ))}
+            </div>
+          )}
+
+          {/* PROJECTS */}
+          {activeTab === "projects" && (
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+              {projects.map((project, index) => (
+                <ProjectCard
+                  key={project.title}
+                  project={project}
+                  index={index}
+                />
+              ))}
+            </div>
           )}
         </div>
 
-        {/* ===================================================
-            DEVELOPER TOOLS
-        =================================================== */}
+        {/* ---------------------------------------------------------------- */}
+        {/* Bottom status                                                     */}
+        {/* ---------------------------------------------------------------- */}
 
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 40,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.2,
-          }}
-          transition={{
-            duration: 0.8,
-            delay: 0.15,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="
-            group/tools
-            relative
-            mt-6
-            overflow-hidden
-            rounded-[26px]
-            border
-            border-white/[0.075]
-            bg-[#080c0a]/85
-            backdrop-blur-2xl
-          "
-        >
-          <div
-            className="
-              pointer-events-none
-              absolute
-              -left-20
-              -top-24
-              h-64
-              w-64
-              rounded-full
-              bg-emerald-300/[0.045]
-              blur-[90px]
-              transition-all
-              duration-700
-              group-hover/tools:scale-125
-            "
-          />
+        <div className="mt-6 flex items-center justify-center gap-3 pb-2">
+          <span className="h-px w-12 bg-gradient-to-r from-transparent to-emerald-400/40" />
 
-          <div
-            className="
-              pointer-events-none
-              absolute
-              -bottom-32
-              -right-20
-              h-72
-              w-72
-              rounded-full
-              bg-emerald-400/[0.035]
-              blur-[90px]
-            "
-          />
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.8)]" />
 
-          <div
-            className="
-              absolute
-              left-[7%]
-              right-[7%]
-              top-0
-              h-px
-              bg-gradient-to-r
-              from-transparent
-              via-emerald-300/45
-              to-transparent
-              shadow-[0_0_14px_rgba(110,231,183,0.18)]
-            "
-          />
-
-          <div
-            className="
-              relative
-              z-10
-              flex
-              flex-col
-              gap-5
-              border-b
-              border-white/[0.06]
-              p-7
-              md:flex-row
-              md:items-center
-              md:justify-between
-              md:px-8
-              md:py-7
-            "
-          >
-            <div className="flex items-center gap-4">
-              <motion.div
-                whileHover={{
-                  scale: 1.08,
-                  rotate: 4,
-                }}
-                className="
-                  flex
-                  h-11
-                  w-11
-                  items-center
-                  justify-center
-                  rounded-xl
-                  border
-                  border-emerald-300/[0.14]
-                  bg-emerald-300/[0.04]
-                  text-emerald-200/70
-                  shadow-[0_0_24px_rgba(110,231,183,0.05)]
-                  transition-all
-                  duration-300
-                "
-              >
-                <Wrench
-                  size={18}
-                  strokeWidth={1.6}
-                />
-              </motion.div>
-
-              <div>
-                <div className="flex items-center gap-3">
-                  <h3
-                    className="
-                      text-lg
-                      font-semibold
-                      tracking-[-0.02em]
-                      text-[#dce2e6]
-                    "
-                  >
-                    Developer Tools
-                  </h3>
-
-                  <motion.div
-                    animate={{
-                      rotate: [0, 8, -8, 0],
-                      opacity: [0.35, 0.8, 0.35],
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                    }}
-                  >
-                    <Sparkles
-                      size={14}
-                      className="
-                        text-emerald-300/60
-                      "
-                    />
-                  </motion.div>
-                </div>
-
-                <p
-                  className="
-                    mt-1
-                    text-xs
-                    leading-5
-                    text-white/32
-                  "
-                >
-                  Tools and platforms that power my
-                  development workflow.
-                </p>
-              </div>
-            </div>
-
-            <div
-              className="
-                hidden
-                h-px
-                flex-1
-                bg-gradient-to-r
-                from-emerald-300/20
-                via-white/[0.04]
-                to-transparent
-                md:ml-10
-                md:block
-              "
-            />
-
-            <span
-              className="
-                text-[9px]
-                font-semibold
-                uppercase
-                tracking-[0.3em]
-                text-white/18
-              "
-            >
-              WORKFLOW / TOOLS
-            </span>
-          </div>
-
-          <div
-            className="
-              relative
-              z-10
-              grid
-              grid-cols-2
-              sm:grid-cols-4
-              lg:grid-cols-8
-            "
-          >
-            {TOOLS.map(
-              (tool, index) => (
-                <ToolItem
-                  key={tool.name}
-                  tool={tool}
-                  index={index}
-                />
-              )
-            )}
-          </div>
-        </motion.div>
-
-        {/* ===================================================
-            DEVELOPMENT PHILOSOPHY
-        =================================================== */}
-
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 30,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.8,
-            delay: 0.2,
-          }}
-          className="mt-12"
-        >
-          <div className="mb-5 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <span
-                className="
-                  text-[9px]
-                  font-semibold
-                  uppercase
-                  tracking-[0.32em]
-                  text-white/24
-                "
-              >
-                DEVELOPMENT PHILOSOPHY
-              </span>
-
-              <div
-                className="
-                  h-px
-                  w-10
-                  bg-gradient-to-r
-                  from-white/15
-                  to-transparent
-                "
-              />
-            </div>
-
-            <span
-              className="
-                text-[9px]
-                tracking-[0.25em]
-                text-white/15
-              "
-            >
-              01 — 04
-            </span>
-          </div>
-
-          <div
-            className="
-              relative
-              grid
-              overflow-hidden
-              rounded-2xl
-              border
-              border-white/[0.06]
-              bg-white/[0.018]
-              backdrop-blur-xl
-              md:grid-cols-4
-            "
-          >
-            <motion.div
-              animate={{
-                x: ["-100%", "100%"],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              className="
-                pointer-events-none
-                absolute
-                left-0
-                top-0
-                h-px
-                w-1/3
-                bg-gradient-to-r
-                from-transparent
-                via-emerald-300/45
-                to-transparent
-              "
-            />
-
-            {[
-              "LEARN",
-              "BUILD",
-              "TEST",
-              "IMPROVE",
-            ].map(
-              (item, index) => (
-                <motion.div
-                  key={item}
-                  whileHover={{
-                    backgroundColor:
-                      "rgba(110,231,183,0.035)",
-                  }}
-                  className="
-                    group/workflow
-                    relative
-                    flex
-                    items-center
-                    gap-4
-                    border-b
-                    border-white/[0.055]
-                    px-6
-                    py-5
-                    transition-colors
-                    last:border-b-0
-                    md:border-b-0
-                    md:border-r
-                    md:last:border-r-0
-                  "
-                >
-                  <span
-                    className="
-                      text-[9px]
-                      font-semibold
-                      tracking-[0.2em]
-                      text-emerald-300/40
-                      transition-all
-                      duration-300
-                      group-hover/workflow:text-emerald-200
-                    "
-                  >
-                    0{index + 1}
-                  </span>
-
-                  <span
-                    className="
-                      text-xs
-                      font-medium
-                      tracking-[0.2em]
-                      text-white/42
-                      transition-colors
-                      duration-300
-                      group-hover/workflow:text-white/90
-                    "
-                  >
-                    {item}
-                  </span>
-
-                  {index < 3 && (
-                    <ArrowUpRight
-                      size={13}
-                      className="
-                        ml-auto
-                        text-white/10
-                        transition-all
-                        duration-300
-                        group-hover/workflow:translate-x-0.5
-                        group-hover/workflow:-translate-y-0.5
-                        group-hover/workflow:text-emerald-300/60
-                      "
-                    />
-                  )}
-
-                  <span
-                    className="
-                      absolute
-                      bottom-0
-                      left-6
-                      h-px
-                      w-0
-                      bg-emerald-300
-                      opacity-0
-                      shadow-[0_0_10px_rgba(110,231,183,0.7)]
-                      transition-all
-                      duration-500
-                      group-hover/workflow:w-10
-                      group-hover/workflow:opacity-100
-                    "
-                  />
-                </motion.div>
-              )
-            )}
-          </div>
-        </motion.div>
-
-        {/* ===================================================
-            FOOTER
-        =================================================== */}
-
-        <motion.div
-          initial={{
-            opacity: 0,
-          }}
-          whileInView={{
-            opacity: 1,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.8,
-            delay: 0.35,
-          }}
-          className="
-            mt-10
-            flex
-            items-center
-            justify-center
-            gap-3
-          "
-        >
-          <motion.span
-            animate={{
-              scale: [0.8, 1.2, 0.8],
-              opacity: [0.35, 1, 0.35],
-            }}
-            transition={{
-              duration: 2.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="
-              h-1.5
-              w-1.5
-              rounded-full
-              bg-emerald-300
-              shadow-[0_0_12px_rgba(110,231,183,0.8)]
-            "
-          />
-
-          <span
-            className="
-              text-[9px]
-              font-semibold
-              uppercase
-              tracking-[0.32em]
-              text-white/18
-            "
-          >
+          <span className="font-mono text-[7px] uppercase tracking-[0.35em] text-slate-600">
             Always learning • Always building
           </span>
-        </motion.div>
+
+          <span className="h-px w-12 bg-gradient-to-l from-transparent to-emerald-400/40" />
+        </div>
       </div>
+
+      {/* ------------------------------------------------------------------ */}
+      {/* Local animation                                                     */}
+      {/* ------------------------------------------------------------------ */}
+
+      <style>{`
+        @keyframes showcaseIn {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </section>
   );
-}
+} 

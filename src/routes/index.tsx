@@ -68,18 +68,6 @@ function Index() {
         ]}
         speed={26}
       />
-      <ProjectsSection />
-      <TransitionMarquee
-        items={[
-          "BUILDING",
-          "SOLVING",
-          "SHIPPING",
-          "CREATING",
-          "COLLABORATING",
-        ]}
-        speed={30}
-        reverse
-      />
       <ContactSection />
       <Footer />
     </main>
