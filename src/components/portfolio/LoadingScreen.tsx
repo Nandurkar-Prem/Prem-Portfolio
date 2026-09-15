@@ -87,6 +87,8 @@ export const LoadingScreen = ({
           position: absolute;
           inset: 0;
 
+          z-index: 0;
+
           overflow: hidden;
 
           pointer-events: none;
@@ -207,17 +209,6 @@ export const LoadingScreen = ({
               rgba(255, 255, 255, 0.35) 0,
               transparent 1px
             );
-
-          background-size:
-            100% 100%,
-            100% 100%,
-            100% 100%,
-            100% 100%,
-            100% 100%,
-            100% 100%,
-            100% 100%,
-            100% 100%,
-            100% 100%;
         }
 
         /* =========================================================
@@ -266,10 +257,13 @@ export const LoadingScreen = ({
 
         /* =========================================================
            CENTRAL HUD
+           IMPORTANT: Decorative layer stays BEHIND content
         ========================================================= */
 
         .loader-hud {
           position: absolute;
+
+          z-index: 1;
 
           left: 50%;
           top: 47%;
@@ -290,7 +284,6 @@ export const LoadingScreen = ({
           content: "";
 
           position: absolute;
-
           inset: 8%;
 
           border: 1px solid rgba(70, 255, 220, 0.055);
@@ -359,10 +352,13 @@ export const LoadingScreen = ({
 
         /* =========================================================
            CROSSHAIR
+           Kept behind content
         ========================================================= */
 
         .hud-crosshair-horizontal {
           position: absolute;
+
+          z-index: 1;
 
           left: 0;
           right: 0;
@@ -379,10 +375,14 @@ export const LoadingScreen = ({
               rgba(70, 255, 220, 0.08) 70%,
               transparent
             );
+
+          pointer-events: none;
         }
 
         .hud-crosshair-vertical {
           position: absolute;
+
+          z-index: 1;
 
           top: 0;
           bottom: 0;
@@ -399,20 +399,25 @@ export const LoadingScreen = ({
               rgba(70, 255, 220, 0.08) 70%,
               transparent
             );
+
+          pointer-events: none;
         }
 
         /* =========================================================
            CENTER BEAM
+           Kept behind content
         ========================================================= */
 
         .loader-beam {
           position: absolute;
 
+          z-index: 1;
+
           left: 50%;
           top: 0;
 
           width: 1px;
-          height: 44%;
+          height: 36%;
 
           transform: translateX(-50%);
 
@@ -420,19 +425,23 @@ export const LoadingScreen = ({
             linear-gradient(
               180deg,
               transparent,
-              rgba(80, 255, 220, 0.35),
-              rgba(80, 255, 220, 0.85)
+              rgba(80, 255, 220, 0.28),
+              rgba(80, 255, 220, 0.75)
             );
 
           box-shadow:
-            0 0 10px rgba(0, 255, 210, 0.4);
+            0 0 10px rgba(0, 255, 210, 0.35);
+
+          pointer-events: none;
         }
 
         .loader-beam-point {
           position: absolute;
 
+          z-index: 1;
+
           left: 50%;
-          top: 43%;
+          top: 35%;
 
           width: 8px;
           height: 8px;
@@ -446,16 +455,19 @@ export const LoadingScreen = ({
           box-shadow:
             0 0 8px rgba(80, 255, 220, 0.95),
             0 0 24px rgba(0, 255, 210, 0.6);
+
+          pointer-events: none;
         }
 
         /* =========================================================
            MAIN CONTENT
+           IMPORTANT: High z-index prevents decorative overlap
         ========================================================= */
 
         .loader-content {
           position: relative;
 
-          z-index: 10;
+          z-index: 20;
 
           width: min(820px, 88vw);
 
@@ -464,6 +476,38 @@ export const LoadingScreen = ({
           align-items: center;
 
           text-align: center;
+
+          isolation: isolate;
+        }
+
+        /* Dedicated clean visual layer behind the content */
+
+        .loader-content::before {
+          content: "";
+
+          position: absolute;
+
+          z-index: -1;
+
+          left: 50%;
+          top: 50%;
+
+          width: 105%;
+          height: 90%;
+
+          transform: translate(-50%, -50%);
+
+          border-radius: 50%;
+
+          background:
+            radial-gradient(
+              ellipse at center,
+              rgba(8, 11, 11, 0.48) 0%,
+              rgba(8, 11, 11, 0.28) 45%,
+              transparent 75%
+            );
+
+          pointer-events: none;
         }
 
         /* =========================================================
@@ -471,6 +515,9 @@ export const LoadingScreen = ({
         ========================================================= */
 
         .loader-welcome {
+          position: relative;
+          z-index: 25;
+
           margin-bottom: 15px;
 
           color: rgba(100, 255, 224, 0.82);
@@ -489,9 +536,15 @@ export const LoadingScreen = ({
         ========================================================= */
 
         .loader-name {
+          position: relative;
+
+          z-index: 30;
+
+          display: block;
+
           margin: 0;
 
-          color: rgba(247, 249, 248, 0.96);
+          color: rgba(247, 249, 248, 0.98);
 
           font-size: clamp(
             1.8rem,
@@ -508,8 +561,11 @@ export const LoadingScreen = ({
           white-space: nowrap;
 
           text-shadow:
-            0 0 25px rgba(255, 255, 255, 0.07),
-            0 0 45px rgba(0, 255, 210, 0.06);
+            0 0 25px rgba(255, 255, 255, 0.08),
+            0 0 45px rgba(0, 255, 210, 0.07);
+
+          /* Keeps central decorative lines visually away */
+          padding: 5px 12px;
         }
 
         /* =========================================================
@@ -517,6 +573,9 @@ export const LoadingScreen = ({
         ========================================================= */
 
         .loader-tagline {
+          position: relative;
+          z-index: 25;
+
           margin-top: 18px;
 
           color: rgba(255, 255, 255, 0.48);
@@ -537,6 +596,9 @@ export const LoadingScreen = ({
         ========================================================= */
 
         .loader-loading-section {
+          position: relative;
+          z-index: 25;
+
           width: min(700px, 90vw);
 
           margin-top: 52px;
@@ -593,8 +655,6 @@ export const LoadingScreen = ({
 
           overflow: hidden;
         }
-
-        /* Outer energy glow */
 
         .loader-progress-shell::before {
           content: "";
@@ -660,7 +720,9 @@ export const LoadingScreen = ({
           overflow: hidden;
         }
 
-        /* Flowing energy */
+        /* =========================================================
+           ENERGY FLOW
+        ========================================================= */
 
         .loader-energy {
           position: absolute;
@@ -690,7 +752,9 @@ export const LoadingScreen = ({
           }
         }
 
-        /* Bright leading edge */
+        /* =========================================================
+           PROGRESS LEADING EDGE
+        ========================================================= */
 
         .loader-progress-edge {
           position: absolute;
@@ -735,8 +799,13 @@ export const LoadingScreen = ({
           letter-spacing: 0.3em;
         }
 
+        /* =========================================================
+           PERCENTAGE
+        ========================================================= */
+
         .loader-percentage {
           position: relative;
+          z-index: 25;
 
           margin-top: 19px;
 
@@ -787,6 +856,9 @@ export const LoadingScreen = ({
         ========================================================= */
 
         .loader-experience {
+          position: relative;
+          z-index: 25;
+
           display: flex;
 
           align-items: center;
@@ -822,7 +894,7 @@ export const LoadingScreen = ({
         .loader-side {
           position: fixed;
 
-          z-index: 8;
+          z-index: 10;
 
           top: 50%;
 
@@ -867,6 +939,8 @@ export const LoadingScreen = ({
 
         .loader-horizon {
           position: absolute;
+
+          z-index: 2;
 
           left: 50%;
           bottom: -19%;
@@ -949,7 +1023,7 @@ export const LoadingScreen = ({
           right: 0;
           bottom: 25px;
 
-          z-index: 10;
+          z-index: 15;
 
           display: flex;
 
@@ -987,6 +1061,10 @@ export const LoadingScreen = ({
 
           pointer-events: none;
         }
+
+        /* =========================================================
+           CURTAIN FABRIC
+        ========================================================= */
 
         .curtain-fabric {
           position: absolute;
@@ -1143,7 +1221,7 @@ export const LoadingScreen = ({
         }
 
         /* =========================================================
-           CURTAIN WAVY EDGE
+           WAVY CURTAIN EDGE
         ========================================================= */
 
         .curtain-bottom {
@@ -1225,6 +1303,8 @@ export const LoadingScreen = ({
             );
 
             letter-spacing: 0.19em;
+
+            padding: 4px 8px;
           }
 
           .loader-tagline {
@@ -1299,10 +1379,6 @@ export const LoadingScreen = ({
             width: 125vw;
           }
 
-          .loader-frame {
-            padding: 0;
-          }
-
           .loader-loading-section {
             margin-top: 34px;
           }
@@ -1329,6 +1405,16 @@ export const LoadingScreen = ({
 
           .loader-bottom {
             justify-content: center;
+          }
+
+          .loader-name {
+            font-size: clamp(
+              1.05rem,
+              6vw,
+              1.65rem
+            );
+
+            letter-spacing: 0.16em;
           }
         }
 
@@ -1458,7 +1544,7 @@ export const LoadingScreen = ({
                 }}
               />
 
-              {/* Bottom horizon */}
+              {/* Horizon */}
 
               <div className="loader-horizon">
                 <div className="horizon-light" />
@@ -1467,7 +1553,7 @@ export const LoadingScreen = ({
             </div>
 
             {/* =====================================================
-                CENTRAL HUD
+                CENTRAL DECORATIVE HUD
             ===================================================== */}
 
             <motion.div
@@ -1486,8 +1572,6 @@ export const LoadingScreen = ({
 
             <div className="hud-crosshair-horizontal" />
             <div className="hud-crosshair-vertical" />
-
-            {/* Center beam */}
 
             <motion.div
               className="loader-beam"
@@ -1643,7 +1727,7 @@ export const LoadingScreen = ({
                 A Developer Who Builds Possibilities
               </motion.div>
 
-              {/* Loading */}
+              {/* Loading Section */}
 
               <motion.div
                 className="loader-loading-section"
@@ -1687,7 +1771,7 @@ export const LoadingScreen = ({
                   </div>
                 </div>
 
-                {/* 0 / 100 */}
+                {/* Progress limits */}
 
                 <div className="loader-progress-info">
                   <span className="progress-limit">
@@ -1877,7 +1961,7 @@ export const LoadingScreen = ({
               }}
             />
 
-            {/* Glow */}
+            {/* Bottom glow */}
 
             <div className="curtain-bottom-glow" />
 
