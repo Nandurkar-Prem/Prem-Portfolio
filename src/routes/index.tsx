@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HeroSection } from "@/components/portfolio/HeroSection";
 import { AboutSection } from "@/components/portfolio/AboutSection";
-import { SkillsSection } from "@/components/portfolio/SkillsSection"
-import { ProjectsSection } from "@/components/portfolio/ProjectsSection";
+import { SkillsSection } from "@/components/portfolio/SkillsSection";
+import { LoadingScreen } from "@/components/portfolio/LoadingScreen";
 import { ContactSection } from "@/components/portfolio/ContactSection";
 import { Footer } from "@/components/portfolio/Footer";
 import { TransitionMarquee } from "@/components/portfolio/TransitionMarquee";
@@ -14,13 +14,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Jack is a 3D creator crafting striking 3D modeling, rendering, motion design, branding and web design projects.",
+          "Portfolio of Prem Nandurkar — a Java developer building modern, scalable and immersive web experiences.",
       },
       { property: "og:title", content: "Prem - Java Devloper" },
       {
         property: "og:description",
         content:
-          "3D modeling, rendering, motion design, branding and web design by Jack — a 3D creator building unforgettable projects.",
+          "Explore Prem Nandurkar's portfolio, projects, technical skills and experience in Java, Spring Boot and full-stack development.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -32,6 +32,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main style={{ backgroundColor: "#0C0C0C", overflowX: "clip" }}>
+      <LoadingScreen />
       <HeroSection />
       <TransitionMarquee
         items={[

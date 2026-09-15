@@ -185,7 +185,7 @@ export function HeroSection() {
                 lg:text-[15vw]
               "
             >
-              Prem
+              Portfolio
             </h1>
 
             <h2
@@ -204,7 +204,6 @@ export function HeroSection() {
                 lg:text-[12vw]
               "
             >
-              Nandurkar
             </h2>
           </div>
         </FadeIn>
