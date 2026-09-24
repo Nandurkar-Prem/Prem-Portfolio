@@ -11,8 +11,6 @@ const NAV = [
   { name: "Contact", href: "/contact" },
 ];
 
-const TECH_STACK = ["JAVA", "SPRING BOOT", "REST APIs"];
-
 export function HeroSection() {
   return (
     <section
@@ -68,10 +66,15 @@ export function HeroSection() {
 
         {/* Floating particles */}
         <span className="hero-particle absolute left-[10%] top-[25%] h-1 w-1 rounded-full bg-white" />
+
         <span className="hero-particle hero-particle-delay-1 absolute left-[22%] top-[65%] h-1.5 w-1.5 rounded-full bg-cyan-300" />
+
         <span className="hero-particle hero-particle-delay-2 absolute left-[78%] top-[22%] h-1 w-1 rounded-full bg-purple-300" />
+
         <span className="hero-particle hero-particle-delay-3 absolute left-[88%] top-[58%] h-1.5 w-1.5 rounded-full bg-blue-300" />
+
         <span className="hero-particle hero-particle-delay-4 absolute left-[68%] top-[78%] h-1 w-1 rounded-full bg-white" />
+
         <span className="hero-particle hero-particle-delay-5 absolute left-[35%] top-[18%] h-1 w-1 rounded-full bg-cyan-200" />
       </div>
 
@@ -83,15 +86,40 @@ export function HeroSection() {
         delay={0}
         y={-20}
         as="nav"
-        className="relative z-30 px-6 pt-6 md:px-10 md:pt-8"
+        className="
+          relative
+          z-30
+          px-5
+          pt-5
+          sm:px-6
+          sm:pt-6
+          md:px-10
+          md:pt-7
+        "
         aria-label="Main navigation"
       >
-        <div className="flex items-center justify-between">
-          {/* Logo / Initial */}
+        <div className="relative flex items-center justify-center">
+          {/* =====================================================
+              LOGO
+          ===================================================== */}
+
           <Link
             to="/"
             aria-label="Go to homepage"
-            className="group hidden text-xl font-black tracking-tight text-[#D7E2EA] md:block"
+            className="
+              group
+              absolute
+              left-0
+              hidden
+              text-xl
+              font-black
+              tracking-tight
+              text-[#D7E2EA]
+              transition-transform
+              duration-300
+              hover:scale-105
+              md:block
+            "
           >
             P
             <span className="text-cyan-300 transition-colors duration-300 group-hover:text-purple-300">
@@ -99,50 +127,128 @@ export function HeroSection() {
             </span>
           </Link>
 
-          <ul className="flex w-full items-center justify-between gap-3 md:w-auto md:gap-8 lg:gap-12">
-            {NAV.map((item) => (
-              <li key={item.name}>
-                <Link
-                  to={item.href}
-                  className="
-                    group
-                    relative
-                    text-[#D7E2EA]
-                    font-medium
-                    uppercase
-                    tracking-wider
-                    text-[0.65rem]
-                    sm:text-xs
-                    md:text-sm
-                    lg:text-base
-                    transition-colors
-                    duration-300
-                    hover:text-white
-                    focus:outline-none
-                    focus-visible:text-cyan-300
-                  "
-                >
-                  {item.name}
+          {/* =====================================================
+              NAVIGATION GLASS BAR
+          ===================================================== */}
 
-                  <span
+          <div
+            className="
+              relative
+              rounded-full
+              border
+              border-white/[0.10]
+              bg-[#111417]/75
+              px-3
+              py-2
+              shadow-[0_8px_35px_rgba(0,0,0,0.35)]
+              backdrop-blur-xl
+              sm:px-4
+              sm:py-2.5
+              md:px-5
+            "
+          >
+            {/* Subtle top highlight */}
+            <div
+              className="
+                pointer-events-none
+                absolute
+                inset-x-5
+                top-0
+                h-px
+                bg-gradient-to-r
+                from-transparent
+                via-white/20
+                to-transparent
+              "
+              aria-hidden="true"
+            />
+
+            {/* Subtle cyan ambient glow */}
+            <div
+              className="
+                pointer-events-none
+                absolute
+                left-1/2
+                top-1/2
+                h-8
+                w-1/2
+                -translate-x-1/2
+                -translate-y-1/2
+                rounded-full
+                bg-cyan-400/[0.04]
+                blur-2xl
+              "
+              aria-hidden="true"
+            />
+
+            <ul className="relative flex items-center justify-center gap-3 sm:gap-5 md:gap-7 lg:gap-10">
+              {NAV.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    to={item.href}
                     className="
-                      absolute
-                      -bottom-2
-                      left-0
-                      h-px
-                      w-0
-                      bg-gradient-to-r
-                      from-cyan-300
-                      to-purple-400
-                      transition-all
+                      group
+                      relative
+                      block
+                      whitespace-nowrap
+                      px-1
+                      py-1
+                      text-[#D7E2EA]/80
+                      font-medium
+                      uppercase
+                      tracking-wider
+                      text-[0.55rem]
+                      transition-colors
                       duration-300
-                      group-hover:w-full
+                      hover:text-white
+                      focus:outline-none
+                      focus-visible:text-cyan-300
+                      sm:text-[0.65rem]
+                      md:text-xs
+                      lg:text-sm
                     "
-                  />
-                </Link>
-              </li>
-            ))}
-          </ul>
+                  >
+                    {item.name}
+
+                    {/* Hover underline */}
+                    <span
+                      className="
+                        absolute
+                        -bottom-1
+                        left-1/2
+                        h-px
+                        w-0
+                        -translate-x-1/2
+                        bg-gradient-to-r
+                        from-cyan-300
+                        to-purple-400
+                        transition-all
+                        duration-300
+                        group-hover:w-full
+                      "
+                    />
+
+                    {/* Hover glow */}
+                    <span
+                      className="
+                        pointer-events-none
+                        absolute
+                        inset-0
+                        -z-10
+                        rounded-md
+                        bg-cyan-300/[0.03]
+                        opacity-0
+                        blur-md
+                        transition-opacity
+                        duration-300
+                        group-hover:opacity-100
+                      "
+                    />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </FadeIn>
 
@@ -150,179 +256,63 @@ export function HeroSection() {
           HERO TITLE
       ========================================================= */}
 
-      <div className="relative z-10 mt-8 overflow-visible sm:mt-6 md:mt-2">
-        <FadeIn delay={0.15} y={40}>
+      <div
+        className="
+          absolute
+          left-1/2
+          top-[18%]
+          z-10
+          w-full
+          -translate-x-1/2
+          overflow-visible
+          px-4
+          sm:top-[19%]
+          md:top-[19%]
+          lg:top-[18%]
+        "
+      >
+        <FadeIn delay={0.15} y={30}>
           <div className="flex flex-col items-center">
             {/* Small identity label */}
             <p
               className="
                 mb-3
-                text-[0.65rem]
+                text-[0.6rem]
                 font-medium
                 uppercase
-                tracking-[0.35em]
+                tracking-[0.3em]
                 text-cyan-300/80
                 sm:text-xs
                 md:mb-4
+                md:tracking-[0.35em]
               "
             >
               Java • Spring Boot • Full Stack
             </p>
 
+            {/* Main Name */}
             <h1
               className="
                 hero-heading
                 w-full
+                whitespace-nowrap
                 text-center
                 font-black
                 uppercase
-                leading-[0.8]
+                leading-[0.85]
                 tracking-[-0.055em]
                 text-[#E8F0F5]
-                text-[16vw]
-                sm:text-[15vw]
-                md:text-[14.5vw]
-                lg:text-[15vw]
+                text-[9vw]
+                sm:text-[8.5vw]
+                md:text-[8.5vw]
+                lg:text-[8.5vw]
               "
             >
-              Portfolio
+              Prem Nandurkar
             </h1>
-
-            <h2
-              className="
-                -mt-1
-                w-full
-                text-center
-                font-black
-                uppercase
-                leading-[0.8]
-                tracking-[-0.055em]
-                text-[#343A40]
-                text-[13vw]
-                sm:text-[12vw]
-                md:text-[11.5vw]
-                lg:text-[12vw]
-              "
-            >
-            </h2>
           </div>
         </FadeIn>
       </div>
-
-      {/* =========================================================
-          FLOATING INFORMATION CARD - LEFT
-      ========================================================= */}
-
-      <FadeIn
-        delay={0.4}
-        y={15}
-        className="
-          absolute
-          left-5
-          top-[38%]
-          z-20
-          hidden
-          md:block
-          lg:left-10
-        "
-      >
-        <div
-          className="
-            hero-floating-card
-            w-[145px]
-            rounded-2xl
-            border
-            border-white/10
-            bg-white/[0.035]
-            p-4
-            backdrop-blur-md
-            lg:w-[165px]
-          "
-        >
-          <div className="mb-3 flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(103,232,249,0.8)]" />
-
-            <span className="text-[0.55rem] font-medium uppercase tracking-[0.2em] text-white/50">
-              Currently
-            </span>
-          </div>
-
-          <p className="text-sm font-semibold leading-tight text-[#D7E2EA] lg:text-base">
-            Building
-            <br />
-            backend systems
-          </p>
-
-          <div className="mt-3 h-px w-full bg-white/10" />
-
-          <p className="mt-3 text-[0.55rem] uppercase tracking-wider text-white/40">
-            Java / Spring Boot
-          </p>
-        </div>
-      </FadeIn>
-
-      {/* =========================================================
-          FLOATING INFORMATION CARD - RIGHT
-      ========================================================= */}
-
-      <FadeIn
-        delay={0.5}
-        y={15}
-        className="
-          absolute
-          right-5
-          top-[43%]
-          z-20
-          hidden
-          md:block
-          lg:right-10
-        "
-      >
-        <div
-          className="
-            hero-floating-card
-            w-[145px]
-            rounded-2xl
-            border
-            border-white/10
-            bg-white/[0.035]
-            p-4
-            backdrop-blur-md
-            lg:w-[165px]
-          "
-        >
-          <div className="mb-3 flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-purple-300 shadow-[0_0_12px_rgba(216,180,254,0.8)]" />
-
-            <span className="text-[0.55rem] font-medium uppercase tracking-[0.2em] text-white/50">
-              Stack
-            </span>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            {TECH_STACK.map((tech) => (
-              <span
-                key={tech}
-                className="
-                  rounded-full
-                  border
-                  border-white/10
-                  bg-white/[0.04]
-                  px-2.5
-                  py-1.5
-                  text-[0.5rem]
-                  font-medium
-                  uppercase
-                  tracking-wider
-                  text-white/55
-                "
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
-      </FadeIn>
 
       {/* =========================================================
           AVATAR
@@ -604,10 +594,6 @@ export function HeroSection() {
           animation: heroFloat 5s ease-in-out infinite;
         }
 
-        .hero-floating-card {
-          animation: heroFloat 6s ease-in-out infinite;
-        }
-
         .hero-particle {
           animation: heroParticle 4s ease-in-out infinite;
         }
@@ -636,9 +622,14 @@ export function HeroSection() {
           animation: heroScroll 2s ease-in-out infinite;
         }
 
+        @media (max-width: 639px) {
+          .hero-heading {
+            font-size: 10vw;
+          }
+        }
+
         @media (prefers-reduced-motion: reduce) {
           .hero-avatar-float,
-          .hero-floating-card,
           .hero-particle,
           .hero-scroll-line span {
             animation: none !important;
